@@ -1,0 +1,6 @@
+@SALAODEBELEZA_HostAddress = http://localhost:5054
+
+GET {{SALAODEBELEZA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
