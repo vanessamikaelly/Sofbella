@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020023\\source\\repos\\salaodebeleza\\salaodebeleza\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020023\\source\\repos\\salaodebeleza\\salaodebeleza\\dtos\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020023\\source\\repos\\salaodebeleza\\salaodebeleza\\salaodebeleza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\salaodebeleza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -19,15 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SALAODEBELEZA",
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T17:59:01.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\Cliente.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\Cliente.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\Cliente.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\DTOS\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T17:58:34.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SALAODEBELEZA.csproj",
               "DocumentMoniker": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA.csproj",
               "ToolTip": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-09T17:28:41.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-09T17:28:41.448Z"
             }
           ]
         }
