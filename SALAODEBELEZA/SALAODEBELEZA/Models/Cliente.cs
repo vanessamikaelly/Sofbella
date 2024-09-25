@@ -2,6 +2,8 @@
 {
     public class Cliente
     {
-        /*babaaaa*/
+        public DateTime DataNascimento { get; set; }
+        public string Enderco { get; set; } 
+
     }
 }

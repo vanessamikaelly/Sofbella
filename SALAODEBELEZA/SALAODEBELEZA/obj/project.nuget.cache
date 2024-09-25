@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m1j0rsbJtAM=",
+  "dgSpecHash": "V0l+kbw/HYVboLU2oCFk/FWNQ5Ypyjf7OrGO/QAAmegeKFNmJOj+2+pNrjxLt/k9WQJM9dJI32vs/iYBpM7IiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\giova\\OneDrive - ifro.edu.br (1)\\Documentos\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

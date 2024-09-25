@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {}
+    "C:\\Users\\giova\\OneDrive - ifro.edu.br (1)\\Documentos\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {
+    "C:\\Users\\giova\\OneDrive - ifro.edu.br (1)\\Documentos\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
+        "projectUniqueName": "C:\\Users\\giova\\OneDrive - ifro.edu.br (1)\\Documentos\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
         "projectName": "SALAODEBELEZA",
-        "projectPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\obj\\",
+        "projectPath": "C:\\Users\\giova\\OneDrive - ifro.edu.br (1)\\Documentos\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
+        "packagesPath": "C:\\Users\\giova\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giova\\OneDrive - ifro.edu.br (1)\\Documentos\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\giova\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,42 +34,22 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
