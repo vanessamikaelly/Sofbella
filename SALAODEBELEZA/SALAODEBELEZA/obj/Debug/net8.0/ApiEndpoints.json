@@ -1,0 +1,275 @@
+[
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "GetFornecedor",
+    "RelativePath": "api/categoriaCategoria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "GetById",
+    "RelativePath": "api/categoriaCategoria/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "Put",
+    "RelativePath": "api/categoriaCategoria/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.CategoriaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "Delete",
+    "RelativePath": "api/categoriaCategoria/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.EstoqueController",
+    "Method": "GetEstoque",
+    "RelativePath": "api/estoqueEstoque",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.EstoqueController",
+    "Method": "GetById",
+    "RelativePath": "api/estoqueEstoque/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.EstoqueController",
+    "Method": "Put",
+    "RelativePath": "api/estoqueEstoque/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.OrcamentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.EstoqueController",
+    "Method": "Delete",
+    "RelativePath": "api/estoqueEstoque/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.FornecedorController",
+    "Method": "GetFornecedor",
+    "RelativePath": "api/fornecedorFornecedor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.FornecedorController",
+    "Method": "GetById",
+    "RelativePath": "api/fornecedorFornecedor/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.FornecedorController",
+    "Method": "Put",
+    "RelativePath": "api/fornecedorFornecedor/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.FornecedorDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.FornecedorController",
+    "Method": "Delete",
+    "RelativePath": "api/fornecedorFornecedor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.OrcamentoController",
+    "Method": "GetOrcamento",
+    "RelativePath": "api/orcamentoOrcamento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.OrcamentoController",
+    "Method": "GetById",
+    "RelativePath": "api/orcamentoOrcamento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.OrcamentoController",
+    "Method": "Put",
+    "RelativePath": "api/orcamentoOrcamento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.OrcamentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.OrcamentoController",
+    "Method": "Delete",
+    "RelativePath": "api/orcamentoOrcamento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SALAODEBELEZA.WeatherForecast, SALAODEBELEZA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

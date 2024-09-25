@@ -3,6 +3,8 @@ using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
+    [Route("api/relatorio[controller]")]
+    [ApiController]
     public class RelatorioController: ControllerBase
     {
         /*

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SALAODEBELEZA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3858b4f295ec69a75c03889314764ebf3130853")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66bced43a68b59ee368f12fb76e8a5850e4455bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SALAODEBELEZA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SALAODEBELEZA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
