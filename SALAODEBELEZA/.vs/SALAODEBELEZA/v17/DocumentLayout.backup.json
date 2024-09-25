@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\relatoriocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\relatoriocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\orcamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\orcamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\fornecedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\fornecedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\estoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\estoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\models\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,26 +71,6 @@
       "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\relatoriocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\relatoriocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\orcamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\orcamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\fornecedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\fornecedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\estoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\estoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\lenovo\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\salaodebeleza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\salaodebeleza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -82,11 +82,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Cliente.cs",
@@ -94,12 +94,11 @@
               "RelativeToolTip": "SALAODEBELEZA\\Models\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T23:59:17.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T23:59:17.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\Cliente.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\Cliente.cs",
@@ -107,25 +106,24 @@
               "RelativeToolTip": "SALAODEBELEZA\\DTOS\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T01:43:38.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T01:43:38.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "CategoriaController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\CategoriaController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\CategoriaController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADYAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs*",
+              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\CategoriaController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T00:40:47.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "CategoriaDTO.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\CategoriaDTO.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\CategoriaDTO.cs",
@@ -133,12 +131,11 @@
               "RelativeToolTip": "SALAODEBELEZA\\DTOS\\CategoriaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:40:08.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:40:08.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Categoria.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Categoria.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Categoria.cs",
@@ -146,25 +143,24 @@
               "RelativeToolTip": "SALAODEBELEZA\\Models\\Categoria.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:39:01.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:39:01.605Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "RelatorioController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\RelatorioController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\RelatorioController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs*",
+              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\RelatorioController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T00:38:18.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "RelatorioDTO.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\RelatorioDTO.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\RelatorioDTO.cs",
@@ -172,12 +168,11 @@
               "RelativeToolTip": "SALAODEBELEZA\\DTOS\\RelatorioDTO.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAAACgAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:37:58.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:37:58.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Relatorio.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Relatorio.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Relatorio.cs",
@@ -185,25 +180,24 @@
               "RelativeToolTip": "SALAODEBELEZA\\Models\\Relatorio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:37:39.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:37:39.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "EstoqueController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\EstoqueController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\EstoqueController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\EstoqueController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\EstoqueController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\EstoqueController.cs*",
+              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\EstoqueController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T00:31:59.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "EstoqueDTO.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\EstoqueDTO.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\EstoqueDTO.cs",
@@ -211,12 +205,11 @@
               "RelativeToolTip": "SALAODEBELEZA\\DTOS\\EstoqueDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:31:18.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:31:18.34Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Estoque.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Estoque.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Estoque.cs",
@@ -224,25 +217,24 @@
               "RelativeToolTip": "SALAODEBELEZA\\Models\\Estoque.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:30:56.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:30:56.102Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 2,
               "Title": "FornecedorController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\FornecedorController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\FornecedorController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs*",
+              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\FornecedorController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-25T00:30:08.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "FornecedorDTO.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\FornecedorDTO.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\FornecedorDTO.cs",
@@ -250,12 +242,11 @@
               "RelativeToolTip": "SALAODEBELEZA\\DTOS\\FornecedorDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:29:47.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:29:47.202Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Fornecedor.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Fornecedor.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Fornecedor.cs",
@@ -263,25 +254,24 @@
               "RelativeToolTip": "SALAODEBELEZA\\Models\\Fornecedor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:29:15.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T00:29:15.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "OrcamentoController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs*",
+              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\OrcamentoController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T23:55:53.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Orcamento.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Orcamento.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Orcamento.cs",
@@ -289,12 +279,11 @@
               "RelativeToolTip": "SALAODEBELEZA\\Models\\Orcamento.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T23:55:23.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T23:55:23.091Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "OrcamentoDTO.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\OrcamentoDTO.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\OrcamentoDTO.cs",
@@ -302,8 +291,7 @@
               "RelativeToolTip": "SALAODEBELEZA\\DTOS\\OrcamentoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T23:54:36.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T23:54:36.596Z"
             },
             {
               "$type": "Document",
@@ -315,8 +303,7 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-09T17:28:41.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-09T17:28:41.448Z"
             }
           ]
         }

@@ -4,6 +4,8 @@ using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
+    [Route("api/orcamento[controller]")]
+    [ApiController]
     public class OrcamentoController: ControllerBase
     {
         private static List<Orcamento> listaorcamento = new List<Orcamento>();

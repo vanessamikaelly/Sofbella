@@ -4,6 +4,8 @@ using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
+    [Route("api/fornecedor[controller]")]
+    [ApiController]
     public class FornecedorController: ControllerBase
     {
         private static List<Fornecedor> listafornecedor = new List<Fornecedor>();
