@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XWAk4tHg6Mc=",
+  "dgSpecHash": "s2wkKrRHToY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\2022102020060\\Downloads\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
+  "projectFilePath": "C:\\Users\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2022102020060\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\2022102020060\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
