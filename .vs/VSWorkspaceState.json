@@ -3,10 +3,8 @@
     "",
     "\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA",
-    "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
-    "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS",
-    "\\SALAODEBELEZA\\SALAODEBELEZA\\Models"
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers"
   ],
-  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
+  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
   "PreviewInSolutionExplorer": false
 }
