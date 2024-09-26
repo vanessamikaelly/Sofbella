@@ -61,7 +61,7 @@ namespace SALAODEBELEZA.Controllers
             return NoContent();
         }
 
-        // Excluir anamnese por ID
+      
         [HttpDelete("Excluir/id")]
         public ActionResult Excluir(int id)
         {
@@ -71,7 +71,7 @@ namespace SALAODEBELEZA.Controllers
                 return NotFound();
             }
 
-            // Remover a anamnese da lista
+            
             anamneses.Remove(anamnese);
             return NoContent();
         }

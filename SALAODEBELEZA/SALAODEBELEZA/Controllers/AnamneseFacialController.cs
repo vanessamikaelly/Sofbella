@@ -32,18 +32,18 @@ namespace SALAODEBELEZA.Controllers
             [HttpPost("Criar")]
             public ActionResult Criar([FromBody] AnamneseFacialDTO anamneseDTO)
             {
-                // Validar se todos os campos obrigatórios foram preenchidos
+              
                 if (!ModelState.IsValid || string.IsNullOrEmpty(anamneseDTO.Alergia))
                 {
                     return BadRequest("Todos os campos são obrigatórios.");
                 }
 
-                // Adicionar a nova anamnese à lista
+              
                 anamneses.Add(anamneseDTO);
                 return CreatedAtAction(nameof(BuscarPorId), new { id = anamneseDTO.Id }, anamneseDTO);
             }
 
-            // Atualizar anamnese existente
+          
             [HttpPut("Atualizar/id")]
             public ActionResult Atualizar(int id, [FromBody] AnamneseFacialDTO anamneseAtualizada)
             {
@@ -53,7 +53,7 @@ namespace SALAODEBELEZA.Controllers
                     return NotFound();
                 }
 
-                // Atualizar os campos da anamnese
+              
                 anamnese.Gestante = anamneseAtualizada.Gestante;
                 anamnese.Queda_Cabelo = anamneseAtualizada.Queda_Cabelo;
                 anamnese.Alergia = anamneseAtualizada.Alergia;
@@ -62,7 +62,7 @@ namespace SALAODEBELEZA.Controllers
                 return NoContent();
             }
 
-            // Excluir anamnese por ID
+           
             [HttpDelete("Excluir/id")]
             public ActionResult Excluir(int id)
             {
@@ -72,7 +72,7 @@ namespace SALAODEBELEZA.Controllers
                     return NotFound();
                 }
 
-                // Remover a anamnese da lista
+               
                 anamneses.Remove(anamnese);
                 return NoContent();
             }
