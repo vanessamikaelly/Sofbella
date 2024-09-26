@@ -4,8 +4,9 @@
     "\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\Models"
   ],
-  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
+  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
   "PreviewInSolutionExplorer": false
 }
