@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {}
+    "C:\\Users\\2022102020060\\Downloads\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {
+    "C:\\Users\\2022102020060\\Downloads\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
+        "projectUniqueName": "C:\\Users\\2022102020060\\Downloads\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
         "projectName": "SALAODEBELEZA",
-        "projectPath": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
-        "packagesPath": "C:\\Users\\2022102020023\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2022102020023\\source\\repos\\SALAODEBELEZA\\SALAODEBELEZA\\obj\\",
+        "projectPath": "C:\\Users\\2022102020060\\Downloads\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
+        "packagesPath": "C:\\Users\\2022102020060\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2022102020060\\Downloads\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\Sofbella-143d521a9d3a67b1dbd0976f06b9f80416c0076b\\SALAODEBELEZA\\SALAODEBELEZA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2022102020023\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2022102020060\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
