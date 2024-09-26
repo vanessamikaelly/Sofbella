@@ -14,14 +14,14 @@ namespace SALAODEBELEZA.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("Vizualizar")]
         public ActionResult GetEstoque()
         {
             return Ok(listaestoque);
 
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("Vizualizar por ID{id}")]
 
         public IActionResult GetById(int id)
         {
@@ -30,7 +30,13 @@ namespace SALAODEBELEZA.Controllers
             return Ok(estoque);
         }
 
-        [HttpPut("{id}")]
+        [HttpPost("Cadastrar")]
+        public IActionResult Post([FromBody] EstoqueDTO item)
+        {
+            return Ok("Estoque cadastrado com sucesso:" + item);
+        }
+
+        [HttpPut("Atualizar{id}")]
         public IActionResult Put(int id, [FromBody] OrcamentoDTO item)
         {
             var estoque = listaestoque.Where(item => item.Id == id).FirstOrDefault();
@@ -43,7 +49,7 @@ namespace SALAODEBELEZA.Controllers
             return Ok(listaestoque);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Deletar{id}")]
 
         public IActionResult Delete(int id)
         {

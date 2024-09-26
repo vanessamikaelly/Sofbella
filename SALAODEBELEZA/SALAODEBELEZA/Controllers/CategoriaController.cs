@@ -30,7 +30,19 @@ namespace SALAODEBELEZA.Controllers
             return Ok(categoria);
         }
 
-        [HttpPut("{id}")]
+        [HttpPost("Cadastrar")]
+        public IActionResult Post([FromBody] CategoriaDTO item)
+        {
+            var categoria = new Categoria();
+            categoria.Id = listacategoria.Count + 1;
+            categoria.Nome = item.Nome;
+            categoria.Tipo = item.Tipo;
+            categoria.Ativo = item.Ativo;
+
+            return Ok("Categoria cadastrada com sucesso:" + item);
+        }
+
+        [HttpPut("Atualozar{id}")]
         public IActionResult Put(int id, [FromBody] CategoriaDTO item)
         {
             var categoria = listacategoria.Where(item => item.Id == id).FirstOrDefault();

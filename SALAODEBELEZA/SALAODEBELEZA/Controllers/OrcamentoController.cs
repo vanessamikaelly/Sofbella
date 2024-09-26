@@ -14,14 +14,14 @@ namespace SALAODEBELEZA.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("Vizualizar")]
         public ActionResult GetOrcamento()
         {
             return Ok(listaorcamento);
 
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("Vizualizar por ID{id}")]
 
         public IActionResult GetById(int id)
         {
@@ -30,7 +30,21 @@ namespace SALAODEBELEZA.Controllers
             return Ok(orcamento);
         }
 
-        [HttpPut("{id}")]
+        [HttpPost("Cadastrar")]
+        public IActionResult Post([FromBody] OrcamentoDTO item)
+        {
+            var orcamento = new Orcamento();
+            orcamento.Id = listaorcamento.Count + 1;
+            orcamento.Descricao = item.Descricao;
+            orcamento.Data = item.Data;
+            orcamento.Validade = item.Validade;
+            orcamento.Forma_Pagamento = item.Forma_Pagamento;
+            orcamento.Observaçao = item.Observaçao;
+
+            return Ok("Orcamento cadastrado com sucesso:" + item);
+        }
+
+        [HttpPut("Atualizar{id}")]
         public IActionResult Put(int id, [FromBody] OrcamentoDTO item)
         {
             var orcamento = listaorcamento.Where(item => item.Id == id).FirstOrDefault();
@@ -49,7 +63,7 @@ namespace SALAODEBELEZA.Controllers
             return Ok(listaorcamento);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Deletar{id}")]
 
         public IActionResult Delete(int id)
         {
