@@ -3,7 +3,9 @@
     "",
     "\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA",
-    "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers"
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS",
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\Models"
   ],
   "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
   "PreviewInSolutionExplorer": false

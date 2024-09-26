@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,18 +39,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SALAODEBELEZA\\SALAODEBELEZA\\Models\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,60 +53,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Expediente.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
-              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T03:12:56.548Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AnamneseCorporalController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
-              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAJAAAAAAAAAA==",
+              "Title": "RelatorioController.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\RelatorioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T03:09:24.777Z",
+              "WhenOpened": "2024-09-26T14:53:54.025Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AnamneseFacialController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
-              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAAAEoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:24:06.7Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AnamneseManicureEPedicureController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
-              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:23:37.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "ExpedienteController.cs",
               "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs",
@@ -110,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "FornecedorController.cs",
               "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs",
@@ -122,19 +94,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "OrcamentoController.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\OrcamentoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:20:56.142Z"
+              "WhenOpened": "2024-09-26T14:53:51.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "CategoriaController.cs",
               "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
@@ -146,7 +118,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AnamneseCorporalController.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCorporalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T03:09:24.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Expediente.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T03:12:56.548Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "AnamneseFacialController.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAEoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T02:24:06.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AnamneseManicureEPedicureController.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
+              "ToolTip": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T02:23:37.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\2022102020060\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T02:20:56.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Categoria.cs",
               "DocumentMoniker": "C:\\Users\\2022102020023\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Categoria.cs",
               "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Categoria.cs",
