@@ -4,8 +4,11 @@
     "\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
-    "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\Models"
   ],
+<<<<<<< HEAD
+=======
+  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
+>>>>>>> parent of 98b5401 (novo commit)
   "PreviewInSolutionExplorer": false
 }
