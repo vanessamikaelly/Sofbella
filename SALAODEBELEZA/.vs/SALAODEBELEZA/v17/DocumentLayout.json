@@ -1,58 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\",
+  "WorkspaceRootPath": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\anamnesecapilarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\anamnesecapilarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\prifo\\documents\\git\\sofbella\\salaodebeleza\\salaodebeleza\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\servicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\servicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\prifo\\documents\\git\\sofbella\\salaodebeleza\\salaodebeleza\\models\\baixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\baixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\prifo\\documents\\git\\sofbella\\salaodebeleza\\salaodebeleza\\models\\bloqueio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\bloqueio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\controllers\\caixacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\controllers\\caixacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\prifo\\documents\\git\\sofbella\\salaodebeleza\\salaodebeleza\\models\\comanda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\comanda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\models\\anamnesecapilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\anamnesecapilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\dtos\\anamnesecapilardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\anamnesecapilardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\dtos\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\models\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\dtos\\caixadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\caixadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\dtos\\servicodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\dtos\\servicodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\models\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\2022102020016\\documents\\github\\sofbella\\salaodebeleza\\salaodebeleza\\salaodebeleza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\salaodebeleza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|c:\\users\\prifo\\documents\\git\\sofbella\\salaodebeleza\\salaodebeleza\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B55ADA2-19D0-4FDD-AD04-3304AF5A5699}|SALAODEBELEZA\\SALAODEBELEZA.csproj|solutionrelative:salaodebeleza\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,175 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AnamneseCapilar.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\AnamneseCapilar.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\AnamneseCapilar.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\AnamneseCapilar.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Models\\AnamneseCapilar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Produto.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Produto.cs",
+              "ToolTip": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Produto.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\Models\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:47:50.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AnamneseCapilarDTO.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\AnamneseCapilarDTO.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\AnamneseCapilarDTO.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\AnamneseCapilarDTO.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\DTOS\\AnamneseCapilarDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:47:28.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AnamneseCapilarController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCapilarController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\AnamneseCapilarController.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCapilarController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\AnamneseCapilarController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAcwE4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:46:59.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServicoController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ServicoController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\ServicoController.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ServicoController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\ServicoController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwEIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:34:45.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CaixaDTO.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\CaixaDTO.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\CaixaDTO.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\CaixaDTO.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\DTOS\\CaixaDTO.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:19:45.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Caixa.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Caixa.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Caixa.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Caixa.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Models\\Caixa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:19:05.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T20:46:47.744Z",
+              "WhenOpened": "2024-09-27T03:00:32.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CaixaController.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CaixaController.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Controllers\\CaixaController.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CaixaController.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Controllers\\CaixaController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwD4AAAAVAAAAAAAAAA==",
+              "Title": "Comanda.cs",
+              "DocumentMoniker": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Comanda.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Comanda.cs",
+              "ToolTip": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Comanda.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\Models\\Comanda.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:18:19.918Z",
+              "WhenOpened": "2024-09-27T03:00:30.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ServicoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ServicoDTO.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\ServicoDTO.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ServicoDTO.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\DTOS\\ServicoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Bloqueio.cs",
+              "DocumentMoniker": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Bloqueio.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Bloqueio.cs",
+              "ToolTip": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Bloqueio.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\Models\\Bloqueio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:35:36.683Z",
+              "WhenOpened": "2024-09-27T03:00:28.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Servico.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Servico.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Servico.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Servico.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Models\\Servico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Baixa.cs",
+              "DocumentMoniker": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Baixa.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Baixa.cs",
+              "ToolTip": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Baixa.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\Models\\Baixa.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T21:36:10.654Z",
+              "WhenOpened": "2024-09-27T03:00:27.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClienteDTO.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ClienteDTO.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\ClienteDTO.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ClienteDTO.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\DTOS\\ClienteDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ProdutoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ProdutoDTO.cs",
+              "RelativeDocumentMoniker": "SALAODEBELEZA\\DTOS\\ProdutoDTO.cs",
+              "ToolTip": "C:\\Users\\prifo\\Documents\\git\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ProdutoDTO.cs",
+              "RelativeToolTip": "SALAODEBELEZA\\DTOS\\ProdutoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T20:52:53.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
-              "RelativeToolTip": "SALAODEBELEZA\\Models\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T20:48:28.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SALAODEBELEZA.csproj",
-              "DocumentMoniker": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
-              "RelativeDocumentMoniker": "SALAODEBELEZA\\SALAODEBELEZA.csproj",
-              "ToolTip": "C:\\Users\\2022102020016\\Documents\\GitHub\\Sofbella\\SALAODEBELEZA\\SALAODEBELEZA\\SALAODEBELEZA.csproj",
-              "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-09T17:28:41.448Z",
+              "WhenOpened": "2024-09-27T02:59:23.406Z",
               "EditorCaption": ""
             }
           ]
