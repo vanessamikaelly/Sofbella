@@ -3,8 +3,9 @@
     "",
     "\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA",
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS"
   ],
-  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS\\ProdutoDTO.cs",
+  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\DataBase",
   "PreviewInSolutionExplorer": false
 }
