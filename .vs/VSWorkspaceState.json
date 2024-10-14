@@ -3,10 +3,11 @@
     "",
     "\\SALAODEBELEZA",
     "\\SALAODEBELEZA\\SALAODEBELEZA",
+    "\\SALAODEBELEZA\\SALAODEBELEZA\\bin",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\DTOS",
     "\\SALAODEBELEZA\\SALAODEBELEZA\\Models"
   ],
-  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseCapilarController.cs",
+  "SelectedNode": "\\SALAODEBELEZA\\SALAODEBELEZA\\Controllers",
   "PreviewInSolutionExplorer": false
 }
