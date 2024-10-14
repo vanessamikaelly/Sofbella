@@ -58,7 +58,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Expediente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T03:12:56.548Z"
+              "WhenOpened": "2024-09-26T03:12:56.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -83,7 +84,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseFacialController.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAAAEoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:24:06.7Z"
+              "WhenOpened": "2024-09-26T02:24:06.7Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -95,7 +97,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\AnamneseManicureEPedicureController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:23:37.234Z"
+              "WhenOpened": "2024-09-26T02:23:37.234Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -107,7 +110,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\ExpedienteController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:22:40.991Z"
+              "WhenOpened": "2024-09-26T02:22:40.991Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -119,7 +123,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\FornecedorController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:22:31.792Z"
+              "WhenOpened": "2024-09-26T02:22:31.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -131,7 +136,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Cliente.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:20:56.142Z"
+              "WhenOpened": "2024-09-26T02:20:56.142Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -143,7 +149,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Controllers\\CategoriaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:20:56.164Z"
+              "WhenOpened": "2024-09-26T02:20:56.164Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -155,7 +162,8 @@
               "RelativeToolTip": "SALAODEBELEZA\\SALAODEBELEZA\\Models\\Categoria.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T02:20:56.167Z"
+              "WhenOpened": "2024-09-26T02:20:56.167Z",
+              "EditorCaption": ""
             }
           ]
         }
