@@ -10,6 +10,5 @@ namespace SALAODEBELEZA.DTOS
         public double PrecoUnitario { get; set; }
         public string DuracaoAtendimento { get; set; }
         public double Comissao { get; set; }
-        public int Recorrencia { get; set; }
     }
 }

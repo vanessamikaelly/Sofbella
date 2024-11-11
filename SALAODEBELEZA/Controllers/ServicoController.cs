@@ -46,7 +46,6 @@ namespace SALAODEBELEZA.Controllers
             servico.PrecoUnitario = item.PrecoUnitario;
             servico.DuracaoAtendimento = item.DuracaoAtendimento;
             servico.Comissao = item.Comissao;
-            servico.Recorrencia = item.Recorrencia;
             return Ok(listaservico);
         }
 
@@ -60,7 +59,6 @@ namespace SALAODEBELEZA.Controllers
             servico.PrecoUnitario = item.PrecoUnitario;
             servico.DuracaoAtendimento = item.DuracaoAtendimento;
             servico.Comissao = item.Comissao;
-            servico.Recorrencia = item.Recorrencia;
             return Ok("Categoria cadastrada com sucesso:" + item);
         }
 

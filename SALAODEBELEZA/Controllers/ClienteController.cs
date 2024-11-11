@@ -46,6 +46,11 @@ namespace SALAODEBELEZA.Controllers
             cliente.Id = item.Id;
             cliente.Endereco = item.Endereco;
             cliente.DataNascimento = item.DataNascimento;
+            cliente.CPFCli = item.CPFCli;
+            cliente.EmailCli = item.EmailCli;
+            cliente.NomeCli = item.NomeCli;
+            cliente.SexoCli = item.SexoCli;
+            cliente.TelefoneCli = item.TelefoneCli;
 
             return Ok(listacliente);
         }
@@ -56,7 +61,13 @@ namespace SALAODEBELEZA.Controllers
             var cliente = new Cliente();
             cliente.Id = listacliente.Count + 1;
             cliente.Endereco = item.Endereco;
-            cliente.DataNascimento = item.DataNascimento; ;
+            cliente.DataNascimento = item.DataNascimento;
+            cliente.CPFCli = item.CPFCli;
+            cliente.EmailCli = item.EmailCli;
+            cliente.NomeCli = item.NomeCli;
+            cliente.SexoCli = item.SexoCli;
+            cliente.TelefoneCli = item.TelefoneCli;
+
 
             return Ok("Categoria cadastrada com sucesso:" + item);
         }
