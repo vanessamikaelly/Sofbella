@@ -13,7 +13,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<Categoria> listaCategorias = new CategoriaDAO().List();
+            List<Categoria> listaCategorias = new CategoriaDAO1().List();
             return Ok(listaCategorias);
         }
 
@@ -29,7 +29,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new CategoriaDAO();
+                var dao = new CategoriaDAO1();
                 categoria.Id = dao.Insert(categoria);
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var categoria = new CategoriaDAO().GetById(id);
+                var categoria = new CategoriaDAO1().GetById(id);
 
                 if (categoria == null)
                 {
@@ -65,7 +65,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var categoria = new CategoriaDAO().GetById(id);
+                var categoria = new CategoriaDAO1().GetById(id);
 
                 if (categoria == null)
                 {
@@ -76,7 +76,7 @@ namespace SALAODEBELEZA.Controllers
                 categoria.Tipo = item.Tipo;
                 categoria.Descricao = item.Descricao;
 
-                new CategoriaDAO().Update(categoria);
+                new CategoriaDAO1().Update(categoria);
 
                 return Ok(categoria);
             }
@@ -91,14 +91,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var categoria = new CategoriaDAO().GetById(id);
+                var categoria = new CategoriaDAO1().GetById(id);
 
                 if (categoria == null)
                 {
                     return NotFound();
                 }
 
-                new CategoriaDAO().Delete(categoria.Id);
+                new CategoriaDAO1().Delete(categoria.Id);
 
                 return Ok();
             }

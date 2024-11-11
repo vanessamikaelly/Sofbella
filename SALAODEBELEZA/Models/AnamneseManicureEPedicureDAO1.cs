@@ -6,11 +6,11 @@ using System.Collections.Generic;
 
 namespace SALAODEBELEZA.Models
 {
-    public class AnamneseManicureEPedicureDAO
+    public class AnamneseManicureEPedicureDAO1
     {
         private static ConnectionMysql conn;
 
-        public AnamneseManicureEPedicureDAO()
+        public AnamneseManicureEPedicureDAO1()
         {
             conn = new ConnectionMysql();
         }

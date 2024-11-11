@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<BaixaInterna> listaBaixasInternas = new BaixaInternaDAO().List();
+            List<BaixaInterna> listaBaixasInternas = new BaixaInternaDAO1().List();
 
             return Ok(listaBaixasInternas);
         }
@@ -31,7 +31,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new BaixaInternaDAO();
+                var dao = new BaixaInternaDAO1();
                 baixaInterna.Id = dao.Insert(baixaInterna);
             }
             catch (Exception ex)
@@ -47,7 +47,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var baixaInterna = new BaixaInternaDAO().GetById(id);
+                var baixaInterna = new BaixaInternaDAO1().GetById(id);
 
                 if (baixaInterna == null)
                 {
@@ -67,7 +67,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var baixaInterna = new BaixaInternaDAO().GetById(id);
+                var baixaInterna = new BaixaInternaDAO1().GetById(id);
 
                 if (baixaInterna == null)
                 {
@@ -80,7 +80,7 @@ namespace SALAODEBELEZA.Controllers
                 baixaInterna.Descricao = item.Descricao;
                 baixaInterna.IdEstoqueFk = item.IdEstoqueFk;
 
-                new BaixaInternaDAO().Update(baixaInterna);
+                new BaixaInternaDAO1().Update(baixaInterna);
 
                 return Ok(baixaInterna);
             }
@@ -95,14 +95,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var baixaInterna = new BaixaInternaDAO().GetById(id);
+                var baixaInterna = new BaixaInternaDAO1().GetById(id);
 
                 if (baixaInterna == null)
                 {
                     return NotFound();
                 }
 
-                new BaixaInternaDAO().Delete(baixaInterna.Id);
+                new BaixaInternaDAO1().Delete(baixaInterna.Id);
 
                 return Ok();
             }

@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<AnamneseManicureEPedicure> listaAnamneses = new AnamneseManicureEPedicureDAO().List();
+            List<AnamneseManicureEPedicure> listaAnamneses = new AnamneseManicureEPedicureDAO1().List();
 
             return Ok(listaAnamneses);
         }
@@ -36,7 +36,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new AnamneseManicureEPedicureDAO();
+                var dao = new AnamneseManicureEPedicureDAO1();
                 anamnese.Id = dao.Insert(anamnese);
             }
             catch (Exception ex)
@@ -52,7 +52,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseManicureEPedicureDAO().GetById(id);
+                var anamnese = new AnamneseManicureEPedicureDAO1().GetById(id);
 
                 if (anamnese == null)
                 {
@@ -72,7 +72,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseManicureEPedicureDAO().GetById(id);
+                var anamnese = new AnamneseManicureEPedicureDAO1().GetById(id);
 
                 if (anamnese == null)
                 {
@@ -90,7 +90,7 @@ namespace SALAODEBELEZA.Controllers
                 anamnese.Micose = item.Micose;
                 anamnese.CorEsmalte = item.CorEsmalte;
 
-                new AnamneseManicureEPedicureDAO().Update(anamnese);
+                new AnamneseManicureEPedicureDAO1().Update(anamnese);
 
                 return Ok(anamnese);
             }
@@ -105,14 +105,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseManicureEPedicureDAO().GetById(id);
+                var anamnese = new AnamneseManicureEPedicureDAO1().GetById(id);
 
                 if (anamnese == null)
                 {
                     return NotFound();
                 }
 
-                new AnamneseManicureEPedicureDAO().Delete(anamnese.Id);
+                new AnamneseManicureEPedicureDAO1().Delete(anamnese.Id);
 
                 return Ok();
             }

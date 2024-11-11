@@ -14,7 +14,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var lista = new AnamneseCorporalDAO().List();
+                var lista = new AnamneseCorporalDAO1().List();
                 return Ok(lista);
             }
             catch (System.Exception ex)
@@ -28,7 +28,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseCorporalDAO().GetById(id);
+                var anamnese = new AnamneseCorporalDAO1().GetById(id);
 
                 if (anamnese == null)
                 {
@@ -67,7 +67,7 @@ namespace SALAODEBELEZA.Controllers
                     Areas = anamneseDTO.Areas
                 };
 
-                anamnese.Id = new AnamneseCorporalDAO().Insert(anamnese);
+                anamnese.Id = new AnamneseCorporalDAO1().Insert(anamnese);
 
                 return CreatedAtAction(nameof(GetById), new { id = anamnese.Id }, anamneseDTO);
             }
@@ -82,7 +82,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var existingAnamnese = new AnamneseCorporalDAO().GetById(id);
+                var existingAnamnese = new AnamneseCorporalDAO1().GetById(id);
 
                 if (existingAnamnese == null)
                 {
@@ -100,7 +100,7 @@ namespace SALAODEBELEZA.Controllers
                 existingAnamnese.MetodosUtilizados = updatedAnamnese.MetodosUtilizados;
                 existingAnamnese.Areas = updatedAnamnese.Areas;
 
-                new AnamneseCorporalDAO().Update(existingAnamnese);
+                new AnamneseCorporalDAO1().Update(existingAnamnese);
 
                 return NoContent();
             }
@@ -115,14 +115,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseCorporalDAO().GetById(id);
+                var anamnese = new AnamneseCorporalDAO1().GetById(id);
 
                 if (anamnese == null)
                 {
                     return NotFound();
                 }
 
-                new AnamneseCorporalDAO().Delete(id);
+                new AnamneseCorporalDAO1().Delete(id);
 
                 return NoContent();
             }

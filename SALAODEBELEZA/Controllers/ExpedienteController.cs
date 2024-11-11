@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<Expediente> listaExpedientes = new ExpedienteDAO().List();
+            List<Expediente> listaExpedientes = new ExpedienteDAO1().List();
 
             return Ok(listaExpedientes);
         }
@@ -34,7 +34,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new ExpedienteDAO();
+                var dao = new ExpedienteDAO1();
                 expediente.Id = dao.Insert(expediente);
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var expediente = new ExpedienteDAO().GetById(id);
+                var expediente = new ExpedienteDAO1().GetById(id);
 
                 if (expediente == null)
                 {
@@ -70,7 +70,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var expediente = new ExpedienteDAO().GetById(id);
+                var expediente = new ExpedienteDAO1().GetById(id);
 
                 if (expediente == null)
                 {
@@ -86,7 +86,7 @@ namespace SALAODEBELEZA.Controllers
                 expediente.HoraSaida = item.HoraSaida;
                 expediente.FuncionarioIdFK = item.FuncionarioIdFK;
 
-                new ExpedienteDAO().Update(expediente);
+                new ExpedienteDAO1().Update(expediente);
 
                 return Ok(expediente);
             }
@@ -101,14 +101,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var expediente = new ExpedienteDAO().GetById(id);
+                var expediente = new ExpedienteDAO1().GetById(id);
 
                 if (expediente == null)
                 {
                     return NotFound();
                 }
 
-                new ExpedienteDAO().Delete(expediente.Id);
+                new ExpedienteDAO1().Delete(expediente.Id);
 
                 return Ok();
             }
