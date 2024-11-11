@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<Login> listaLogins = new LoginDAO1().List();
+            List<Login> listaLogins = new LoginDAO().List();
 
             return Ok(listaLogins);
         }
@@ -28,7 +28,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new LoginDAO1();
+                var dao = new LoginDAO();
                 login.Id = dao.Insert(login);
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var login = new LoginDAO1().GetById(id);
+                var login = new LoginDAO().GetById(id);
 
                 if (login == null)
                 {
@@ -64,7 +64,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var login = new LoginDAO1().GetById(id);
+                var login = new LoginDAO().GetById(id);
 
                 if (login == null)
                 {
@@ -74,7 +74,7 @@ namespace SALAODEBELEZA.Controllers
                 login.Email = item.Email;
                 login.Senha = item.Senha;
 
-                new LoginDAO1().Update(login);
+                new LoginDAO().Update(login);
 
                 return Ok(login);
             }
@@ -89,14 +89,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var login = new LoginDAO1().GetById(id);
+                var login = new LoginDAO().GetById(id);
 
                 if (login == null)
                 {
                     return NotFound();
                 }
 
-                new LoginDAO1().Delete(login.Id);
+                new LoginDAO().Delete(login.Id);
 
                 return Ok();
             }

@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace SOFBELLASALAOOO.Models
 {
-    public class BloqueioDAO1
+    public class BloqueioDAO
     {
         private static ConnectionMysql conn;
 
-        public BloqueioDAO1()
+        public BloqueioDAO()
         {
             conn = new ConnectionMysql();
         }

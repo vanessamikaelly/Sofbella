@@ -6,11 +6,11 @@ using System.Collections.Generic;
 
 namespace SALAODEBELEZA.Models
 {
-    public class CaixaDAO1
+    public class CaixaDAO
     {       
             private static ConnectionMysql conn;
 
-            public CaixaDAO1()
+            public CaixaDAO()
             {
                 conn = new ConnectionMysql();
             }

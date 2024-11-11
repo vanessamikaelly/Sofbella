@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<AnamneseFacial> listaAnamneses = new AnamneseFacialDAO1().List();
+            List<AnamneseFacial> listaAnamneses = new AnamneseFacialDAO().List();
 
             return Ok(listaAnamneses);
         }
@@ -31,7 +31,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new AnamneseFacialDAO1();
+                var dao = new AnamneseFacialDAO();
                 anamnese.Id = dao.Insert(anamnese);
             }
             catch (Exception ex)
@@ -47,7 +47,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseFacialDAO1().GetById(id);
+                var anamnese = new AnamneseFacialDAO().GetById(id);
 
                 if (anamnese == null)
                 {
@@ -67,7 +67,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseFacialDAO1().GetById(id);
+                var anamnese = new AnamneseFacialDAO().GetById(id);
 
                 if (anamnese == null)
                 {
@@ -80,7 +80,7 @@ namespace SALAODEBELEZA.Controllers
                 anamnese.Medicacao = item.Medicacao;
                 anamnese.TipodePele = item.TipodePele;
 
-                new AnamneseFacialDAO1().Update(anamnese);
+                new AnamneseFacialDAO().Update(anamnese);
 
                 return Ok(anamnese);
             }
@@ -95,14 +95,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var anamnese = new AnamneseFacialDAO1().GetById(id);
+                var anamnese = new AnamneseFacialDAO().GetById(id);
 
                 if (anamnese == null)
                 {
                     return NotFound();
                 }
 
-                new AnamneseFacialDAO1().Delete(anamnese.Id);
+                new AnamneseFacialDAO().Delete(anamnese.Id);
 
                 return Ok();
             }

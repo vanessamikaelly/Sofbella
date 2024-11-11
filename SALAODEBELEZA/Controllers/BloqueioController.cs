@@ -10,7 +10,7 @@ namespace SOFBELLASALAOOO.Controllers
     [ApiController]
     public class BloqueioController : ControllerBase
     {
-        private static BloqueioDAO1 bloqueioDAO = new BloqueioDAO1();
+        private static BloqueioDAO bloqueioDAO = new BloqueioDAO();
 
         
         [HttpGet]
@@ -64,7 +64,7 @@ namespace SOFBELLASALAOOO.Controllers
 
             try
             {
-                var dao = new BloqueioDAO1();
+                var dao = new BloqueioDAO();
                 bloqueio.Id = dao.Insert(bloqueio);  
             }
             catch (Exception ex)

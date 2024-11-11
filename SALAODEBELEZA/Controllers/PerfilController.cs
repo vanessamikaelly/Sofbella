@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<Perfil> listaPerfis = new PerfilDAO1().List();
+            List<Perfil> listaPerfis = new PerfilDAO().List();
 
             return Ok(listaPerfis);
         }
@@ -30,7 +30,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new PerfilDAO1();
+                var dao = new PerfilDAO();
                 perfil.Id = dao.Insert(perfil);
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var perfil = new PerfilDAO1().GetById(id);
+                var perfil = new PerfilDAO().GetById(id);
 
                 if (perfil == null)
                 {
@@ -66,7 +66,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var perfil = new PerfilDAO1().GetById(id);
+                var perfil = new PerfilDAO().GetById(id);
 
                 if (perfil == null)
                 {
@@ -78,7 +78,7 @@ namespace SALAODEBELEZA.Controllers
                 perfil.Comissoes = item.Comissoes;
                 perfil.Financeiro = item.Financeiro;
 
-                new PerfilDAO1().Update(perfil);
+                new PerfilDAO().Update(perfil);
 
                 return Ok(perfil);
             }
@@ -93,14 +93,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var perfil = new PerfilDAO1().GetById(id);
+                var perfil = new PerfilDAO().GetById(id);
 
                 if (perfil == null)
                 {
                     return NotFound();
                 }
 
-                new PerfilDAO1().Delete(perfil.Id);
+                new PerfilDAO().Delete(perfil.Id);
 
                 return Ok();
             }

@@ -12,7 +12,7 @@ namespace SALAODEBELEZA.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<Pacote> listaPacotes = new PacoteDAO1().List();
+            List<Pacote> listaPacotes = new PacoteDAO().List();
 
             return Ok(listaPacotes);
         }
@@ -30,7 +30,7 @@ namespace SALAODEBELEZA.Controllers
 
             try
             {
-                var dao = new PacoteDAO1();
+                var dao = new PacoteDAO();
                 pacote.Id = dao.Insert(pacote);
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var pacote = new PacoteDAO1().GetById(id);
+                var pacote = new PacoteDAO().GetById(id);
 
                 if (pacote == null)
                 {
@@ -66,7 +66,7 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var pacote = new PacoteDAO1().GetById(id);
+                var pacote = new PacoteDAO().GetById(id);
 
                 if (pacote == null)
                 {
@@ -78,7 +78,7 @@ namespace SALAODEBELEZA.Controllers
                 pacote.Itens = item.Itens;
                 pacote.Preco = item.Preco;
 
-                new PacoteDAO1().Update(pacote);
+                new PacoteDAO().Update(pacote);
 
                 return Ok(pacote);
             }
@@ -93,14 +93,14 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var pacote = new PacoteDAO1().GetById(id);
+                var pacote = new PacoteDAO().GetById(id);
 
                 if (pacote == null)
                 {
                     return NotFound();
                 }
 
-                new PacoteDAO1().Delete(pacote.Id);
+                new PacoteDAO().Delete(pacote.Id);
 
                 return Ok();
             }

@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace SALAODEBELEZA.Models
 {
-    public class CategoriaDAO1
+    public class CategoriaDAO
     {
         private static ConnectionMysql conn;
 
-        public CategoriaDAO1()
+        public CategoriaDAO()
         {
             conn = new ConnectionMysql();
         }

@@ -6,27 +6,27 @@ using System.Collections.Generic;
 
 namespace SALAODEBELEZA.Models
 {
-    public class PacoteDAO1
+    public class PerfilDAO
     {
         private static ConnectionMysql conn;
 
-        public PacoteDAO1()
+        public PerfilDAO()
         {
             conn = new ConnectionMysql();
         }
 
-        public int Insert(Pacote pacote)
+        public int Insert(Perfil perfil)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO pacote (nome_pacote_pac, valor_pacote_pac, validade_pacote_pac, itens_pacote_pac) " +
-                                    "VALUES (@Nome, @Preco, @Validade, @Itens)";
+                query.CommandText = "INSERT INTO perfil (tipo_perf, agenda_perf, comissoes_perf, financeiro_perf) " +
+                                    "VALUES (@TipoPerfil, @Agenda, @Comissoes, @Financeiro)";
 
-                query.Parameters.AddWithValue("@Nome", pacote.Nome);
-                query.Parameters.AddWithValue("@Preco", pacote.Preco);
-                query.Parameters.AddWithValue("@Validade", pacote.Validade);
-                query.Parameters.AddWithValue("@Itens", pacote.Itens);
+                query.Parameters.AddWithValue("@TipoPerfil", perfil.Tipo_perfil);
+                query.Parameters.AddWithValue("@Agenda", perfil.Agenda);
+                query.Parameters.AddWithValue("@Comissoes", perfil.Comissoes);
+                query.Parameters.AddWithValue("@Financeiro", perfil.Financeiro);
 
                 query.ExecuteNonQuery();
 
@@ -43,26 +43,26 @@ namespace SALAODEBELEZA.Models
             }
         }
 
-        public List<Pacote> List()
+        public List<Perfil> List()
         {
-            List<Pacote> lista = new List<Pacote>();
+            List<Perfil> lista = new List<Perfil>();
 
             try
             {
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM pacote";
+                query.CommandText = "SELECT * FROM perfil";
 
                 MySqlDataReader reader = query.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    lista.Add(new Pacote
+                    lista.Add(new Perfil
                     {
-                        Id = reader.GetInt32("id_pac"),
-                        Nome = reader.GetString("nome_pacote_pac"),
-                        Preco = reader.GetFloat("valor_pacote_pac"),
-                        Validade = reader.GetDateTime("validade_pacote_pac"),
-                        Itens = reader.GetString("itens_pacote_pac")
+                        Id = reader.GetInt32("id_perf"),
+                        Tipo_perfil = reader.GetString("tipo_perf"),
+                        Agenda = reader.GetString("agenda_perf"),
+                        Comissoes = reader.GetString("comissoes_perf"),
+                        Financeiro = reader.GetString("financeiro_perf")
                     });
                 }
 
@@ -79,15 +79,15 @@ namespace SALAODEBELEZA.Models
             }
         }
 
-        public Pacote GetById(int id)
+        public Perfil GetById(int id)
         {
             try
             {
-                Pacote pacote = new Pacote();
+                Perfil perfil = new Perfil();
 
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM pacote WHERE id_pac = @Id";
-                query.Parameters.AddWithValue("@Id", id);
+                query.CommandText = "SELECT * FROM perfil WHERE id_perf = @id";
+                query.Parameters.AddWithValue("@id", id);
 
                 MySqlDataReader reader = query.ExecuteReader();
 
@@ -98,14 +98,14 @@ namespace SALAODEBELEZA.Models
 
                 while (reader.Read())
                 {
-                    pacote.Id = reader.GetInt32("id_pac");
-                    pacote.Nome = reader.GetString("nome_pacote_pac");
-                    pacote.Preco = reader.GetFloat("valor_pacote_pac");
-                    pacote.Validade = reader.GetDateTime("validade_pacote_pac");
-                    pacote.Itens = reader.GetString("itens_pacote_pac");
+                    perfil.Id = reader.GetInt32("id_perf");
+                    perfil.Tipo_perfil = reader.GetString("tipo_perf");
+                    perfil.Agenda = reader.GetString("agenda_perf");
+                    perfil.Comissoes = reader.GetString("comissoes_perf");
+                    perfil.Financeiro = reader.GetString("financeiro_perf");
                 }
 
-                return pacote;
+                return perfil;
             }
             catch (Exception ex)
             {
@@ -118,19 +118,20 @@ namespace SALAODEBELEZA.Models
             }
         }
 
-        public void Update(Pacote pacote)
+        public void Update(Perfil perfil)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE pacote SET nome_pacote_pac = @Nome, valor_pacote_pac = @Preco, validade_pacote_pac = @Validade, itens_pacote_pac = @Itens " +
-                                    "WHERE id_pac = @Id";
+                query.CommandText = "UPDATE perfil SET tipo_perf = @TipoPerfil, agenda_perf = @Agenda, " +
+                                    "comissoes_perf = @Comissoes, financeiro_perf = @Financeiro " +
+                                    "WHERE id_perf = @Id";
 
-                query.Parameters.AddWithValue("@Nome", pacote.Nome);
-                query.Parameters.AddWithValue("@Preco", pacote.Preco);
-                query.Parameters.AddWithValue("@Validade", pacote.Validade);
-                query.Parameters.AddWithValue("@Itens", pacote.Itens);
-                query.Parameters.AddWithValue("@Id", pacote.Id);
+                query.Parameters.AddWithValue("@TipoPerfil", perfil.Tipo_perfil);
+                query.Parameters.AddWithValue("@Agenda", perfil.Agenda);
+                query.Parameters.AddWithValue("@Comissoes", perfil.Comissoes);
+                query.Parameters.AddWithValue("@Financeiro", perfil.Financeiro);
+                query.Parameters.AddWithValue("@Id", perfil.Id);
 
                 query.ExecuteNonQuery();
             }
@@ -150,7 +151,7 @@ namespace SALAODEBELEZA.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "DELETE FROM pacote WHERE id_pac = @Id";
+                query.CommandText = "DELETE FROM perfil WHERE id_perf = @Id";
                 query.Parameters.AddWithValue("@Id", id);
 
                 query.ExecuteNonQuery();
