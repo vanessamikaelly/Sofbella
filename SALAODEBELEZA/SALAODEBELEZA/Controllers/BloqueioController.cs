@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
 using System;
+using System.Collections.Generic;
 using SOFBELLASALAOOO.Models;
+using SOFBELLASALAOOO.DTO;
 
 namespace SOFBELLASALAOOO.Controllers
 {
@@ -10,66 +10,129 @@ namespace SOFBELLASALAOOO.Controllers
     [ApiController]
     public class BloqueioController : ControllerBase
     {
-        private static List<Bloqueio> listaBloqueio = new List<Bloqueio>();
+        private static BloqueioDAO bloqueioDAO = new BloqueioDAO();
 
+        
         [HttpGet]
         public ActionResult<List<Bloqueio>> GetBloqueio()
         {
-            return Ok(listaBloqueio);
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id)
-        {
-            var bloqueio = listaBloqueio.ElementAtOrDefault(id);
-            if (bloqueio == null)
+            try
             {
-                return NotFound();
+                var bloqueios = bloqueioDAO.List();
+                return Ok(bloqueios);
             }
-            return Ok(bloqueio);
-        }
-
-        [HttpPost]
-        public IActionResult Post([FromBody] Bloqueio novoBloqueio)
-        {
-            listaBloqueio.Add(novoBloqueio);
-            return CreatedAtAction(nameof(GetById), new { id = listaBloqueio.Count - 1 }, novoBloqueio);
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Bloqueio item)
-        {
-            var bloqueio = listaBloqueio.ElementAtOrDefault(id);
-
-            if (bloqueio == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest("Erro ao listar bloqueios: " + ex.Message);
             }
-
-            bloqueio.Profissional = item.Profissional;
-            bloqueio.DataInicio = item.DataInicio;
-            bloqueio.HoraInicio = item.HoraInicio;
-            bloqueio.DataFinal = item.DataFinal;
-            bloqueio.HoraFinal = item.HoraFinal;
-            bloqueio.Motivo = item.Motivo;
-
-            return Ok(bloqueio);
         }
 
         
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var bloqueio = bloqueioDAO.GetById(id);
+
+                if (bloqueio == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(bloqueio);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Erro ao buscar bloqueio: " + ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] BloqueioDTO item)
+        {
+            var bloqueio = new Bloqueio
+            {
+                Profissional = item.Profissional,
+                DataInicio = item.DataInicio,
+                HoraInicio = item.HoraInicio,
+                DataFinal = item.DataFinal,
+                HoraFinal = item.HoraFinal,
+                Motivo = item.Motivo,
+                DiaInteiro = item.DiaInteiro
+            };
+
+            try
+            {
+                var dao = new BloqueioDAO();
+                bloqueio.Id = dao.Insert(bloqueio);  
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", bloqueio);  
+        }
+
+
+
+      
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Bloqueio item)
+        {
+            try
+            {
+                
+                var bloqueio = bloqueioDAO.GetById(id);
+
+                
+                if (bloqueio == null)
+                {
+                    return NotFound();
+                }
+
+                
+                bloqueio.Profissional = item.Profissional;
+                bloqueio.DataInicio = item.DataInicio;
+                bloqueio.HoraInicio = item.HoraInicio;
+                bloqueio.DataFinal = item.DataFinal;
+                bloqueio.HoraFinal = item.HoraFinal;
+                bloqueio.Motivo = item.Motivo;
+                bloqueio.DiaInteiro = item.DiaInteiro;
+
+                
+                bloqueioDAO.Update(bloqueio);
+
+                return Ok(bloqueio);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Erro ao atualizar bloqueio: " + ex.Message);
+            }
+        }
+
+       
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var bloqueio = listaBloqueio.ElementAtOrDefault(id);
-
-            if (bloqueio == null)
+            try
             {
-                return NotFound();
+                var bloqueio = bloqueioDAO.GetById(id);
+
+                if (bloqueio == null)
+                {
+                    return NotFound();
+                }
+
+                bloqueioDAO.Delete(id);
+
+                return Ok(bloqueio);
             }
-
-            listaBloqueio.RemoveAt(id);
-
-            return Ok(bloqueio);
+            catch (Exception ex)
+            {
+                return BadRequest("Erro ao excluir bloqueio: " + ex.Message);
+            }
         }
     }
 }

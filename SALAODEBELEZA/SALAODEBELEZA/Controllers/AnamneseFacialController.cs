@@ -1,83 +1,115 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SALAODEBELEZA.DTOS;
+using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-   
-    
-
-        [Route("Anamnese-facial")]
-        [ApiController]
-        public class AnamneseFacialController : ControllerBase
+    [Route("anamneseFacial")]
+    [ApiController]
+    public class AnamneseFacialController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get()
         {
-            private static List<AnamneseFacialDTO> anamneses = new List<AnamneseFacialDTO>();
+            List<AnamneseFacial> listaAnamneses = new AnamneseFacialDAO().List();
 
-            [HttpGet]
-            public ActionResult<IEnumerable<AnamneseFacialDTO>> Listar()
+            return Ok(listaAnamneses);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] AnamneseFacialDTO item)
+        {
+            var anamnese = new AnamneseFacial
             {
-                return Ok(anamneses);
+                Gestante = item.Gestante,
+                Queda_Cabelo = item.Queda_Cabelo,
+                Alergia = item.Alergia,
+                Medicacao = item.Medicacao,
+                TipodePele = item.TipodePele
+            };
+
+            try
+            {
+                var dao = new AnamneseFacialDAO();
+                anamnese.Id = dao.Insert(anamnese);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            [HttpGet("Buscar/id")]
-            public ActionResult<AnamneseFacialDTO> BuscarPorId(int id)
+            return Created("", anamnese);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
             {
-                var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
+                var anamnese = new AnamneseFacialDAO().GetById(id);
+
                 if (anamnese == null)
                 {
                     return NotFound();
                 }
+
                 return Ok(anamnese);
             }
-
-            [HttpPost("Criar")]
-            public ActionResult Criar([FromBody] AnamneseFacialDTO anamneseDTO)
+            catch (Exception)
             {
-              
-                if (!ModelState.IsValid || string.IsNullOrEmpty(anamneseDTO.Alergia))
-                {
-                    return BadRequest("Todos os campos são obrigatórios.");
-                }
-
-              
-                anamneses.Add(anamneseDTO);
-                return CreatedAtAction(nameof(BuscarPorId), new { id = anamneseDTO.Id }, anamneseDTO);
+                return Problem("Ocorreram erros ao processar a solicitação");
             }
+        }
 
-          
-            [HttpPut("Atualizar/id")]
-            public ActionResult Atualizar(int id, [FromBody] AnamneseFacialDTO anamneseAtualizada)
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] AnamneseFacialDTO item)
+        {
+            try
             {
-                var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
+                var anamnese = new AnamneseFacialDAO().GetById(id);
+
                 if (anamnese == null)
                 {
                     return NotFound();
                 }
 
-              
-                anamnese.Gestante = anamneseAtualizada.Gestante;
-                anamnese.Queda_Cabelo = anamneseAtualizada.Queda_Cabelo;
-                anamnese.Alergia = anamneseAtualizada.Alergia;
-                anamnese.Medicacao = anamneseAtualizada.Medicacao;
+                anamnese.Gestante = item.Gestante;
+                anamnese.Queda_Cabelo = item.Queda_Cabelo;
+                anamnese.Alergia = item.Alergia;
+                anamnese.Medicacao = item.Medicacao;
+                anamnese.TipodePele = item.TipodePele;
 
-                return NoContent();
+                new AnamneseFacialDAO().Update(anamnese);
+
+                return Ok(anamnese);
             }
-
-           
-            [HttpDelete("Excluir/id")]
-            public ActionResult Excluir(int id)
+            catch (Exception e)
             {
-                var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
+                return Problem(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var anamnese = new AnamneseFacialDAO().GetById(id);
+
                 if (anamnese == null)
                 {
                     return NotFound();
                 }
 
-               
-                anamneses.Remove(anamnese);
-                return NoContent();
+                new AnamneseFacialDAO().Delete(anamnese.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
             }
         }
     }
-
-
-
+}

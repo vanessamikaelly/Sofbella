@@ -4,17 +4,23 @@ namespace SALAODEBELEZA.DTOS
 {
     public class ExpedienteDTO
     {
+
         [Required]
-        public int Id { get; set; }
+        public string Nome { get; set; }
         [Required]
-        public int Dia { get; set; }
+        public string Dia { get; set; }
         [Required]
         public DateTime HoraEntrada { get; set; }
         [Required]
-        public DateTime HoraInicioIntervalo { get; set; }
+        public DateTime AlmoçoInicio { get; set; }
         [Required]
-        public DateTime HoraFinalIntervalo { get; set; }
+        public DateTime AlmoçoFinal { get; set; }
+        [Required]
+        public bool IntervaloAlmoço { get; set; }
         [Required]
         public DateTime HoraSaida { get; set; }
+        [Required]
+        public int FuncionarioIdFK { get; set; }
+        
     }
 }

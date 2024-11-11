@@ -1,79 +1,125 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SALAODEBELEZA.DTOS;
 using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("Anamnese-manicure-pedicure")]
+    [Route("anamneseManicurePedicure")]
     [ApiController]
     public class AnamneseManicureEPedicureController : ControllerBase
     {
-        private static List<AnamneseManicureEPedicureDTO> anamneses = new List<AnamneseManicureEPedicureDTO>();
-
         [HttpGet]
-        public ActionResult<IEnumerable<AnamneseManicureEPedicureDTO>> Listar()
+        public IActionResult Get()
         {
-            return Ok(anamneses);
+            List<AnamneseManicureEPedicure> listaAnamneses = new AnamneseManicureEPedicureDAO().List();
+
+            return Ok(listaAnamneses);
         }
 
-        [HttpGet("Buscar/id")]
-        public ActionResult<AnamneseManicureEPedicureDTO> BuscarPorId(int id)
+        [HttpPost]
+        public IActionResult Post([FromBody] AnamneseManicureEPedicureDTO item)
         {
-            var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
-            if (anamnese == null)
+            var anamnese = new AnamneseManicureEPedicure
             {
-                return NotFound();
+                Frequenca = item.Frequenca,
+                RetiraCuticula = item.RetiraCuticula,
+                RoeUnhas = item.RoeUnhas,
+                Alergia = item.Alergia,
+                DescricaoAlergia = item.DescricaoAlergia,
+                FormatoPreferencia = item.FormatoPreferencia,
+                TonalidadePreferida = item.TonalidadePreferida,
+                UnhaEncravada = item.UnhaEncravada,
+                Micose = item.Micose,
+                CorEsmalte = item.CorEsmalte
+            };
+
+            try
+            {
+                var dao = new AnamneseManicureEPedicureDAO();
+                anamnese.Id = dao.Insert(anamnese);
             }
-            return Ok(anamnese);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", anamnese);
         }
 
-        [HttpPost("Criar")]
-        public ActionResult Criar([FromBody] AnamneseManicureEPedicureDTO anamneseDTO)
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
         {
-            if (!ModelState.IsValid || string.IsNullOrEmpty(anamneseDTO.DescricaoAlergia))
+            try
             {
-                return BadRequest("Todos os campos são obrigatórios.");
-            }
+                var anamnese = new AnamneseManicureEPedicureDAO().GetById(id);
 
-            anamneses.Add(anamneseDTO);
-            return CreatedAtAction(nameof(BuscarPorId), new { id = anamneseDTO.Id }, anamneseDTO);
+                if (anamnese == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(anamnese);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
 
-        [HttpPut("Atualizar/id")]
-        public ActionResult Atualizar(int id, [FromBody] AnamneseManicureEPedicureDTO anamneseAtualizada)
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] AnamneseManicureEPedicureDTO item)
         {
-            var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
-            if (anamnese == null)
+            try
             {
-                return NotFound();
+                var anamnese = new AnamneseManicureEPedicureDAO().GetById(id);
+
+                if (anamnese == null)
+                {
+                    return NotFound();
+                }
+
+                anamnese.Frequenca = item.Frequenca;
+                anamnese.RetiraCuticula = item.RetiraCuticula;
+                anamnese.RoeUnhas = item.RoeUnhas;
+                anamnese.Alergia = item.Alergia;
+                anamnese.DescricaoAlergia = item.DescricaoAlergia;
+                anamnese.FormatoPreferencia = item.FormatoPreferencia;
+                anamnese.TonalidadePreferida = item.TonalidadePreferida;
+                anamnese.UnhaEncravada = item.UnhaEncravada;
+                anamnese.Micose = item.Micose;
+                anamnese.CorEsmalte = item.CorEsmalte;
+
+                new AnamneseManicureEPedicureDAO().Update(anamnese);
+
+                return Ok(anamnese);
             }
-
-            anamnese.Frequenca = anamneseAtualizada.Frequenca;
-            anamnese.RetiraCuticula = anamneseAtualizada.RetiraCuticula;
-            anamnese.RoeUnhas = anamneseAtualizada.RoeUnhas;
-            anamnese.Alergia = anamneseAtualizada.Alergia;
-            anamnese.DescricaoAlergia = anamneseAtualizada.DescricaoAlergia;
-            anamnese.FormatoPreferencia = anamneseAtualizada.FormatoPreferencia;
-            anamnese.TonalidadePreferida = anamneseAtualizada.TonalidadePreferida;
-            anamnese.UnhaEncravada = anamneseAtualizada.UnhaEncravada;
-            anamnese.TeveOnocomicose = anamneseAtualizada.TeveOnocomicose;
-
-            return NoContent();
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
 
-      
-        [HttpDelete("Excluir/id")]
-        public ActionResult Excluir(int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
-            if (anamnese == null)
+            try
             {
-                return NotFound();
-            }
+                var anamnese = new AnamneseManicureEPedicureDAO().GetById(id);
 
-            
-            anamneses.Remove(anamnese);
-            return NoContent();
+                if (anamnese == null)
+                {
+                    return NotFound();
+                }
+
+                new AnamneseManicureEPedicureDAO().Delete(anamnese.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }

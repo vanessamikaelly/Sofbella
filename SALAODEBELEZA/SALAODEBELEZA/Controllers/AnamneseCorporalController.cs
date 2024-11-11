@@ -1,86 +1,135 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SALAODEBELEZA.DTOS;
+using SALAODEBELEZA.Models;
+using System.Collections.Generic;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("Anamnese-corporal")]
+    [Route("anamneseCorporal")]
     [ApiController]
     public class AnamneseCorporalController : ControllerBase
     {
-        private static List<AnamneseCorporalDTO> anamneses = new List<AnamneseCorporalDTO>();
-
-       
         [HttpGet]
-        public ActionResult<IEnumerable<AnamneseCorporalDTO>> Listar()
+        public ActionResult<IEnumerable<AnamneseCorporal>> GetAll()
         {
-            return Ok(anamneses);
+            try
+            {
+                var lista = new AnamneseCorporalDAO().List();
+                return Ok(lista);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest($"Error while listing: {ex.Message}");
+            }
         }
 
-      
-        [HttpGet("Buscar/id")]
-        public ActionResult<AnamneseCorporalDTO> BuscarPorId(int id)
+        [HttpGet("{id}")]
+        public ActionResult<AnamneseCorporal> GetById(int id)
         {
-            var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
-            if (anamnese == null)
+            try
             {
-                return NotFound();
+                var anamnese = new AnamneseCorporalDAO().GetById(id);
+
+                if (anamnese == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(anamnese);
             }
-            return Ok(anamnese);
+            catch (System.Exception ex)
+            {
+                return BadRequest($"Error while getting by ID: {ex.Message}");
+            }
         }
 
-    
-        [HttpPost("Criar")]
-        public ActionResult Criar([FromBody] AnamneseCorporalDTO anamneseDTO)
+        [HttpPost]
+        public ActionResult Create([FromBody] AnamneseCorporalDTO anamneseDTO)
         {
-           
-            if (!ModelState.IsValid || string.IsNullOrEmpty(anamneseDTO.TipoAlergia))
+            try
             {
-                return BadRequest("Todos os campos são obrigatórios.");
-            }
+                if (!ModelState.IsValid || string.IsNullOrEmpty(anamneseDTO.TipoAlergia))
+                {
+                    return BadRequest("All fields are required.");
+                }
 
-           
-            anamneses.Add(anamneseDTO);
-            return CreatedAtAction(nameof(BuscarPorId), new { id = anamneseDTO.Id }, anamneseDTO);
+                var anamnese = new AnamneseCorporal
+                {
+                    Depilacao = anamneseDTO.Depilacao,
+                    Alergia = anamneseDTO.Alergia,
+                    TipoAlergia = anamneseDTO.TipoAlergia,
+                    ProblemaPele = anamneseDTO.ProblemaPele,
+                    TratamentoDermatologico = anamneseDTO.TratamentoDermatologico,
+                    Gestante = anamneseDTO.Gestante,
+                    TipoPele = anamneseDTO.TipoPele,
+                    VasosVarizes = anamneseDTO.VasosVarizes,
+                    MetodosUtilizados = anamneseDTO.MetodosUtilizados,
+                    Areas = anamneseDTO.Areas
+                };
+
+                anamnese.Id = new AnamneseCorporalDAO().Insert(anamnese);
+
+                return CreatedAtAction(nameof(GetById), new { id = anamnese.Id }, anamneseDTO);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest($"Error while creating: {ex.Message}");
+            }
         }
 
-     
-        [HttpPut("Atualizar/id")]
-        public ActionResult Atualizar(int id, [FromBody] AnamneseCorporalDTO anamneseAtualizada)
+        [HttpPut("{id}")]
+        public ActionResult Update(int id, [FromBody] AnamneseCorporalDTO updatedAnamnese)
         {
-            var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
-            if (anamnese == null)
+            try
             {
-                return NotFound();
+                var existingAnamnese = new AnamneseCorporalDAO().GetById(id);
+
+                if (existingAnamnese == null)
+                {
+                    return NotFound();
+                }
+
+                existingAnamnese.Depilacao = updatedAnamnese.Depilacao;
+                existingAnamnese.Alergia = updatedAnamnese.Alergia;
+                existingAnamnese.TipoAlergia = updatedAnamnese.TipoAlergia;
+                existingAnamnese.ProblemaPele = updatedAnamnese.ProblemaPele;
+                existingAnamnese.TratamentoDermatologico = updatedAnamnese.TratamentoDermatologico;
+                existingAnamnese.Gestante = updatedAnamnese.Gestante;
+                existingAnamnese.TipoPele = updatedAnamnese.TipoPele;
+                existingAnamnese.VasosVarizes = updatedAnamnese.VasosVarizes;
+                existingAnamnese.MetodosUtilizados = updatedAnamnese.MetodosUtilizados;
+                existingAnamnese.Areas = updatedAnamnese.Areas;
+
+                new AnamneseCorporalDAO().Update(existingAnamnese);
+
+                return NoContent();
             }
-
-          
-            anamnese.Depilacao = anamneseAtualizada.Depilacao;
-            anamnese.Alergia = anamneseAtualizada.Alergia;
-            anamnese.TipoAlergia = anamneseAtualizada.TipoAlergia;
-            anamnese.ProblemaPele = anamneseAtualizada.ProblemaPele;
-            anamnese.TratamentoDermatologico = anamneseAtualizada.TratamentoDermatologico;
-            anamnese.Gestante = anamneseAtualizada.Gestante;
-            anamnese.TipoPele = anamneseAtualizada.TipoPele;
-            anamnese.VasosVarizes = anamneseAtualizada.VasosVarizes;
-            anamnese.MetodosUtilizados = anamneseAtualizada.MetodosUtilizados;
-            anamnese.Areas = anamneseAtualizada.Areas;
-
-            return NoContent();
+            catch (System.Exception ex)
+            {
+                return BadRequest($"Error while updating: {ex.Message}");
+            }
         }
 
-       
-        [HttpDelete("Excluir/id")]
-        public ActionResult Excluir(int id)
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
         {
-            var anamnese = anamneses.FirstOrDefault(a => a.Id == id);
-            if (anamnese == null)
+            try
             {
-                return NotFound();
-            }
+                var anamnese = new AnamneseCorporalDAO().GetById(id);
 
-         
-            anamneses.Remove(anamnese);
-            return NoContent();
+                if (anamnese == null)
+                {
+                    return NotFound();
+                }
+
+                new AnamneseCorporalDAO().Delete(id);
+
+                return NoContent();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest($"Error while deleting: {ex.Message}");
+            }
         }
     }
 }

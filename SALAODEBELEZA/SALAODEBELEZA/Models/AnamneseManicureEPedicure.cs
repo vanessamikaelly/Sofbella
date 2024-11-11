@@ -9,9 +9,10 @@
         public bool Alergia { get; set; }
         public string DescricaoAlergia { get; set; }
         public string FormatoPreferencia { get; set; }
-        public string TonalidadePreferida { get; set; }
+        public bool TonalidadePreferida { get; set; }
         public bool UnhaEncravada { get; set; }
-        public bool TeveOnocomicose { get; set; }
+        public bool Micose { get; set; }
+        public string CorEsmalte { get; set; }
     }
 
 }

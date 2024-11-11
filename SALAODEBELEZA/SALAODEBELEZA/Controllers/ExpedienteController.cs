@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SALAODEBELEZA.DTOS;
-using System.Collections.Generic;
-using System.Linq;
+using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
@@ -9,68 +9,113 @@ namespace SALAODEBELEZA.Controllers
     [ApiController]
     public class ExpedienteController : ControllerBase
     {
-        private static List<ExpedienteDTO> expedientes = new List<ExpedienteDTO>();
-
         [HttpGet]
-        public ActionResult<IEnumerable<ExpedienteDTO>> Listar()
+        public IActionResult Get()
         {
-            return Ok(expedientes);
+            List<Expediente> listaExpedientes = new ExpedienteDAO().List();
+
+            return Ok(listaExpedientes);
         }
 
-        [HttpGet("Buscar/id")]
-        public ActionResult<ExpedienteDTO> BuscarPorId(int id)
+        [HttpPost]
+        public IActionResult Post([FromBody] ExpedienteDTO item)
         {
-            var expediente = expedientes.FirstOrDefault(r => r.Id == id);
-            if (expediente == null)
+            var expediente = new Expediente
             {
-                return NotFound();
+                Nome = item.Nome,
+                Dia = item.Dia,
+                HoraEntrada = item.HoraEntrada,
+                AlmoçoInicio = item.AlmoçoInicio,
+                AlmoçoFinal = item.AlmoçoFinal,
+                IntervaloAlmoço = item.IntervaloAlmoço,
+                HoraSaida = item.HoraSaida,
+                FuncionarioIdFK = item.FuncionarioIdFK
+            };
+
+            try
+            {
+                var dao = new ExpedienteDAO();
+                expediente.Id = dao.Insert(expediente);
             }
-            return Ok(expediente);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", expediente);
         }
 
-        [HttpPost("Criar")]
-        public ActionResult Criar([FromBody] ExpedienteDTO expedienteDTO)
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest("Todos os campos são obrigatórios.");
-            }
+                var expediente = new ExpedienteDAO().GetById(id);
 
-            expedientes.Add(expedienteDTO);
-            return CreatedAtAction(nameof(BuscarPorId), new { id = expedienteDTO.Id }, expedienteDTO);
+                if (expediente == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(expediente);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
 
-        [HttpPut("Atualizar/id")]
-        public ActionResult Atualizar(int id, [FromBody] ExpedienteDTO expedienteAtualizado)
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] ExpedienteDTO item)
         {
-            var expediente = expedientes.FirstOrDefault(r => r.Id == id);
-            if (expediente == null)
+            try
             {
-                return NotFound();
+                var expediente = new ExpedienteDAO().GetById(id);
+
+                if (expediente == null)
+                {
+                    return NotFound();
+                }
+
+                expediente.Nome = item.Nome;
+                expediente.Dia = item.Dia;
+                expediente.HoraEntrada = item.HoraEntrada;
+                expediente.AlmoçoInicio = item.AlmoçoInicio;
+                expediente.AlmoçoFinal = item.AlmoçoFinal;
+                expediente.IntervaloAlmoço = item.IntervaloAlmoço;
+                expediente.HoraSaida = item.HoraSaida;
+                expediente.FuncionarioIdFK = item.FuncionarioIdFK;
+
+                new ExpedienteDAO().Update(expediente);
+
+                return Ok(expediente);
             }
-
-            expediente.Dia = expedienteAtualizado.Dia;
-            expediente.HoraEntrada = expedienteAtualizado.HoraEntrada;
-            expediente.HoraInicioIntervalo = expedienteAtualizado.HoraInicioIntervalo;
-            expediente.HoraFinalIntervalo = expedienteAtualizado.HoraFinalIntervalo;
-            expediente.HoraSaida = expedienteAtualizado.HoraSaida;
-
-            return NoContent();
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
 
-
-        [HttpDelete("Excluir/id")]
-        public ActionResult Excluir(int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            var expediente = expedientes.FirstOrDefault(r => r.Id == id);
-            if (expediente == null)
+            try
             {
-                return NotFound();
-            }
+                var expediente = new ExpedienteDAO().GetById(id);
 
-           
-            expedientes.Remove(expediente);
-            return NoContent();
+                if (expediente == null)
+                {
+                    return NotFound();
+                }
+
+                new ExpedienteDAO().Delete(expediente.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }

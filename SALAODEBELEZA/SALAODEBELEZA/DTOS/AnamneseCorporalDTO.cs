@@ -4,8 +4,7 @@ namespace SALAODEBELEZA.DTOS
 {
     public class AnamneseCorporalDTO
     {
-        [Required]
-         public int Id { get; set; }
+        
         [Required]
         public bool Depilacao { get; set; }
         [Required]

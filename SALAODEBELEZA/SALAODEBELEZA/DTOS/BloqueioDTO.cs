@@ -5,19 +5,20 @@ namespace SOFBELLASALAOOO.DTO
     public class BloqueioDTO
     {
       
-        
         [Required]
-        public string Profissional { get; set; }  
+        public int Profissional { get; set; }  
         [Required]
         public DateTime DataInicio { get; set; }  
         [Required]
-        public TimeSpan HoraInicio { get; set; }   
+        public string HoraInicio { get; set; }   
         [Required]
         public DateTime DataFinal { get; set; }    
         [Required]
-        public TimeSpan HoraFinal { get; set; }   
+        public string HoraFinal { get; set; }   
         [Required]
         public string Motivo { get; set; }
+        [Required]
+        public bool DiaInteiro { get; set; }
 
     }
 

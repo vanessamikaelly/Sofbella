@@ -4,8 +4,7 @@ namespace SALAODEBELEZA.Models
 {
     public class AnamneseManicureEPedicureDTO
     {
-        [Required]
-        public int Id { get; set; }
+
         [Required]
         public string Frequenca { get; set; }
         [Required]
@@ -19,10 +18,12 @@ namespace SALAODEBELEZA.Models
         [Required]
         public string FormatoPreferencia { get; set; }
         [Required]
-        public string TonalidadePreferida { get; set; }
+        public bool TonalidadePreferida { get; set; }
         [Required]
         public bool UnhaEncravada { get; set; }
         [Required]
-        public bool TeveOnocomicose { get; set; }
+        public bool Micose { get; set; }
+        [Required]
+        public string CorEsmalte { get; set; }
     }
 }
