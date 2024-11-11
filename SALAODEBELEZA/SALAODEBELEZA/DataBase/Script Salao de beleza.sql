@@ -8,12 +8,23 @@ create table perfil (
     comissoes_perf varchar(200),
     financeiro_perf varchar(200)
 );
+INSERT INTO perfil (
+    tipo_perf, agenda_perf, comissoes_perf, financeiro_perf
+) 
+VALUES (
+    'Administrador', 'Agenda Completa', 'Comissões de 5% sobre vendas', 'Controle de fluxo de caixa'
+);
 
 create table login (
     id_log int primary key auto_increment,
     email_log varchar(100) not null,
     senha_log varchar(100) not null
 );
+INSERT INTO login (email_log, senha_log)
+VALUES
+    ('usuario@exemplo.com', 'senha123'),
+    ('admin@exemplo.com', 'admin123');
+
 
 create table fornecedor (
     id_forn int primary key auto_increment,
@@ -93,6 +104,17 @@ create table profissional (
     foreign key ( id_log_fk) references login(id_log),
     foreign key (id_perf_fk) references perfil(id_perf)
 );
+INSERT INTO profissional (
+    nome_pro, celular_pro, email_pro, senha_pro, cpf_pro, sexo_pro, observacoes_pro, 
+    expediente_pro, categoria_pro, perfil_acesso_pro, possui_agenda_pro, rg_pro, 
+    data_nasc_pro, ativo_pro, id_log_fk, id_perf_fk
+) 
+VALUES (
+    'João Silva', '12345-6789', 'joao.silva@email.com', 'senha123', '123.456.789-00', 
+    'Masculino', 'Nenhuma observação', 'Segunda a Sexta, das 9h às 18h', 'Estagiário', 
+    'Administrador', true, '12.345.678-9', '1990-05-15', true, 1, 1
+);
+select * from profissional;
 
 create table endereco (
     id_end int primary key auto_increment,
@@ -188,6 +210,8 @@ create table bloqueio (
    dia_inteiro_blo bool
 );
 
+	
+
 create table bloqueio_profissional (
 	id_blo_pro int primary key auto_increment,
 	id_blo_fk int,
@@ -257,6 +281,7 @@ create table anamnese_corporal (
     metodos_utilizados_anamcorp varchar(45),
     areas_anamcorp varchar(200)
 );
+select * from anamnese_corporal;
 
 create table Cliente_Anamnesecorporal (
 	id_cli_anamcorp int primary key auto_increment,
@@ -319,7 +344,7 @@ create table anamnese_manicure_pedicure (
     micose_anamncure bool,
     coresmalte_anamncure varchar(45)
 );
-
+select * from anamnese_manicure_pedicure;
 create table Cliente_Anamnesemanicurepedicure (
 	id_cli_anamncure int primary key auto_increment,
 	id_cli_fk int,
