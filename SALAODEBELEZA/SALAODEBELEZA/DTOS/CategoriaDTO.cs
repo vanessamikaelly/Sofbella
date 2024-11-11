@@ -9,6 +9,6 @@ namespace SALAODEBELEZA.DTOS
         [Required]
         public string Tipo { get; set; }
         [Required]
-        public bool Ativo { get; set; }
+        public string Descricao { get; set; }
     }
 }

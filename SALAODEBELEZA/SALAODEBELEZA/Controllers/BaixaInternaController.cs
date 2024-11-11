@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SALAODEBELEZA.DTOS;
 using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
@@ -7,75 +9,107 @@ namespace SALAODEBELEZA.Controllers
     [ApiController]
     public class BaixaInternaController : ControllerBase
     {
-
-        private static List<BaixaInterna> baixasInternas = new List<BaixaInterna>();
-        public BaixaInternaController()
-        {
-            if (baixasInternas.Count == 0)
-            {
-                baixasInternas.Add(new BaixaInterna
-                {
-                    Descricao = "Produto 1",
-                    Estoque_atual = 100
-                });
-
-                baixasInternas.Add(new BaixaInterna
-                {
-                    Descricao = "Produto 2",
-                    Estoque_atual = 50
-                });
-            }
-        }
-        [HttpPost]
-        public IActionResult Post([FromBody] BaixaInterna baixaInterna)
-        {
-            if (baixaInterna == null)
-            {
-                return BadRequest("Dados inválidos.");
-            }
-
-            baixasInternas.Add(baixaInterna);
-            return StatusCode(StatusCodes.Status201Created, baixaInterna);
-        }
         [HttpGet]
-        public IActionResult GetBaixasInternas()
+        public IActionResult Get()
         {
-            return Ok(baixasInternas);
+            List<BaixaInterna> listaBaixasInternas = new BaixaInternaDAO().List();
+
+            return Ok(listaBaixasInternas);
         }
-        [HttpGet("{descricao}")]
-        public IActionResult GetBaixaInterna(string descricao)
+
+        [HttpPost]
+        public IActionResult Post([FromBody] BaixaInternaDTO item)
         {
-            var baixaInterna = baixasInternas.FirstOrDefault(b => b.Descricao == descricao);
-            if (baixaInterna == null)
+            var baixaInterna = new BaixaInterna
             {
-                return NotFound("Baixa interna não encontrada.");
+                Nome = item.Nome,
+                EstoqueAtual = item.EstoqueAtual,
+                BaixarEstoque = item.BaixarEstoque,
+                Descricao = item.Descricao,
+                IdEstoqueFk = item.IdEstoqueFk
+            };
+
+            try
+            {
+                var dao = new BaixaInternaDAO();
+                baixaInterna.Id = dao.Insert(baixaInterna);
             }
-            return Ok(baixaInterna);
-        }
-        [HttpPut("{descricao}")]
-        public IActionResult Put(string descricao, [FromBody] BaixaInterna baixaInternaAtualizada)
-        {
-            var baixaInterna = baixasInternas.FirstOrDefault(b => b.Descricao == descricao);
-            if (baixaInterna == null)
+            catch (Exception ex)
             {
-                return NotFound("Baixa interna não encontrada.");
+                return BadRequest(ex.Message);
             }
 
-            baixaInterna.Estoque_atual = baixaInternaAtualizada.Estoque_atual;
-            return Ok(baixaInterna);
+            return Created("", baixaInterna);
         }
-        [HttpDelete("{descricao}")]
-        public IActionResult Delete(string descricao)
-        {
-            var baixaInterna = baixasInternas.FirstOrDefault(b => b.Descricao == descricao);
-            if (baixaInterna == null)
-            {
-                return NotFound("Baixa interna não encontrada.");
-            }
 
-            baixasInternas.Remove(baixaInterna);
-            return Ok("Baixa interna deletada com sucesso!");
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var baixaInterna = new BaixaInternaDAO().GetById(id);
+
+                if (baixaInterna == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(baixaInterna);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] BaixaInternaDTO item)
+        {
+            try
+            {
+                var baixaInterna = new BaixaInternaDAO().GetById(id);
+
+                if (baixaInterna == null)
+                {
+                    return NotFound();
+                }
+
+                baixaInterna.Nome = item.Nome;
+                baixaInterna.EstoqueAtual = item.EstoqueAtual;
+                baixaInterna.BaixarEstoque = item.BaixarEstoque;
+                baixaInterna.Descricao = item.Descricao;
+                baixaInterna.IdEstoqueFk = item.IdEstoqueFk;
+
+                new BaixaInternaDAO().Update(baixaInterna);
+
+                return Ok(baixaInterna);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var baixaInterna = new BaixaInternaDAO().GetById(id);
+
+                if (baixaInterna == null)
+                {
+                    return NotFound();
+                }
+
+                new BaixaInternaDAO().Delete(baixaInterna.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }
-

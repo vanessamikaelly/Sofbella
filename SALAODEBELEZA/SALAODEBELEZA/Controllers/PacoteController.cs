@@ -1,91 +1,113 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SALAODEBELEZA.Models; 
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SALAODEBELEZA.DTOS;
+using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("pacotes")]
     [ApiController]
     public class PacotesController : ControllerBase
     {
-        private static List<Pacote> pacotes = new List<Pacote>();
-
-        public PacotesController()
-        {
-            if (pacotes.Count == 0)
-            {
-                pacotes.Add(new Pacote
-                {
-                    Nome = "Pacote Básico",
-                    Unidade = 1,
-                    Descricao = "Descrição do pacote básico",
-                    Codigo_barras = "1234567890123",
-                    Categoria = "Serviço",
-                    Preco = 100.0,
-                    Comissao = 10.0
-                });
-            }
-        }
-        [HttpPost]
-        public IActionResult Post([FromBody] Pacote pacote)
-        {
-            if (pacote == null)
-            {
-                return BadRequest("Dados do pacote inválidos.");
-            }
-
-            if (string.IsNullOrWhiteSpace(pacote.Nome) || pacote.Preco < 0 || pacote.Unidade < 0)
-            {
-                return BadRequest("Nome, preço e unidade são obrigatórios.");
-            }
-
-            pacotes.Add(pacote);
-            return StatusCode(StatusCodes.Status201Created, pacote);
-        }
-        [HttpGet("{codigoBarras}")]
-        public IActionResult Get(string codigoBarras)
-        {
-            var pacote = pacotes.FirstOrDefault(p => p.Codigo_barras == codigoBarras);
-            if (pacote == null)
-            {
-                return NotFound("Pacote não encontrado.");
-            }
-            return Ok(pacote);
-        }
-        [HttpPut("{codigoBarras}")]
-        public IActionResult Put(string codigoBarras, [FromBody] Pacote pacoteAtualizado)
-        {
-            var pacote = pacotes.FirstOrDefault(p => p.Codigo_barras == codigoBarras);
-            if (pacote == null)
-            {
-                return NotFound("Pacote não encontrado.");
-            }
-
-            pacote.Nome = pacoteAtualizado.Nome;
-            pacote.Unidade = pacoteAtualizado.Unidade;
-            pacote.Descricao = pacoteAtualizado.Descricao;
-            pacote.Categoria = pacoteAtualizado.Categoria;
-            pacote.Preco = pacoteAtualizado.Preco;
-            pacote.Comissao = pacoteAtualizado.Comissao;
-
-            return Ok(pacote);
-        }
-        [HttpDelete("{codigoBarras}")]
-        public IActionResult Delete(string codigoBarras)
-        {
-            var pacote = pacotes.FirstOrDefault(p => p.Codigo_barras == codigoBarras);
-            if (pacote == null)
-            {
-                return NotFound("Pacote não encontrado.");
-            }
-
-            pacotes.Remove(pacote);
-            return Ok("Pacote deletado com sucesso!");
-        }
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
-            return Ok(pacotes);
+            List<Pacote> listaPacotes = new PacoteDAO().List();
+
+            return Ok(listaPacotes);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] PacoteDTO item)
+        {
+            var pacote = new Pacote
+            {
+                Nome = item.Nome,
+                Validade = item.Validade,
+                Itens = item.Itens,
+                Preco = item.Preco
+            };
+
+            try
+            {
+                var dao = new PacoteDAO();
+                pacote.Id = dao.Insert(pacote);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", pacote);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var pacote = new PacoteDAO().GetById(id);
+
+                if (pacote == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(pacote);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] PacoteDTO item)
+        {
+            try
+            {
+                var pacote = new PacoteDAO().GetById(id);
+
+                if (pacote == null)
+                {
+                    return NotFound();
+                }
+
+                pacote.Nome = item.Nome;
+                pacote.Validade = item.Validade;
+                pacote.Itens = item.Itens;
+                pacote.Preco = item.Preco;
+
+                new PacoteDAO().Update(pacote);
+
+                return Ok(pacote);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var pacote = new PacoteDAO().GetById(id);
+
+                if (pacote == null)
+                {
+                    return NotFound();
+                }
+
+                new PacoteDAO().Delete(pacote.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }
-

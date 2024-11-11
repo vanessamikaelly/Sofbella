@@ -12,7 +12,7 @@ INSERT INTO perfil (
     tipo_perf, agenda_perf, comissoes_perf, financeiro_perf
 ) 
 VALUES (
-    'Administrador', 'Agenda Completa', 'Comissıes de 5% sobre vendas', 'Controle de fluxo de caixa'
+    'Administrador', 'Agenda Completa', 'Comiss√µes de 5% sobre vendas', 'Controle de fluxo de caixa'
 );
 
 create table login (
@@ -64,7 +64,9 @@ create table estoque (
     preco_venda_est float,
     fornecedor_est int
 );
-
+INSERT INTO estoque (nomeprod_est, estoque_atual_est, entrada_est, preco_compra_est, preco_venda_est, fornecedor_est)
+VALUES ('Produto Exemplo2', 100, 20, 10.50, 15.00, 1);
+select * from estoque;
 create table baixa_uso_interno (
 	id_baixa int primary key auto_increment,
     nome_baixa varchar(100),
@@ -110,8 +112,8 @@ INSERT INTO profissional (
     data_nasc_pro, ativo_pro, id_log_fk, id_perf_fk
 ) 
 VALUES (
-    'Jo„o Silva', '12345-6789', 'joao.silva@email.com', 'senha123', '123.456.789-00', 
-    'Masculino', 'Nenhuma observaÁ„o', 'Segunda a Sexta, das 9h ‡s 18h', 'Estagi·rio', 
+    'Jo√£o Silva', '12345-6789', 'joao.silva@email.com', 'senha123', '123.456.789-00', 
+    'Masculino', 'Nenhuma observa√ß√£o', 'Segunda a Sexta, das 9h √†s 18h', 'Estagi√°rio', 
     'Administrador', true, '12.345.678-9', '1990-05-15', true, 1, 1
 );
 select * from profissional;

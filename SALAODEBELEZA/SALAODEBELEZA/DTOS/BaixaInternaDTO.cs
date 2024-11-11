@@ -6,10 +6,15 @@ namespace SALAODEBELEZA.DTOS
     {
         
         [Required]
-        public string Descricao { get; set; }
-
+        public string Nome { get; set; }
         [Required]
-        public int Estoque_atual { get; set; }
+        public int EstoqueAtual { get; set; }
+        [Required]
+        public int BaixarEstoque { get; set; }
+        [Required]
+        public string Descricao { get; set; }
+        [Required]
+        public int IdEstoqueFk { get; set; }
 
     }
 }

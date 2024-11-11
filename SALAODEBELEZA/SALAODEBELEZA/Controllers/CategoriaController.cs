@@ -1,78 +1,111 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SALAODEBELEZA.DTOS;
 using SALAODEBELEZA.Models;
+using System.Collections.Generic;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("categoria")]
     [ApiController]
     public class CategoriaController : ControllerBase
     {
-        private static List<Categoria> listacategoria = new List<Categoria>();
-        public CategoriaController()
+        [HttpGet]
+        public IActionResult Get()
         {
-
+            List<Categoria> listaCategorias = new CategoriaDAO().List();
+            return Ok(listaCategorias);
         }
 
-        [HttpGet]
-        public ActionResult GetFornecedor()
+        [HttpPost]
+        public IActionResult Post([FromBody] CategoriaDTO item)
         {
-            return Ok(listacategoria);
+            var categoria = new Categoria
+            {
+                Nome = item.Nome,
+                Tipo = item.Tipo,
+                Descricao = item.Descricao
+            };
 
+            try
+            {
+                var dao = new CategoriaDAO();
+                categoria.Id = dao.Insert(categoria);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", categoria);
         }
 
         [HttpGet("{id}")]
-
         public IActionResult GetById(int id)
         {
-            var categoria = listacategoria.Where(item => item.Id == id).FirstOrDefault();
+            try
+            {
+                var categoria = new CategoriaDAO().GetById(id);
 
-            return Ok(categoria);
+                if (categoria == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(categoria);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
 
-        [HttpPost("Cadastrar")]
-        public IActionResult Post([FromBody] CategoriaDTO item)
-        {
-            var categoria = new Categoria();
-            categoria.Id = listacategoria.Count + 1;
-            categoria.Nome = item.Nome;
-            categoria.Tipo = item.Tipo;
-            categoria.Ativo = item.Ativo;
-
-            return Ok("Categoria cadastrada com sucesso:" + item);
-        }
-
-        [HttpPut("Atualozar{id}")]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] CategoriaDTO item)
         {
-            var categoria = listacategoria.Where(item => item.Id == id).FirstOrDefault();
-
-            if (categoria == null)
+            try
             {
-                return NotFound();
+                var categoria = new CategoriaDAO().GetById(id);
+
+                if (categoria == null)
+                {
+                    return NotFound();
+                }
+
+                categoria.Nome = item.Nome;
+                categoria.Tipo = item.Tipo;
+                categoria.Descricao = item.Descricao;
+
+                new CategoriaDAO().Update(categoria);
+
+                return Ok(categoria);
             }
-
-            categoria.Nome = item.Nome;
-            categoria.Tipo = item.Tipo;
-            categoria.Ativo = item.Ativo;
-
-            return Ok(listacategoria);
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
 
         [HttpDelete("{id}")]
-
         public IActionResult Delete(int id)
         {
-            var categoria = listacategoria.Where(item => item.Id == id).FirstOrDefault();
-
-            if (categoria == null)
+            try
             {
-                return NotFound();
+                var categoria = new CategoriaDAO().GetById(id);
+
+                if (categoria == null)
+                {
+                    return NotFound();
+                }
+
+                new CategoriaDAO().Delete(categoria.Id);
+
+                return Ok();
             }
-
-            listacategoria.Remove(categoria);
-
-            return Ok(categoria);
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }

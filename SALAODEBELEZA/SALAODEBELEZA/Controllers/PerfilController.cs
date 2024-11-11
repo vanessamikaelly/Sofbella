@@ -1,91 +1,113 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SALAODEBELEZA.DTOS;
 using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("perfil")]
     [ApiController]
     public class PerfilController : ControllerBase
-    { 
-        private static List<Perfil> perfis = new List<Perfil>();
-        public PerfilController()
-        {
-            if (perfis.Count == 0)
-            {
-                perfis.Add(new Perfil
-                {
-                    Id = 1,
-                    Tipo_perfil = "Administrador",
-                    Agenda = "Sim",
-                    Comissoes = "Sim",
-                    Financeiro = "Sim"
-                });
-
-                perfis.Add(new Perfil
-                {
-                    Id = 2,
-                    Tipo_perfil = "Funcionário",
-                    Agenda = "Sim",
-                    Comissoes = "Sim",
-                    Financeiro = "Não"
-                });
-            }
-        }
-        [HttpPost]
-        public IActionResult Post([FromBody] Perfil perfil)
-        {
-            if (perfil == null)
-            {
-                return BadRequest("Perfil inválido.");
-            }
-
-            perfil.Id = perfis.Count + 1;
-            perfis.Add(perfil);
-            return StatusCode(StatusCodes.Status201Created, perfil);
-        }
+    {
         [HttpGet]
-        public IActionResult GetPerfis()
+        public IActionResult Get()
         {
-            return Ok(perfis);
+            List<Perfil> listaPerfis = new PerfilDAO().List();
+
+            return Ok(listaPerfis);
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] PerfilDTO item)
+        {
+            var perfil = new Perfil
+            {
+                Tipo_perfil = item.Tipo_perfil,
+                Agenda = item.Agenda,
+                Comissoes = item.Comissoes,
+                Financeiro = item.Financeiro
+            };
+
+            try
+            {
+                var dao = new PerfilDAO();
+                perfil.Id = dao.Insert(perfil);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", perfil);
+        }
+
         [HttpGet("{id}")]
-        public IActionResult GetPerfil(int id)
+        public IActionResult GetById(int id)
         {
-            var perfil = perfis.FirstOrDefault(p => p.Id == id);
-            if (perfil == null)
+            try
             {
-                return NotFound("Perfil não encontrado.");
+                var perfil = new PerfilDAO().GetById(id);
+
+                if (perfil == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(perfil);
             }
-            return Ok(perfil);
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
+
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Perfil perfilAtualizado)
+        public IActionResult Put(int id, [FromBody] PerfilDTO item)
         {
-            var perfil = perfis.FirstOrDefault(p => p.Id == id);
-            if (perfil == null)
+            try
             {
-                return NotFound("Perfil não encontrado.");
+                var perfil = new PerfilDAO().GetById(id);
+
+                if (perfil == null)
+                {
+                    return NotFound();
+                }
+
+                perfil.Tipo_perfil = item.Tipo_perfil;
+                perfil.Agenda = item.Agenda;
+                perfil.Comissoes = item.Comissoes;
+                perfil.Financeiro = item.Financeiro;
+
+                new PerfilDAO().Update(perfil);
+
+                return Ok(perfil);
             }
-
-            perfil.Tipo_perfil = perfilAtualizado.Tipo_perfil;
-            perfil.Agenda = perfilAtualizado.Agenda;
-            perfil.Comissoes = perfilAtualizado.Comissoes;
-            perfil.Financeiro = perfilAtualizado.Financeiro;
-
-            return Ok(perfil);
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var perfil = perfis.FirstOrDefault(p => p.Id == id);
-            if (perfil == null)
+            try
             {
-                return NotFound("Perfil não encontrado.");
-            }
+                var perfil = new PerfilDAO().GetById(id);
 
-            perfis.Remove(perfil);
-            return Ok("Perfil deletado com sucesso!");
+                if (perfil == null)
+                {
+                    return NotFound();
+                }
+
+                new PerfilDAO().Delete(perfil.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }
-

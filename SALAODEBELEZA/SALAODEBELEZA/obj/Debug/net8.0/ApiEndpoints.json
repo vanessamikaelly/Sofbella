@@ -484,23 +484,7 @@
   },
   {
     "ContainingType": "SALAODEBELEZA.Controllers.BaixaInternaController",
-    "Method": "Post",
-    "RelativePath": "api/BaixaInterna",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "baixaInterna",
-        "Type": "SALAODEBELEZA.Models.BaixaInterna",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.BaixaInternaController",
-    "Method": "GetBaixasInternas",
+    "Method": "Get",
     "RelativePath": "api/BaixaInterna",
     "HttpMethod": "GET",
     "IsController": true,
@@ -510,15 +494,31 @@
   },
   {
     "ContainingType": "SALAODEBELEZA.Controllers.BaixaInternaController",
-    "Method": "GetBaixaInterna",
-    "RelativePath": "api/BaixaInterna/{descricao}",
+    "Method": "Post",
+    "RelativePath": "api/BaixaInterna",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.BaixaInternaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.BaixaInternaController",
+    "Method": "GetById",
+    "RelativePath": "api/BaixaInterna/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "descricao",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -527,19 +527,19 @@
   {
     "ContainingType": "SALAODEBELEZA.Controllers.BaixaInternaController",
     "Method": "Put",
-    "RelativePath": "api/BaixaInterna/{descricao}",
+    "RelativePath": "api/BaixaInterna/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "descricao",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {
-        "Name": "baixaInternaAtualizada",
-        "Type": "SALAODEBELEZA.Models.BaixaInterna",
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.BaixaInternaDTO",
         "IsRequired": true
       }
     ],
@@ -548,14 +548,14 @@
   {
     "ContainingType": "SALAODEBELEZA.Controllers.BaixaInternaController",
     "Method": "Delete",
-    "RelativePath": "api/BaixaInterna/{descricao}",
+    "RelativePath": "api/BaixaInterna/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "descricao",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -792,85 +792,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
-    "Method": "GetFornecedor",
-    "RelativePath": "api/Categoria",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
-    "Method": "GetById",
-    "RelativePath": "api/Categoria/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
-    "Method": "Delete",
-    "RelativePath": "api/Categoria/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
-    "Method": "Put",
-    "RelativePath": "api/Categoria/Atualozar{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "item",
-        "Type": "SALAODEBELEZA.DTOS.CategoriaDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
-    "Method": "Post",
-    "RelativePath": "api/Categoria/Cadastrar",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "item",
-        "Type": "SALAODEBELEZA.DTOS.CategoriaDTO",
         "IsRequired": true
       }
     ],
@@ -1203,85 +1124,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
-    "Method": "Post",
-    "RelativePath": "api/Login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "login",
-        "Type": "SALAODEBELEZA.Models.Login",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
-    "Method": "GetAll",
-    "RelativePath": "api/Login",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
-    "Method": "Get",
-    "RelativePath": "api/Login/{email}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
-    "Method": "Put",
-    "RelativePath": "api/Login/{email}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "loginAtualizado",
-        "Type": "SALAODEBELEZA.Models.Login",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
-    "Method": "Delete",
-    "RelativePath": "api/Login/{email}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "SALAODEBELEZA.Controllers.OrcamentoController",
     "Method": "Put",
     "RelativePath": "api/orcamentoOrcamento/Atualizar{id}",
@@ -1361,85 +1203,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
-    "Method": "Post",
-    "RelativePath": "api/Pacotes",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "pacote",
-        "Type": "SALAODEBELEZA.Models.Pacote",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
-    "Method": "GetAll",
-    "RelativePath": "api/Pacotes",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
-    "Method": "Get",
-    "RelativePath": "api/Pacotes/{codigoBarras}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "codigoBarras",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
-    "Method": "Put",
-    "RelativePath": "api/Pacotes/{codigoBarras}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "codigoBarras",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "pacoteAtualizado",
-        "Type": "SALAODEBELEZA.Models.Pacote",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
-    "Method": "Delete",
-    "RelativePath": "api/Pacotes/{codigoBarras}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "codigoBarras",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "SALAODEBELEZA.Controllers.PagamentoController",
     "Method": "GetPagamento",
     "RelativePath": "api/pagamentoPagamento",
@@ -1495,85 +1258,6 @@
     "ContainingType": "SALAODEBELEZA.Controllers.PagamentoController",
     "Method": "Delete",
     "RelativePath": "api/pagamentoPagamento/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
-    "Method": "Post",
-    "RelativePath": "api/Perfil",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "perfil",
-        "Type": "SALAODEBELEZA.Models.Perfil",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
-    "Method": "GetPerfis",
-    "RelativePath": "api/Perfil",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
-    "Method": "GetPerfil",
-    "RelativePath": "api/Perfil/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
-    "Method": "Put",
-    "RelativePath": "api/Perfil/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "perfilAtualizado",
-        "Type": "SALAODEBELEZA.Models.Perfil",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
-    "Method": "Delete",
-    "RelativePath": "api/Perfil/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -1755,6 +1439,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "Get",
+    "RelativePath": "categoria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "Post",
+    "RelativePath": "categoria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.CategoriaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "GetById",
+    "RelativePath": "categoria/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "Put",
+    "RelativePath": "categoria/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.CategoriaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.CategoriaController",
+    "Method": "Delete",
+    "RelativePath": "categoria/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SALAODEBELEZA.Controllers.ExpedienteController",
     "Method": "Get",
     "RelativePath": "expediente",
@@ -1821,6 +1584,243 @@
     "ContainingType": "SALAODEBELEZA.Controllers.ExpedienteController",
     "Method": "Delete",
     "RelativePath": "expediente/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
+    "Method": "Get",
+    "RelativePath": "login",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
+    "Method": "Post",
+    "RelativePath": "login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
+    "Method": "GetById",
+    "RelativePath": "login/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
+    "Method": "Put",
+    "RelativePath": "login/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.LoginController",
+    "Method": "Delete",
+    "RelativePath": "login/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
+    "Method": "Get",
+    "RelativePath": "pacotes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
+    "Method": "Post",
+    "RelativePath": "pacotes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.PacoteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
+    "Method": "GetById",
+    "RelativePath": "pacotes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
+    "Method": "Put",
+    "RelativePath": "pacotes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.PacoteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PacotesController",
+    "Method": "Delete",
+    "RelativePath": "pacotes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
+    "Method": "Get",
+    "RelativePath": "perfil",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
+    "Method": "Post",
+    "RelativePath": "perfil",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.PerfilDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
+    "Method": "GetById",
+    "RelativePath": "perfil/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
+    "Method": "Put",
+    "RelativePath": "perfil/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "SALAODEBELEZA.DTOS.PerfilDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SALAODEBELEZA.Controllers.PerfilController",
+    "Method": "Delete",
+    "RelativePath": "perfil/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

@@ -1,78 +1,109 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SALAODEBELEZA.Models; 
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SALAODEBELEZA.DTOS;
+using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("login")]
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private static List<Login> logins = new List<Login>();
-
-        public LoginController()
-        {
-            if (logins.Count == 0)
-            { 
-                logins.Add(new Login { Email = "usuario@exemplo.com", Senha = "senha123" });
-            }
-        }
-        [HttpPost]
-        public IActionResult Post([FromBody] Login login)
-        {
-            if (login == null)
-            {
-                return BadRequest("Dados de login inválidos.");
-            }
-
-            if (string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Senha))
-            {
-                return BadRequest("Email e senha são obrigatórios.");
-            }
-
-            logins.Add(login);
-            return StatusCode(StatusCodes.Status201Created, login);
-        }
-        [HttpGet("{email}")]
-        public IActionResult Get(string email)
-        {
-            var login = logins.FirstOrDefault(l => l.Email == email);
-            if (login == null)
-            {
-                return NotFound("Login não encontrado.");
-            }
-            return Ok(login);
-        }
-        [HttpPut("{email}")]
-        public IActionResult Put(string email, [FromBody] Login loginAtualizado)
-        {
-            var login = logins.FirstOrDefault(l => l.Email == email);
-            if (login == null)
-            {
-                return NotFound("Login não encontrado.");
-            }
-
-            login.Senha = loginAtualizado.Senha; 
-
-            return Ok(login);
-        }
-        [HttpDelete("{email}")]
-        public IActionResult Delete(string email)
-        {
-            var login = logins.FirstOrDefault(l => l.Email == email);
-            if (login == null)
-            {
-                return NotFound("Login não encontrado.");
-            }
-
-            logins.Remove(login);
-            return Ok("Login deletado com sucesso!");
-        }
-
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult Get()
         {
-            return Ok(logins);
+            List<Login> listaLogins = new LoginDAO().List();
+
+            return Ok(listaLogins);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] LoginDTO item)
+        {
+            var login = new Login
+            {
+                Email = item.Email,
+                Senha = item.Senha
+            };
+
+            try
+            {
+                var dao = new LoginDAO();
+                login.Id = dao.Insert(login);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", login);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var login = new LoginDAO().GetById(id);
+
+                if (login == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(login);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] LoginDTO item)
+        {
+            try
+            {
+                var login = new LoginDAO().GetById(id);
+
+                if (login == null)
+                {
+                    return NotFound();
+                }
+
+                login.Email = item.Email;
+                login.Senha = item.Senha;
+
+                new LoginDAO().Update(login);
+
+                return Ok(login);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var login = new LoginDAO().GetById(id);
+
+                if (login == null)
+                {
+                    return NotFound();
+                }
+
+                new LoginDAO().Delete(login.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }
-
