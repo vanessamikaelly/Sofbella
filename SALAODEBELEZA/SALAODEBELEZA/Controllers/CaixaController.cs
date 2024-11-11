@@ -44,7 +44,11 @@ namespace SALAODEBELEZA.Controllers
 
             caixa.Id = item.Id;
             caixa.DataInicio = item.DataInicio;
+            caixa.UsuarioCaixa = item.UsuarioCaixa;
             caixa.ValorInicial = item.ValorInicial;
+            caixa.EntradaCaixa = item.EntradaCaixa;
+            caixa.SaidaCaixa = item.SaidaCaixa;
+            caixa.SaldoFinal = item.SaldoFinal;
 
             return Ok(listacaixa);
         }
@@ -54,8 +58,13 @@ namespace SALAODEBELEZA.Controllers
         {
             var caixa = new Caixa();
             caixa.Id = listacaixa.Count + 1;
+            caixa.UsuarioCaixa = item.UsuarioCaixa;
             caixa.DataInicio = item.DataInicio;
             caixa.ValorInicial = item.ValorInicial;
+            caixa.EntradaCaixa = item.EntradaCaixa;
+            caixa.SaidaCaixa = item.SaidaCaixa;
+            caixa.SaldoFinal = item.SaldoFinal;
+
 
             return Ok("Categoria cadastrada com sucesso:" + item);
         }
