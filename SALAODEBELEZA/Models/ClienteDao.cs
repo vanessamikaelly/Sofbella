@@ -1,6 +1,4 @@
-﻿TOME
-
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using SALAODEBELEZA.DataBase;
 using SALAODEBELEZA.Models;
