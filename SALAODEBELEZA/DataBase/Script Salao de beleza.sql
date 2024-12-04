@@ -381,3 +381,4 @@ create table Cliente_Anamnesemanicurepedicure (
     foreign key (id_cli_fk) references cliente(id_cli),
     foreign key (id_anamncure_fk) references anamnese_manicure_pedicure(id_anamncure)
 );
+
