@@ -9,7 +9,6 @@ namespace SALAODEBELEZA.Models
         public int EstoqueAtual { get; set; }
         public int BaixarEstoque { get; set; }
         public string Descricao { get; set; }
-
         public int IdEstoqueFk { get; set; }
     }
 }

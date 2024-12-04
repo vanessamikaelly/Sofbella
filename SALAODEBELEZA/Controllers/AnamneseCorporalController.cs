@@ -19,7 +19,7 @@ namespace SALAODEBELEZA.Controllers
             }
             catch (System.Exception ex)
             {
-                return BadRequest($"Error while listing: {ex.Message}");
+                return BadRequest($"Erro ao listar: {ex.Message}");
             }
         }
 
@@ -39,18 +39,18 @@ namespace SALAODEBELEZA.Controllers
             }
             catch (System.Exception ex)
             {
-                return BadRequest($"Error while getting by ID: {ex.Message}");
+                return BadRequest($"Erro ao buscar ID {ex.Message}");
             }
         }
 
         [HttpPost]
-        public ActionResult Create([FromBody] AnamneseCorporalDTO anamneseDTO)
+        public ActionResult Post([FromBody] AnamneseCorporalDTO anamneseDTO)
         {
             try
             {
                 if (!ModelState.IsValid || string.IsNullOrEmpty(anamneseDTO.TipoAlergia))
                 {
-                    return BadRequest("All fields are required.");
+                    return BadRequest("Todos os campos são obrigatórios.");
                 }
 
                 var anamnese = new AnamneseCorporal

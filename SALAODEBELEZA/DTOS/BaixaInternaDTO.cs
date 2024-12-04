@@ -4,15 +4,17 @@ namespace SALAODEBELEZA.DTOS
 {
     public class BaixaInternaDTO
     {
-        
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Nome { get; set; }
-        [Required]
-        public int EstoqueAtual { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+       
         public int BaixarEstoque { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Descricao { get; set; }
+
         [Required]
         public int IdEstoqueFk { get; set; }
 

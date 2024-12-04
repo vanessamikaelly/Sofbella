@@ -25,6 +25,16 @@ VALUES
     ('usuario@exemplo.com', 'senha123'),
     ('admin@exemplo.com', 'admin123');
 
+create table endereco (
+    id_end int primary key auto_increment,
+    rua_end varchar(45),
+    bairro_end varchar(45),
+    numero_end varchar(10),
+    cidade_end varchar(45),
+    estado_end varchar(45),
+    pais_end varchar(45),
+    cep_end varchar(45)
+);
 
 create table fornecedor (
     id_forn int primary key auto_increment,
@@ -32,7 +42,9 @@ create table fornecedor (
     razao_social_forn varchar(100),
     cnpj_forn varchar(45) not null,
     tel_forn varchar(45),
-    site_forn varchar(45)
+    site_forn varchar(45),
+    id_end_fk int,
+    foreign key (id_end_fk) references endereco(id_end)
 );
 
 create table cliente (
@@ -42,7 +54,9 @@ create table cliente (
     tel_cli varchar(20),
     cpf_cli varchar(45) not null,
     sexo_cli varchar(45),
-    data_nasc_cli date
+    data_nasc_cli date,
+    id_end_fk int,
+    foreign key (id_end_fk) references endereco(id_end)
 );
 
 create table caixa (
@@ -55,6 +69,25 @@ create table caixa (
     saldo_final_caix float
 );
 
+create table categoria (
+    id_cate int primary key auto_increment,
+    nome_cate varchar(100),
+    tipo_cate varchar(45),
+    descricao_cate varchar(45)
+);
+
+create table produto (
+    id_prod int primary key auto_increment,
+    nome_prod varchar(100),
+    descricao_prod varchar(100),
+    codigo_barras_prod varchar(45),
+    categoria_prod varchar(100),
+    valor_prod float,
+    valor_custo_prod varchar(100),
+    comissao_prod float,
+    id_cate_fk int,
+    foreign key (id_cate_fk) references categoria(id_cate)
+);
 create table estoque (
     id_est int primary key auto_increment,
     nomeprod_est varchar(100) not null,
@@ -62,11 +95,12 @@ create table estoque (
    entrada_est float,
     preco_compra_est float,
     preco_venda_est float,
-    fornecedor_est int
+    id_forn_fk int,
+    id_prod_fk int,
+	foreign key (id_forn_fk) references fornecedor(id_forn),
+    foreign key (id_prod_fk) references produto(id_prod)
 );
-INSERT INTO estoque (nomeprod_est, estoque_atual_est, entrada_est, preco_compra_est, preco_venda_est, fornecedor_est)
-VALUES ('Produto Exemplo2', 100, 20, 10.50, 15.00, 1);
-select * from estoque;
+
 create table baixa_uso_interno (
 	id_baixa int primary key auto_increment,
     nome_baixa varchar(100),
@@ -90,81 +124,20 @@ create table profissional (
     nome_pro varchar(100) not null,
 	celular_pro varchar(100),
     email_pro varchar(100),
-    senha_pro varchar(20),
     cpf_pro varchar(45) not null,
     sexo_pro varchar(45),
     observacoes_pro varchar(45),
     expediente_pro varchar(300),
-    categoria_pro varchar(50),
-    perfil_acesso_pro varchar(50),
     possui_agenda_pro boolean,
-    rg_pro varchar(45) not null,
-    data_nasc_pro date,
     ativo_pro boolean,
+    id_cate_fk int,
     id_log_fk int,
     id_perf_fk int,
-    foreign key ( id_log_fk) references login(id_log),
-    foreign key (id_perf_fk) references perfil(id_perf)
-);
-INSERT INTO profissional (
-    nome_pro, celular_pro, email_pro, senha_pro, cpf_pro, sexo_pro, observacoes_pro, 
-    expediente_pro, categoria_pro, perfil_acesso_pro, possui_agenda_pro, rg_pro, 
-    data_nasc_pro, ativo_pro, id_log_fk, id_perf_fk
-) 
-VALUES (
-    'João Silva', '12345-6789', 'joao.silva@email.com', 'senha123', '123.456.789-00', 
-    'Masculino', 'Nenhuma observação', 'Segunda a Sexta, das 9h às 18h', 'Estagiário', 
-    'Administrador', true, '12.345.678-9', '1990-05-15', true, 1, 1
-);
-select * from profissional;
-
-create table endereco (
-    id_end int primary key auto_increment,
-    rua_end varchar(45),
-    bairro_end varchar(45),
-    numero_end varchar(10),
-    cidade_end varchar(45),
-    estado_end varchar(45),
-    pais_end varchar(45),
-    cep_end varchar(45),
-    id_cli_fk int,
-    id_pro_fk int,
-    foreign key (id_cli_fk) references cliente(id_cli),
-    foreign key (id_pro_fk) references profissional(id_pro)
-);
-
-create table categoria (
-    id_cate int primary key auto_increment,
-    nome_cate varchar(100),
-    tipo_cate varchar(45),
-    descricao_cate varchar(45)
-);
-
-create table produto (
-    id_prod int primary key auto_increment,
-    nome_prod varchar(100),
-    descricao_prod varchar(100),
-    codigo_barras_prod varchar(45),
-    categoria_prod varchar(100),
-    valor_prod float,
-    valor_custo_prod varchar(100),
-    comissao_prod float,
-    id_cate_fk int,
-    id_forn_fk int,
-    id_est_fk int,
+    id_end_fk int,
     foreign key (id_cate_fk) references categoria(id_cate),
-    foreign key (id_forn_fk) references fornecedor(id_forn),
-    foreign key (id_est_fk) references estoque(id_est)
-);
-
-create table orcamento (
-    id_orca int primary key auto_increment,
-    descricao_orca varchar(300),
-    data_orca date,
-    forma_pagamento_orca varchar(45),
-    valor_orca float,
-    id_cli_fk int,
-    foreign key (id_cli_fk) references cliente(id_cli)
+    foreign key ( id_log_fk) references login(id_log),
+    foreign key (id_perf_fk) references perfil(id_perf),
+    foreign key (id_end_fk) references endereco(id_end)
 );
 
 create table servico (
@@ -175,10 +148,19 @@ create table servico (
     duracao_serv time,
     comissao_serv float,
     id_cate_fk int,
-    id_orca_fk int,
-    foreign key (id_cate_fk) references categoria(id_cate),
-    foreign key (id_orca_fk) references orcamento(id_orca)
+    foreign key (id_cate_fk) references categoria(id_cate)
 );
+
+create table orcamento (
+    id_orca int primary key auto_increment,
+    descricao_orca varchar(300),
+    data_orca date,
+    forma_pagamento_orca varchar(45),
+    valor_orca float,
+    id_serv_fk int,
+    foreign key (id_serv_fk) references servico(id_serv)
+);
+
 
 create table servico_pacote (
 	id_serv_pac int primary key auto_increment,
@@ -211,8 +193,6 @@ create table bloqueio (
     motivo_bloqueio_blo varchar(100),
    dia_inteiro_blo bool
 );
-
-	
 
 create table bloqueio_profissional (
 	id_blo_pro int primary key auto_increment,
@@ -354,4 +334,3 @@ create table Cliente_Anamnesemanicurepedicure (
     foreign key (id_cli_fk) references cliente(id_cli),
     foreign key (id_anamncure_fk) references anamnese_manicure_pedicure(id_anamncure)
 );
-

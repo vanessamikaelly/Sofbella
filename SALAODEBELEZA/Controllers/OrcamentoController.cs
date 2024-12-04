@@ -6,77 +6,114 @@ namespace SALAODEBELEZA.Controllers
 {
     [Route("api/orcamento[controller]")]
     [ApiController]
-    public class OrcamentoController: ControllerBase
+    public class OrcamentoController : ControllerBase
     {
-        private static List<Orcamento> listaorcamento = new List<Orcamento>();
-        public OrcamentoController()
+        [HttpGet]
+        public IActionResult Get()
         {
-
+            try
+            {
+                var listaOrcamentos = new OrcamentoDAO().List();
+                return Ok(listaOrcamentos);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao listar os orçamentos: " + ex.Message);
+            }
         }
 
-        [HttpGet("Vizualizar")]
-        public ActionResult GetOrcamento()
-        {
-            return Ok(listaorcamento);
-
-        }
-
-        [HttpGet("Vizualizar por ID{id}")]
-
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var orcamento = listaorcamento.Where(item => item.Id == id).FirstOrDefault();
-
-            return Ok(orcamento);
-        }
-
-        [HttpPost("Cadastrar")]
-        public IActionResult Post([FromBody] OrcamentoDTO item)
-        {
-            var orcamento = new Orcamento();
-            orcamento.Id = listaorcamento.Count + 1;
-            orcamento.Descricao = item.Descricao;
-            orcamento.Data = item.Data;
-            orcamento.Validade = item.Validade;
-            orcamento.Forma_Pagamento = item.Forma_Pagamento;
-            orcamento.Observaçao = item.Observaçao;
-
-            return Ok("Orcamento cadastrado com sucesso:" + item);
-        }
-
-        [HttpPut("Atualizar{id}")]
-        public IActionResult Put(int id, [FromBody] OrcamentoDTO item)
-        {
-            var orcamento = listaorcamento.Where(item => item.Id == id).FirstOrDefault();
-
-            if (orcamento == null)
+            try
             {
-                return NotFound();
+                var orcamento = new OrcamentoDAO().GetById(id);
+
+                if (orcamento == null)
+                    return NotFound("Orçamento não encontrado.");
+
+                return Ok(orcamento);
             }
-
-            orcamento.Descricao = item.Descricao;
-            orcamento.Data = item.Data;
-            orcamento.Validade = item.Validade;
-            orcamento.Forma_Pagamento = item.Forma_Pagamento;
-            orcamento.Observaçao = item.Observaçao;
-
-            return Ok(listaorcamento);
+            catch (Exception ex)
+            {
+                return Problem("Erro ao buscar o orçamento: " + ex.Message);
+            }
         }
 
-        [HttpDelete("Deletar{id}")]
+        [HttpPost]
+        public IActionResult Post([FromBody] OrcamentoDTO dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            try
+            {
+                var orcamento = new Orcamento
+                {
+                    Descricao = dto.Descricao,
+                    Data = dto.Data,
+                    Forma_Pagamento = dto.Forma_Pagamento,
+                    Valor = dto.Valor,
+                    IdServFk = dto.IdServFk
+                };
+
+                orcamento.Id = new OrcamentoDAO().Insert(orcamento);
+
+                return Created("", orcamento);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao criar o orçamento: " + ex.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] OrcamentoDTO dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var orcamentoExistente = new OrcamentoDAO().GetById(id);
+
+                if (orcamentoExistente == null)
+                    return NotFound("Orçamento não encontrado.");
+
+                orcamentoExistente.Descricao = dto.Descricao;
+                orcamentoExistente.Data = dto.Data;
+                orcamentoExistente.Forma_Pagamento = dto.Forma_Pagamento;
+                orcamentoExistente.Valor = dto.Valor;
+                orcamentoExistente.IdServFk = dto.IdServFk;
+
+                new OrcamentoDAO().Update(orcamentoExistente);
+
+                return Ok(orcamentoExistente);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao atualizar o orçamento: " + ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var orcamento = listaorcamento.Where(item => item.Id == id).FirstOrDefault();
-
-            if (orcamento == null)
+            try
             {
-                return NotFound();
+                var orcamentoExistente = new OrcamentoDAO().GetById(id);
+
+                if (orcamentoExistente == null)
+                    return NotFound("Orçamento não encontrado.");
+
+                new OrcamentoDAO().Delete(id);
+
+                return Ok("Orçamento excluído com sucesso.");
             }
-
-            listaorcamento.Remove(orcamento);
-
-            return Ok(orcamento);
+            catch (Exception ex)
+            {
+                return Problem("Erro ao excluir o orçamento: " + ex.Message);
+            }
         }
     }
 }

@@ -42,7 +42,6 @@ namespace SALAODEBELEZA.Controllers
                 return NotFound();
             }
 
-            caixa.Id = item.Id;
             caixa.DataInicio = item.DataInicio;
             caixa.UsuarioCaixa = item.UsuarioCaixa;
             caixa.ValorInicial = item.ValorInicial;

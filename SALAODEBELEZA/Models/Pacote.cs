@@ -6,9 +6,10 @@ namespace SALAODEBELEZA.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+        public double Valor { get; set; }
         public DateTime Validade { get; set; }
         public string Itens { get; set; }
-        public double Preco { get; set; }
+        
 
     }
 }

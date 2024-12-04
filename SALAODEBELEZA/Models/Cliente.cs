@@ -1,4 +1,6 @@
-﻿namespace SALAODEBELEZA.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SALAODEBELEZA.Models
 {
     public class Cliente
     {
@@ -10,5 +12,6 @@
         public string TelefoneCli { get; set; }
         public string CPFCli { get; set; }
         public string SexoCli { get; set; }
+        public int IdEndFk { get; set; }
     }
 }

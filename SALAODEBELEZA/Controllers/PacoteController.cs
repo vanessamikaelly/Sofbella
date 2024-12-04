@@ -5,7 +5,7 @@ using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("pacotes")]
+    [Route("api/pacotes[controller]")]
     [ApiController]
     public class PacotesController : ControllerBase
     {
@@ -23,9 +23,10 @@ namespace SALAODEBELEZA.Controllers
             var pacote = new Pacote
             {
                 Nome = item.Nome,
+                Valor = item.Valor,
                 Validade = item.Validade,
                 Itens = item.Itens,
-                Preco = item.Preco
+                
             };
 
             try
@@ -76,7 +77,7 @@ namespace SALAODEBELEZA.Controllers
                 pacote.Nome = item.Nome;
                 pacote.Validade = item.Validade;
                 pacote.Itens = item.Itens;
-                pacote.Preco = item.Preco;
+                pacote.Valor = item.Valor;
 
                 new PacoteDAO().Update(pacote);
 

@@ -4,20 +4,25 @@ namespace SOFBELLASALAOOO.DTO
 {
     public class BloqueioDTO
     {
-      
-        [Required]
-        public int Profissional { get; set; }  
-        [Required]
-        public DateTime DataInicio { get; set; }  
-        [Required]
-        public string HoraInicio { get; set; }   
-        [Required]
-        public DateTime DataFinal { get; set; }    
-        [Required]
-        public string HoraFinal { get; set; }   
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public int Profissional { get; set; }
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public DateTime DataInicio { get; set; }
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public string HoraInicio { get; set; }
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public DateTime DataFinal { get; set; }  
+        
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public string HoraFinal { get; set; }
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Motivo { get; set; }
-        [Required]
+
         public bool DiaInteiro { get; set; }
 
     }

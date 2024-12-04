@@ -9,11 +9,11 @@ using System.Data;
 namespace SALAODEBELEZA.Models
 {
   
-        public class ClienteDao
+        public class ClienteDAO
         {
             private static ConnectionMysql conn;
 
-            public ClienteDao()
+            public ClienteDAO()
             {
                 conn = new ConnectionMysql();
             }

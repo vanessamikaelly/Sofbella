@@ -4,26 +4,35 @@ namespace SALAODEBELEZA.DTOS
 {
     public class AnamneseCorporalDTO
     {
-        
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public bool Depilacao { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public bool Alergia { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string TipoAlergia { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public bool ProblemaPele { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public bool TratamentoDermatologico { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public bool Gestante { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string TipoPele { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public bool VasosVarizes { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string MetodosUtilizados { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Areas { get; set; }
         
     }

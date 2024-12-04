@@ -9,16 +9,19 @@ namespace SALAODEBELEZA.Controllers
     [ApiController]
     public class FornecedorController: ControllerBase
     {
-        private static List<Fornecedor> listafornecedor = new List<Fornecedor>();
-        public FornecedorController()
-        {
-
-        }
 
         [HttpGet("Vizualizar")]
         public ActionResult GetFornecedor()
         {
-            return Ok(listafornecedor);
+            try
+            {
+                var listaFornecedores = new FornecedorDAO().List();
+                return Ok(listaFornecedores);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao listar os fornecedores: " + ex.Message);
+            }
 
         }
 
@@ -26,52 +29,97 @@ namespace SALAODEBELEZA.Controllers
 
         public IActionResult GetById(int id)
         {
-            var fornecedor = listafornecedor.Where(item => item.Id == id).FirstOrDefault();
-
-            return Ok(fornecedor);
-        }
-
-        [HttpPost("Cadastrar")]
-        public IActionResult Post([FromBody] FornecedorDTO item)
-        {
-            var fornecedor = new Fornecedor();
-            fornecedor.Id = listafornecedor.Count + 1;
-            fornecedor.Site = item.Site;
-            fornecedor.Empresa = item.Empresa;
-
-            return Ok("Fornecedor cadastrado com sucesso:" + item);
-        }
-
-        [HttpPut("Atualizar{id}")]
-        public IActionResult Put(int id, [FromBody] FornecedorDTO item)
-        {
-            var fornecedor = listafornecedor.Where(item => item.Id == id).FirstOrDefault();
-
-            if (fornecedor == null)
+            try
             {
-                return NotFound();
-            }
+                var fornecedor = new FornecedorDAO().GetById(id);
 
-            fornecedor.Empresa = item.Empresa;
-            fornecedor.Site = item.Site;
-     
-            return Ok(listafornecedor);
+                if (fornecedor == null)
+                    return NotFound("Fornecedor não encontrado.");
+
+                return Ok(fornecedor);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao buscar o fornecedor: " + ex.Message);
+            }
         }
 
-        [HttpDelete("Deletar{id}")]
+        [HttpPost("Cadastrar Fornecedor")]
+        public IActionResult Post([FromBody] FornecedorDTO dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            try
+            {
+                var fornecedor = new Fornecedor
+                {
+                    NomeFantasia = dto.NomeFantasia,
+                    RazaoSocial = dto.RazaoSocial,
+                    Cnpj = dto.Cnpj,
+                    Site = dto.Site,
+                    IdEndFk = dto.IdEndFk
+                };
+
+                fornecedor.Id = new FornecedorDAO().Insert(fornecedor);
+
+                return Created("", fornecedor);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao criar o fornecedor: " + ex.Message);
+            }
+        }
+
+
+        [HttpPut("Atualizar Fornecedor{id}")]
+        public IActionResult Put(int id, [FromBody] FornecedorDTO dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var fornecedorExistente = new FornecedorDAO().GetById(id);
+
+                if (fornecedorExistente == null)
+                    return NotFound("Fornecedor não encontrado.");
+
+                fornecedorExistente.NomeFantasia = dto.NomeFantasia;
+                fornecedorExistente.RazaoSocial = dto.RazaoSocial;
+                fornecedorExistente.Cnpj = dto.Cnpj;
+                fornecedorExistente.Site = dto.Site;
+                fornecedorExistente.IdEndFk = dto.IdEndFk;
+
+                new FornecedorDAO().Update(fornecedorExistente);
+
+                return Ok(fornecedorExistente);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Erro ao atualizar o fornecedor: " + ex.Message);
+            }
+        }
+
+        [HttpDelete("Deletar Fornecedor{id}")]
         public IActionResult Delete(int id)
         {
-            var fornecedor = listafornecedor.Where(item => item.Id == id).FirstOrDefault();
-
-            if (fornecedor == null)
+            try
             {
-                return NotFound();
+                var fornecedorExistente = new FornecedorDAO().GetById(id);
+
+                if (fornecedorExistente == null)
+                    return NotFound("Fornecedor não encontrado.");
+
+                new FornecedorDAO().Delete(id);
+
+                return Ok("Fornecedor excluído com sucesso.");
             }
-
-            listafornecedor.Remove(fornecedor);
-
-            return Ok(fornecedor);
+            catch (Exception ex)
+            {
+                return Problem("Erro ao excluir o fornecedor: " + ex.Message);
+            }
         }
     }
 }
+

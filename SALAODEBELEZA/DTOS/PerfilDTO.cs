@@ -5,16 +5,16 @@ namespace SALAODEBELEZA.DTOS
     public class PerfilDTO
     {
 
-        [Required]
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Tipo_perfil { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Agenda { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Comissoes { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Financeiro { get; set; }
 
     }

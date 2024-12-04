@@ -2,25 +2,28 @@
 
 namespace SALAODEBELEZA.DTOS
 {
-    public class CaixaDTO
+    public class EnderecoDTO
     {
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string UsuarioCaixa { get; set; }
+        public string Rua { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public DateTime DataInicio { get; set; }
+        public string Bairro { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public double ValorInicial { get; set; }
+        public string Numero { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public double EntradaCaixa { get; set; }
+        public string Cidade { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public double SaidaCaixa { get; set; }
+        public string Estado { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public double SaldoFinal { get; set; }
+        public string Pais { get; set; }
 
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        [StringLength(8, ErrorMessage = "O número deve ter apenas 8 caracteres.")]
+        public string CEP { get; set; }
     }
 }

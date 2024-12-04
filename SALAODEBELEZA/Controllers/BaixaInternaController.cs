@@ -23,7 +23,6 @@ namespace SALAODEBELEZA.Controllers
             var baixaInterna = new BaixaInterna
             {
                 Nome = item.Nome,
-                EstoqueAtual = item.EstoqueAtual,
                 BaixarEstoque = item.BaixarEstoque,
                 Descricao = item.Descricao,
                 IdEstoqueFk = item.IdEstoqueFk
@@ -75,7 +74,6 @@ namespace SALAODEBELEZA.Controllers
                 }
 
                 baixaInterna.Nome = item.Nome;
-                baixaInterna.EstoqueAtual = item.EstoqueAtual;
                 baixaInterna.BaixarEstoque = item.BaixarEstoque;
                 baixaInterna.Descricao = item.Descricao;
                 baixaInterna.IdEstoqueFk = item.IdEstoqueFk;

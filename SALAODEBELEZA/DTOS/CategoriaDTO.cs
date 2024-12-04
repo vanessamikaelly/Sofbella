@@ -4,11 +4,13 @@ namespace SALAODEBELEZA.DTOS
 {
     public class CategoriaDTO
     {
-        [Required]
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Nome { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Tipo { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Descricao { get; set; }
     }
 }

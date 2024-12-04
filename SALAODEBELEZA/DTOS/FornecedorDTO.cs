@@ -4,12 +4,23 @@ namespace SALAODEBELEZA.DTOS
 {
     public class FornecedorDTO
     {
-        [Required]
-        public int Id { get; set; }
-        [Required]
-        public string Empresa { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public string NomeFantasia { get; set; }
+
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        public string RazaoSocial { get; set; }
+
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
+        [StringLength(14, ErrorMessage = "O número deve ter no máximo 14 caracteres.")]
+        public string Cnpj { get; set; }
+
+        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Site { get; set; }
-        //public endereco Endereco { get; set; } dependencia
+
+        [Required]
+        public int IdEndFk { get; set; }
     }
 }

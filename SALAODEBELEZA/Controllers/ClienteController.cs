@@ -11,55 +11,71 @@ namespace SALAODEBELEZA.Controllers
     public class ClienteController : ControllerBase
     {
 
-        public static List<Cliente> listacliente = new List<Cliente>();
-        public ClienteController()
-        {
-
-        }
-
         [HttpGet]
-        public ActionResult GetCliente()
+        public IActionResult Get()
         {
-            return Ok(listacliente);
+            List<Cliente> listaClientes = new ClienteDAO().List();
 
+            return Ok(listaClientes);
         }
 
         [HttpGet("Buscar/id")]
 
         public IActionResult GetById(int id)
         {
-            var cliente = listacliente.Where(item => item.Id == id).FirstOrDefault();
+            try
+            {
+                var cliente = new ClienteDAO().GetById(id);
 
-            return Ok(cliente);
+                if (cliente == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(cliente);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
+           
         }
 
         [HttpPut("Atualizar/id")]
         public IActionResult Put(int id, [FromBody] ClienteDTO item)
         {
-            var cliente = listacliente.Where(item => item.Id == id).FirstOrDefault();
-
-            if (cliente == null)
+            try
             {
-                return NotFound();
+                var cliente = new ClienteDAO().GetById(id);
+
+                if (cliente == null)
+                {
+                    return NotFound();
+                }
+
+                cliente.Endereco = item.Endereco;
+                cliente.DataNascimento = item.DataNascimento;
+                cliente.CPFCli = item.CPFCli;
+                cliente.EmailCli = item.EmailCli;
+                cliente.NomeCli = item.NomeCli;
+                cliente.SexoCli = item.SexoCli;
+                cliente.TelefoneCli = item.TelefoneCli;
+
+                new ClienteDAO().Update(cliente);
+
+                return Ok(cliente);
             }
-
-            cliente.Id = item.Id;
-            cliente.Endereco = item.Endereco;
-            cliente.DataNascimento = item.DataNascimento;
-            cliente.CPFCli = item.CPFCli;
-            cliente.EmailCli = item.EmailCli;
-            cliente.NomeCli = item.NomeCli;
-            cliente.SexoCli = item.SexoCli;
-            cliente.TelefoneCli = item.TelefoneCli;
-
-            return Ok(listacliente);
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+            
         }
 
         [HttpPost("Cadastrar/id")]
         public IActionResult Post([FromBody] ClienteDTO item)
         {
             var cliente = new Cliente();
-            cliente.Id = listacliente.Count + 1;
             cliente.Endereco = item.Endereco;
             cliente.DataNascimento = item.DataNascimento;
             cliente.CPFCli = item.CPFCli;
@@ -68,24 +84,40 @@ namespace SALAODEBELEZA.Controllers
             cliente.SexoCli = item.SexoCli;
             cliente.TelefoneCli = item.TelefoneCli;
 
+            try 
+            { 
+                var dao = new ClienteDAO();
+                cliente.Id = dao.Insert(cliente);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
-            return Ok("Categoria cadastrada com sucesso:" + item);
+            return Created("", cliente);
         }
 
         [HttpDelete("Excluir/id")]
 
         public IActionResult Delete(int id)
         {
-            var cliente = listacliente.Where(item => item.Id == id).FirstOrDefault();
-
-            if (cliente == null)
+            try
             {
-                return NotFound();
+                var cliente = new ClienteDAO().GetById(id);
+
+                if (cliente == null)
+                {
+                    return NotFound();
+                }
+
+                new ClienteDAO().Delete(cliente.Id);
+
+                return Ok();
             }
-
-            listacliente.Remove(cliente);
-
-            return Ok(cliente);
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
     }
 }
