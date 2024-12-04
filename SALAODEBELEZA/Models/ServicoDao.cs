@@ -18,14 +18,15 @@ namespace SALAODEBELEZA.Models
             {
                 var query = conn.Query();
                 query.CommandText = "INSERT INTO servico (nome_serv, descricao_serv, valor_serv, " +
-                                    "duracao_serv, comissao_serv)" +
-                                    "VALUES (@Nome, @Descricao, @Valor, @Duracao, @Comissao)";
+                                    "duracao_serv, comissao_serv, id_cate_fk)" +
+                                    "VALUES (@Nome, @Descricao, @Valor, @Duracao, @Comissao, @IdCateFk)";
 
                 query.Parameters.AddWithValue("@Nome", servico.NomeServico);
                 query.Parameters.AddWithValue("@Descricao", servico.Descricao);
-                query.Parameters.AddWithValue("@Valor", servico.PrecoUnitario);
+                query.Parameters.AddWithValue("@Valor", servico.Valor);
                 query.Parameters.AddWithValue("@Duracao", servico.DuracaoAtendimento);
                 query.Parameters.AddWithValue("@Comissao", servico.Comissao);
+                query.Parameters.AddWithValue("@IdCateFk", servico.IdCateFk);
 
                 query.ExecuteNonQuery();
 
@@ -60,9 +61,10 @@ namespace SALAODEBELEZA.Models
                         Id = reader.GetInt32("id_cli"),
                         NomeServico = reader.GetString("nome_serv"),
                         Descricao = reader.GetString("descricao_serv"),
-                        PrecoUnitario = reader.GetDouble("valor_serv"),
+                        Valor = reader.GetDouble("valor_serv"),
                         DuracaoAtendimento = reader.GetString("duracao_serv"),
-                        Comissao = reader.GetDouble("comissao_serv")
+                        Comissao = reader.GetDouble("comissao_serv"),
+                        IdCateFk = reader.GetInt32("id_cate_fk"),
                     });
                 }
 
@@ -100,9 +102,10 @@ namespace SALAODEBELEZA.Models
                             Id = reader.GetInt32("id_cli"),
                             NomeServico = reader.GetString("nome_serv"),
                             Descricao = reader.GetString("descricao_serv"),
-                            PrecoUnitario = reader.GetDouble("valor_serv"),
+                            Valor = reader.GetDouble("valor_serv"),
                             DuracaoAtendimento = reader.GetString("duracao_serv"),
-                            Comissao = reader.GetDouble("comissao_serv")
+                            Comissao = reader.GetDouble("comissao_serv"),
+                            IdCateFk = reader.GetInt32("id_cate_fk"),
                         };
                     }
                 }
@@ -125,15 +128,16 @@ namespace SALAODEBELEZA.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE servico SET nome_serv = @Nome, descricao_serv = @Descricao, " +
-                                    "valor_serv = @Valor, duracao_serv = @Duracao, " +
-                                    "comissao_serv = @Comissao";
+                query.CommandText = "INSERT INTO servico (nome_serv, descricao_serv, valor_serv, " +
+                                   "duracao_serv, comissao_serv, id_cate_fk)" +
+                                   "VALUES (@Nome, @Descricao, @Valor, @Duracao, @Comissao, @IdCateFk)";
 
                 query.Parameters.AddWithValue("@Nome", servico.NomeServico);
                 query.Parameters.AddWithValue("@Descricao", servico.Descricao);
-                query.Parameters.AddWithValue("@Valor", servico.PrecoUnitario);
+                query.Parameters.AddWithValue("@Valor", servico.Valor);
                 query.Parameters.AddWithValue("@Duracao", servico.DuracaoAtendimento);
                 query.Parameters.AddWithValue("@Comissao", servico.Comissao);
+                query.Parameters.AddWithValue("@IdCateFk", servico.IdCateFk);
 
 
                 query.ExecuteNonQuery();

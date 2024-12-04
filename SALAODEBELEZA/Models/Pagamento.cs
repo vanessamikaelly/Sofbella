@@ -6,7 +6,6 @@ namespace SALAODEBELEZA.Models
     {
         public int Id { get; set; }
         public DateTime DataPagamento { get; set; }
-        public string Cliente { get; set; }
         public double Valor { get; set; }
         public double Desconto { get; set; }
         public int FormaPagamento { get; set; }

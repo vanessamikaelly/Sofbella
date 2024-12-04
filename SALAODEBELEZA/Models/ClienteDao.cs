@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using SALAODEBELEZA.DataBase;
 using SALAODEBELEZA.Models;
 using SOFBELLASALAOOO.Models;
@@ -24,8 +25,8 @@ namespace SALAODEBELEZA.Models
                 {
                     var query = conn.Query();
                     query.CommandText = "INSERT INTO cliente (nome_cli, email_cli, tel_cli, " +
-                                        "cpf_cli, sexo_cli, data_nasc_cli)" +
-                                        "VALUES (@Nome, @Email, @Telefone, @CPF, @Sexo, @DataNasci)";
+                                        "cpf_cli, sexo_cli, data_nasc_cli, id_end_fk)" +
+                                        "VALUES (@Nome, @Email, @Telefone, @CPF, @Sexo, @DataNasci, @IdEndFk)";
 
                     query.Parameters.AddWithValue("@Nome", cliente.NomeCli);
                     query.Parameters.AddWithValue("@DataNasci", cliente.DataNascimento.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -33,6 +34,7 @@ namespace SALAODEBELEZA.Models
                     query.Parameters.AddWithValue("@Telefone", cliente.TelefoneCli);
                     query.Parameters.AddWithValue("@CPF", cliente.CPFCli);
                     query.Parameters.AddWithValue("@Sexo", cliente.SexoCli);
+                    query.Parameters.AddWithValue("@IdEndFk", cliente.IdEndFk);
 
 
                     query.ExecuteNonQuery();
@@ -67,12 +69,13 @@ namespace SALAODEBELEZA.Models
                         {
                             Id = reader.GetInt32("id_cli"),
                             NomeCli = reader.GetString("nome_cli"),
-                            DataNascimento = reader.GetDateTime("data_inicio_caix"),
-                            Endereco = reader.GetString("valor_inicial_caix"),
+                            DataNascimento = reader.GetDateTime("data_nasc_cli"),
                             EmailCli = reader.GetString("email_cli"),
-                            TelefoneCli = reader.GetString("saida_caix"),
-                            CPFCli = reader.GetString("saldo_final_caix"),
-                            SexoCli = reader.GetString("nome_cli"),
+                            TelefoneCli = reader.GetString("tel_cli"),
+                            CPFCli = reader.GetString("cpf_cli"),
+                            SexoCli = reader.GetString("sexo_cli"),
+                            IdEndFk = reader.GetInt32("id_end_fk"),
+               
 
                         });
                     }
@@ -110,12 +113,12 @@ namespace SALAODEBELEZA.Models
                             {
                                 Id = reader.GetInt32("id_cli"),
                                 NomeCli = reader.GetString("nome_cli"),
-                                DataNascimento = reader.GetDateTime("data_inicio_caix"),
-                                Endereco = reader.GetString("valor_inicial_caix"),
+                                DataNascimento = reader.GetDateTime("data_nasc_cli"),
                                 EmailCli = reader.GetString("email_cli"),
-                                TelefoneCli = reader.GetString("saida_caix"),
-                                CPFCli = reader.GetString("saldo_final_caix"),
+                                TelefoneCli = reader.GetString("tel_cli"),
+                                CPFCli = reader.GetString("cpf_cli"),
                                 SexoCli = reader.GetString("nome_cli"),
+                                IdEndFk = reader.GetInt32("id_end_fk"),
 
                             };
                         }
@@ -141,7 +144,7 @@ namespace SALAODEBELEZA.Models
                     var query = conn.Query();
                     query.CommandText = "UPDATE cliente SET nome_cli = @Nome, email_cli = @Email, " +
                                         "tel_cli = @Telefone, cpf_cli = @CPF, " +
-                                        "sexo_cli = @Sexo, data_nasc_cli = @DataNasci";
+                                        "sexo_cli = @Sexo, data_nasc_cli = @DataNasci, id_end_fk = @IdEndFk";
 
                     query.Parameters.AddWithValue("@Nome", cliente.NomeCli);
                     query.Parameters.AddWithValue("@DataNasci", cliente.DataNascimento.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -149,6 +152,7 @@ namespace SALAODEBELEZA.Models
                     query.Parameters.AddWithValue("@Telefone", cliente.TelefoneCli);
                     query.Parameters.AddWithValue("@CPF", cliente.CPFCli);
                     query.Parameters.AddWithValue("@Sexo", cliente.SexoCli);
+                    query.Parameters.AddWithValue("@IdEndFk", cliente.IdEndFk);
                 
 
                     query.ExecuteNonQuery();

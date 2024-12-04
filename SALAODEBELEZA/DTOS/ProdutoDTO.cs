@@ -8,20 +8,11 @@ namespace SOFBELLASALAOOO.DTOS
             [Required(ErrorMessage = "O campo é obrigatório!")]
             [StringLength(100, ErrorMessage = "O nome não pode exceder 100 caracteres.")]
             public string Nome { get; set; }  
-
-            [Required(ErrorMessage = "O campo é obrigatório!")]
-            public int Unidade { get; set; }  
-
-            [StringLength(500, ErrorMessage = "A descrição não pode exceder 500 caracteres.")]
             public string Descricao { get; set; }  
 
             [Required(ErrorMessage = "O campo é obrigatório!")]
             [StringLength(13, ErrorMessage = "O código de barras deve ter 13 dígitos.")]
             public string CodigoBarras { get; set; }  
-
-            [Required(ErrorMessage = "O campo é obrigatório!")]
-            [StringLength(50, ErrorMessage = "A categoria não pode exceder 50 caracteres.")]
-            public string Categoria { get; set; }  
 
             [Required(ErrorMessage = "O campo é obrigatório!")]
             [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser maior que 0.")]

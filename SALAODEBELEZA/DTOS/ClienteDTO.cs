@@ -12,9 +12,6 @@ namespace SALAODEBELEZA.DTOS
         public DateTime DataNascimento { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string Endereco { get; set; }
-
-        [Required(ErrorMessage = "O campo é obrigatório!")]
         public string EmailCli { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]

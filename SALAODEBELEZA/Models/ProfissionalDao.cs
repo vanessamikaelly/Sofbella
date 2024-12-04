@@ -22,27 +22,25 @@ namespace SALAODEBELEZA.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO produto (nome_pro, celular_pro, email_pro, senha_pro, cpf_pro, " +
-                                    "sexo_pro, observacoes_pro, expediente_pro, categoria_pro, perfil_acesso_pro, possui_agenda_pro, rg_pro, " +
-                                    "data_nasc_pro, ativo_pro ) " +
-                                    "VALUES (@Nome, @Celular, @Email, @Senha, @CPF, @Sexo, " +
-                                    "@Observacoes, @Expediente, @Categoria, @PerfilAcesso, @PossuiAgenda, @RG, @DataNascimento, @Ativo )";
+                query.CommandText = "INSERT INTO produto (nome_pro, celular_pro, email_pro, cpf_pro, " +
+                                    "sexo_pro, observacoes_pro, expediente_pro, possui_agenda_pro " +
+                                    "ativo_pro, id_cate_fk, id_log_fk, id_perf_fk, id_end_fk) " +
+                                    "VALUES (@Nome, @Celular, @Email, @CPF, @Sexo, " +
+                                    "@Observacoes, @Expediente, @PossuiAgenda, @Ativo, @IdCateFk, @IdLogFk @IdPerfFk, @IdEndFk)";
 
-                query.Parameters.AddWithValue("@Nome", profissional.Nome);
+                query.Parameters.AddWithValue("@Nome", profissional.NomePro);
                 query.Parameters.AddWithValue("@Celular", profissional.Celular);
                 query.Parameters.AddWithValue("@Email", profissional.Email);
-                query.Parameters.AddWithValue("@Senha", profissional.Senha);
-                query.Parameters.AddWithValue("@CPF", profissional.CPF);
+                query.Parameters.AddWithValue("@CPF", profissional.Cpf);
                 query.Parameters.AddWithValue("@Sexo", profissional.Sexo);
                 query.Parameters.AddWithValue("@Observacoes", profissional.Observacoes);
                 query.Parameters.AddWithValue("@Expediente", profissional.Expediente);
-                query.Parameters.AddWithValue("@Categoria", profissional.Categoria);
-                query.Parameters.AddWithValue("@PerfilAcesso", profissional.PerfilAcesso);
-                query.Parameters.AddWithValue("@PossuiAgenda", profissional.PossuiAgenda);
-                query.Parameters.AddWithValue("@RG", profissional.RG);
-                query.Parameters.AddWithValue("@DataNascimento", profissional.DataNascimento);
+                query.Parameters.AddWithValue("@PossuiAgenda", profissional.Possui_Agenda);
                 query.Parameters.AddWithValue("@Ativo", profissional.Ativo);
-                query.Parameters.AddWithValue("@Id", profissional.Id);
+                query.Parameters.AddWithValue("@IdCateFk", profissional.IdCateFk);
+                query.Parameters.AddWithValue("@IdLogFk", profissional.IdLogFk);
+                query.Parameters.AddWithValue("@IdPerfFk", profissional.IdPerfFk);
+                query.Parameters.AddWithValue("@IdEndFk", profissional.IdEndFk);
 
                 query.ExecuteNonQuery();
 
@@ -75,20 +73,19 @@ namespace SALAODEBELEZA.Models
                     lista.Add(new Profissional
                     {
                         Id = reader.GetInt32("id_pro"),
-                        Nome = reader.GetString("nome_pro"),
+                        NomePro = reader.GetString("nome_pro"),
                         Celular = reader.GetString("celular_pro"),
                         Email = reader.GetString("email_pro"),
-                        Senha = reader.GetString("senha_pro"),
-                        CPF = reader.GetString("cpf_pro"),
-                        Sexo = reader.GetInt32("sexo_pro"),
+                        Cpf = reader.GetString("cpf_pro"),
+                        Sexo = reader.GetString("sexo_pro"),
                         Observacoes = reader.GetString("observacoes_pro"),
                         Expediente = reader.GetString("expediente_pro"),
-                        Categoria = reader.GetString("categoria_pro"),
-                        PerfilAcesso = reader.GetString("perfil_acesso_pro"),
-                        PossuiAgenda = reader.GetString("possui_agenda_pro"),
-                        RG = reader.GetString("rg_pro"),
-                        DataNascimento = reader.GetDateTime("data_nasc_pro"),
+                        Possui_Agenda = reader.GetString("possui_agenda_pro"),
                         Ativo = reader.GetString("ativo_pro "),
+                        IdCateFk = reader.GetInt32("id_cate_fk"),
+                        IdLogFk = reader.GetInt32("id_log_fk"),
+                        IdPerfFk = reader.GetInt32("id_perf_fk"),
+                        IdEndFk = reader.GetInt32("id_end_fk")
                     });
                 }
 
@@ -121,23 +118,22 @@ namespace SALAODEBELEZA.Models
                 {
                     while (reader.Read())
                     {
-                        profissional = new profissional
+                        profissional = new Profissional
                         {
                             Id = reader.GetInt32("id_pro"),
-                            Nome = reader.GetString("nome_pro"),
+                            NomePro = reader.GetString("nome_pro"),
                             Celular = reader.GetString("celular_pro"),
                             Email = reader.GetString("email_pro"),
-                            Senha = reader.GetString("senha_pro"),
-                            CPF = reader.GetString("cpf_pro"),
-                            Sexo = reader.GetInt32("sexo_pro"),
+                            Cpf = reader.GetString("cpf_pro"),
+                            Sexo = reader.GetString("sexo_pro"),
                             Observacoes = reader.GetString("observacoes_pro"),
                             Expediente = reader.GetString("expediente_pro"),
-                            Categoria = reader.GetString("categoria_pro"),
-                            PerfilAcesso = reader.GetString("perfil_acesso_pro"),
-                            PossuiAgenda = reader.GetString("possui_agenda_pro"),
-                            RG = reader.GetString("rg_pro"),
-                            DataNascimento = reader.GetDateTime("data_nasc_pro"),
+                            Possui_Agenda = reader.GetString("possui_agenda_pro"),
                             Ativo = reader.GetString("ativo_pro "),
+                            IdCateFk = reader.GetInt32("id_cate_fk"),
+                            IdLogFk = reader.GetInt32("id_log_fk"),
+                            IdPerfFk = reader.GetInt32("id_perf_fk"),
+                            IdEndFk = reader.GetInt32("id_end_fk")
                         };
                     }
                 }
@@ -159,26 +155,25 @@ namespace SALAODEBELEZA.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "UPDATE profissional SET nome_prod = @Nome, celular_pro = @Celular, email_pro = @Email, senha_pro = @Senha, " +
-                                    "cpf_pro = @CPF, sexo_pro = @Sexo, observacoes_pro = @Observacoes, expediente_pro = @Expediente, categoria_pro = @Categoria, " +
-                                    "perfil_acesso_pro = @PerfilAcesso, possui_agenda_pro = @PossuiAgenda, rg_pro = @RG, data_nasc_pro = @DataNascimento, " +
-                                    "ativo_pro = @Ativo, WHERE id_pro = @Id";
+                query.CommandText = "INSERT INTO produto (nome_pro, celular_pro, email_pro, cpf_pro, " +
+                                   "sexo_pro, observacoes_pro, expediente_pro, possui_agenda_pro " +
+                                   "ativo_pro, id_cate_fk, id_log_fk, id_perf_fk, id_end_fk) " +
+                                   "VALUES (@Nome, @Celular, @Email, @CPF, @Sexo, " +
+                                   "@Observacoes, @Expediente, @PossuiAgenda, @Ativo, @IdCateFk, @IdLogFk @IdPerfFk, @IdEndFk)";
 
-                query.Parameters.AddWithValue("@Nome", profissional.Nome);
+                query.Parameters.AddWithValue("@Nome", profissional.NomePro);
                 query.Parameters.AddWithValue("@Celular", profissional.Celular);
                 query.Parameters.AddWithValue("@Email", profissional.Email);
-                query.Parameters.AddWithValue("@Senha", profissional.Senha);
-                query.Parameters.AddWithValue("@CPF", profissional.CPF);
+                query.Parameters.AddWithValue("@CPF", profissional.Cpf);
                 query.Parameters.AddWithValue("@Sexo", profissional.Sexo);
                 query.Parameters.AddWithValue("@Observacoes", profissional.Observacoes);
                 query.Parameters.AddWithValue("@Expediente", profissional.Expediente);
-                query.Parameters.AddWithValue("@Categoria", profissional.Categoria);
-                query.Parameters.AddWithValue("@PerfilAcesso", profissional.PerfilAcesso);
-                query.Parameters.AddWithValue("@PossuiAgenda", profissional.PossuiAgenda);
-                query.Parameters.AddWithValue("@RG", profissional.RG);
-                query.Parameters.AddWithValue("@DataNascimento", profissional.DataNascimento);
+                query.Parameters.AddWithValue("@PossuiAgenda", profissional.Possui_Agenda);
                 query.Parameters.AddWithValue("@Ativo", profissional.Ativo);
-                query.Parameters.AddWithValue("@Id", profissional.Id);
+                query.Parameters.AddWithValue("@IdCateFk", profissional.IdCateFk);
+                query.Parameters.AddWithValue("@IdLogFk", profissional.IdLogFk);
+                query.Parameters.AddWithValue("@IdPerfFk", profissional.IdPerfFk);
+                query.Parameters.AddWithValue("@IdEndFk", profissional.IdEndFk);
 
                 query.ExecuteNonQuery();
             }

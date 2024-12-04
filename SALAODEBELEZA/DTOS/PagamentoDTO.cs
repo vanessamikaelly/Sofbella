@@ -8,9 +8,6 @@ namespace SALAODEBELEZA.DTOS
         public DateTime DataPagamento { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string Cliente { get; set; }
-
-        [Required(ErrorMessage = "O campo é obrigatório!")]
         public double Valor { get; set; }
 
         public double Desconto { get; set; }

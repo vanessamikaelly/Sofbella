@@ -22,20 +22,17 @@ namespace SALAODEBELEZA.Models
             try
             {
                 var query = conn.Query();
-                query.CommandText = "INSERT INTO produto (nome_prod, descricao_prod, codigo_barras_prod, " +
-                                    "categoria_prod, valor_prod, valor_custo_prod, comissao_prod, ) " +
-                                    "VALUES (@Nome, @Descricao, @CodigoBarras, @Categoria, @Preco, @PrecoCusto, " +
-                                    "@Comissao)";
+                query.CommandText = "INSERT INTO produto (nome_prod, descricao_prod, codigo_barras_prod, valor_prod, valor_custo_prod, comissao_prod, id_cate_fk ) " +
+                                    "VALUES (@Nome, @Descricao, @CodigoBarras, @Preco, @PrecoCusto, @Comissao, @IdCateFk)";
 
 
                 query.Parameters.AddWithValue("@Nome", produto.Nome);
                 query.Parameters.AddWithValue("@Descricao", produto.Descricao);
                 query.Parameters.AddWithValue("@CodigoBarras", produto.CodigoBarras);
-                query.Parameters.AddWithValue("@Categoria", produto.Categoria);
                 query.Parameters.AddWithValue("@Preco", produto.Preco);
                 query.Parameters.AddWithValue("@PrecoCusto", produto.PrecoCusto);
                 query.Parameters.AddWithValue("@Comissao", produto.Comissao);
-                query.Parameters.AddWithValue("@Id", produto.Id);
+                query.Parameters.AddWithValue("@IdCateFk", produto.IdCateFk);
 
                 query.ExecuteNonQuery();
 
@@ -71,10 +68,10 @@ namespace SALAODEBELEZA.Models
                         Nome = reader.GetString("nome_prod"),
                         Descricao = reader.GetString("descricao_prod"),
                         CodigoBarras = reader.GetString("codigo_barras_prod"),
-                        Categoria = reader.GetString("categoria_prod"),
                         Preco = reader.GetInt32("valor_prod"),
                         PrecoCusto = reader.GetInt32("valor_custo_prod"),
                         Comissao = reader.GetInt32("comissao_prod"),
+                        IdCateFk = reader.GetInt32("id_cate_fk"),
                     });
                 }
 
@@ -107,16 +104,16 @@ namespace SALAODEBELEZA.Models
                 {
                     while (reader.Read())
                     {
-                        produto = new produto
+                        produto = new Produto
                         {
                             Id = reader.GetInt32("id_prod"),
                             Nome = reader.GetString("nome_prod"),
                             Descricao = reader.GetString("descricao_prod"),
                             CodigoBarras = reader.GetString("codigo_barras_prod"),
-                            Categoria = reader.GetString("categoria_prod"),
                             Preco = reader.GetInt32("valor_prod"),
                             PrecoCusto = reader.GetInt32("valor_custo_prod"),
                             Comissao = reader.GetInt32("comissao_prod"),
+                            IdCateFk = reader.GetInt32("id_cate_fk"),
                         };
                     }
                 }
@@ -139,17 +136,17 @@ namespace SALAODEBELEZA.Models
             {
                 var query = conn.Query();
                 query.CommandText = "UPDATE produto SET nome_prod = @Nome, descricao_prod = @Descricao, " +
-                                    "codigo_barras_prod = @CodigoBarras, categoria_prod = @Categoria, " +
+                                    "codigo_barras_prod = @CodigoBarras, " +
                                     "valor_prod = @Preco, valor_custo_prod = @PrecoCusto, " +
-                                    "comissao_prod = @Comissao, WHERE id_prod = @Id";
+                                    "comissao_prod = @Comissao, id_cate_fk = @IdCateFk WHERE id_prod = @Id";
 
                 query.Parameters.AddWithValue("@Nome", produto.Nome);
                 query.Parameters.AddWithValue("@Descricao", produto.Descricao);
                 query.Parameters.AddWithValue("@CodigoBarras", produto.CodigoBarras);
-                query.Parameters.AddWithValue("@Categoria", produto.Categoria);
                 query.Parameters.AddWithValue("@Preco", produto.Preco);
                 query.Parameters.AddWithValue("@PrecoCusto", produto.PrecoCusto);
                 query.Parameters.AddWithValue("@Comissao", produto.Comissao);
+                query.Parameters.AddWithValue("@IdCateFk", produto.IdCateFk);
                 query.Parameters.AddWithValue("@Id", produto.Id);
 
                 query.ExecuteNonQuery();
