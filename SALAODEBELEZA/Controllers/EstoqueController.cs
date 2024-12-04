@@ -5,22 +5,43 @@ using SOFBELLASALAOOO.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/estoque[controller]")]
+    [Route("estoque")]
     [ApiController]
     public class EstoqueController : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
         {
+            List<Estoque> listaEstoques = new EstoqueDAO().List();
+
+            return Ok(listaEstoques);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] EstoqueDTO item)
+        {
+            var estoque = new Estoque
+            {
+                NomeProduto = item.NomeProduto,
+                EstoqueAtual = item.EstoqueAtual,
+                Entrada = item.Entrada,
+                PrecoCompra = item.PrecoCompra,
+                PrecoVenda = item.PrecoVenda,
+                IdFornFk = item.IdFornFk,
+                IdProdFk = item.IdProdFk
+            };
+
             try
             {
-                var listaEstoques = new EstoqueDAO().List();
-                return Ok(listaEstoques);
+                var dao = new EstoqueDAO();
+                estoque.Id = dao.Insert(estoque);
             }
             catch (Exception ex)
             {
-                return Problem("Erro ao listar os estoques: " + ex.Message);
+                return BadRequest(ex.Message);
             }
+
+            return Created("", estoque);
         }
 
         [HttpGet("{id}")]
@@ -31,73 +52,45 @@ namespace SALAODEBELEZA.Controllers
                 var estoque = new EstoqueDAO().GetById(id);
 
                 if (estoque == null)
-                    return NotFound("Estoque não encontrado.");
+                {
+                    return NotFound();
+                }
 
                 return Ok(estoque);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Problem("Erro ao buscar o estoque: " + ex.Message);
-            }
-        }
-
-        [HttpPost]
-        public IActionResult Post([FromBody] EstoqueDTO dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            try
-            {
-                var estoque = new Estoque
-                {
-                    NomeProduto = dto.NomeProduto,
-                    EstoqueAtual = dto.EstoqueAtual,
-                    Entrada = dto.Entrada,
-                    PrecoCompra = dto.PrecoCompra,
-                    PrecoVenda = dto.PrecoVenda,
-                    IdFornFk = dto.IdFornFk,
-                    IdProdFk = dto.IdProdFk
-                };
-
-                estoque.Id = new EstoqueDAO().Insert(estoque);
-
-                return Created("", estoque);
-            }
-            catch (Exception ex)
-            {
-                return Problem("Erro ao criar o estoque: " + ex.Message);
+                return Problem("Ocorreram erros ao processar a solicitação");
             }
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] EstoqueDTO dto)
+        public IActionResult Put(int id, [FromBody] EstoqueDTO item)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             try
             {
-                var estoqueExistente = new EstoqueDAO().GetById(id);
+                var estoque = new EstoqueDAO().GetById(id);
 
-                if (estoqueExistente == null)
-                    return NotFound("Estoque não encontrado.");
+                if (estoque == null)
+                {
+                    return NotFound();
+                }
 
-                estoqueExistente.NomeProduto = dto.NomeProduto;
-                estoqueExistente.EstoqueAtual = dto.EstoqueAtual;
-                estoqueExistente.Entrada = dto.Entrada;
-                estoqueExistente.PrecoCompra = dto.PrecoCompra;
-                estoqueExistente.PrecoVenda = dto.PrecoVenda;
-                estoqueExistente.IdFornFk = dto.IdFornFk;
-                estoqueExistente.IdProdFk = dto.IdProdFk;
+                estoque.NomeProduto = item.NomeProduto;
+                estoque.EstoqueAtual = item.EstoqueAtual;
+                estoque.Entrada = item.Entrada;
+                estoque.PrecoCompra = item.PrecoCompra;
+                estoque.PrecoVenda = item.PrecoVenda;
+                estoque.IdFornFk = item.IdFornFk;
+                estoque.IdProdFk = item.IdProdFk;
 
-                new EstoqueDAO().Update(estoqueExistente);
+                new EstoqueDAO().Update(estoque);
 
-                return Ok(estoqueExistente);
+                return Ok(estoque);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return Problem("Erro ao atualizar o estoque: " + ex.Message);
+                return Problem(e.Message);
             }
         }
 
@@ -106,18 +99,20 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var estoqueExistente = new EstoqueDAO().GetById(id);
+                var estoque = new EstoqueDAO().GetById(id);
 
-                if (estoqueExistente == null)
-                    return NotFound("Estoque não encontrado.");
+                if (estoque == null)
+                {
+                    return NotFound();
+                }
 
-                new EstoqueDAO().Delete(id);
+                new EstoqueDAO().Delete(estoque.Id);
 
-                return Ok("Estoque excluído com sucesso.");
+                return Ok();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Problem("Erro ao excluir o estoque: " + ex.Message);
+                return Problem("Ocorreram erros ao processar a solicitação");
             }
         }
     }

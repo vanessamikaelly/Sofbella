@@ -12,13 +12,13 @@ namespace SOFBELLASALAOOO.DTO
         public DateTime DataInicio { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string HoraInicio { get; set; }
+        public DateTime HoraInicio { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
         public DateTime DataFinal { get; set; }  
         
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string HoraFinal { get; set; }
+        public DateTime HoraFinal { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
         public string Motivo { get; set; }

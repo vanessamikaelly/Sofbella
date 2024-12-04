@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SALAODEBELEZA.Models;
 using SOFBELLASALAOOO.DTO;
 using SOFBELLASALAOOO.DTOS;
 using SOFBELLASALAOOO.Models;
@@ -7,93 +8,115 @@ using System.Linq;
 
 namespace SOFBELLASALAOOO.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("produto")]
     [ApiController]
     public class ProdutoController : ControllerBase
     {
-        private static List<Produto> listaProdutos = new List<Produto>();
-
         [HttpGet]
-        public ActionResult<List<Produto>> GetProdutos()
+        public IActionResult Get()
         {
+            List<Produto> listaProdutos = new ProdutoDAO().List();
+
             return Ok(listaProdutos);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetProdutoById(int id)
+        [HttpPost]
+        public IActionResult Post([FromBody] ProdutoDTO item)
         {
-            var produto = listaProdutos.ElementAtOrDefault(id);
-            if (produto == null)
+            var produto = new Produto
             {
-                return NotFound();
+                Nome = item.Nome,
+                Descricao = item.Descricao,
+                CodigoBarras = item.CodigoBarras,
+                Preco = item.Preco,
+                PrecoCusto = item.PrecoCusto,
+                Comissao = item.Comissao,
+                IdCateFk = item.IdCateFk
+            };
+
+            try
+            {
+                var dao = new ProdutoDAO();
+                produto.Id = dao.Insert(produto);
             }
-            return Ok(produto);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Created("", produto);
         }
 
-        [HttpPost]
-        public IActionResult CreateProduto([FromBody] ProdutoDTO produtoDTO)
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                var produto = new ProdutoDAO().GetById(id);
+
+                if (produto == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(produto);
             }
-
-            
-            var novoProduto = new Produto(
-                produtoDTO.Nome,
-                produtoDTO.Unidade,
-                produtoDTO.Descricao,
-                produtoDTO.CodigoBarras,
-                produtoDTO.Categoria,
-                produtoDTO.Preco,
-                produtoDTO.PrecoCusto,
-                produtoDTO.Comissao
-            );
-
-            
-            listaProdutos.Add(novoProduto);
-
-            return CreatedAtAction(nameof(GetProdutoById), new { id = listaProdutos.Count - 1 }, novoProduto);
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProduto(int id, [FromBody] ProdutoDTO produtoDTO)
+        public IActionResult Put(int id, [FromBody] ProdutoDTO item)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
+                var produto = new ProdutoDAO().GetById(id);
 
-            var produtoExistente = listaProdutos.ElementAtOrDefault(id);
-            if (produtoExistente == null)
+                if (produto == null)
+                {
+                    return NotFound();
+                }
+
+                produto.Nome = item.Nome;
+                produto.Descricao = item.Descricao;
+                produto.CodigoBarras = item.CodigoBarras;
+                produto.Preco = item.Preco;
+                produto.PrecoCusto = item.PrecoCusto;
+                produto.Comissao = item.Comissao;
+                produto.IdCateFk = item.IdCateFk;
+
+                new ProdutoDAO().Update(produto);
+
+                return Ok(produto);
+            }
+            catch (Exception e)
             {
-                return NotFound();
+                return Problem(e.Message);
             }
-
-            produtoExistente.Nome = produtoDTO.Nome;
-            produtoExistente.Unidade = produtoDTO.Unidade;
-            produtoExistente.Descricao = produtoDTO.Descricao;
-            produtoExistente.CodigoBarras = produtoDTO.CodigoBarras;
-            produtoExistente.Categoria = produtoDTO.Categoria;
-            produtoExistente.Preco = produtoDTO.Preco;
-            produtoExistente.PrecoCusto = produtoDTO.PrecoCusto;
-            produtoExistente.Comissao = produtoDTO.Comissao;
-
-            return Ok(produtoExistente);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteProduto(int id)
+        public IActionResult Delete(int id)
         {
-            var produto = listaProdutos.ElementAtOrDefault(id);
-            if (produto == null)
+            try
             {
-                return NotFound();
+                var produto = new ProdutoDAO().GetById(id);
+
+                if (produto == null)
+                {
+                    return NotFound();
+                }
+
+                new ProdutoDAO().Delete(produto.Id);
+
+                return Ok();
             }
-
-            listaProdutos.RemoveAt(id);
-
-            return Ok(produto);
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }

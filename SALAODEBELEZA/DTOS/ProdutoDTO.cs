@@ -7,7 +7,10 @@ namespace SOFBELLASALAOOO.DTOS
 
             [Required(ErrorMessage = "O campo é obrigatório!")]
             [StringLength(100, ErrorMessage = "O nome não pode exceder 100 caracteres.")]
-            public string Nome { get; set; }  
+            public string Nome { get; set; }
+
+            [Required(ErrorMessage = "O campo é obrigatório!")]
+            [StringLength(100, ErrorMessage = "O nome não pode exceder 100 caracteres.")]
             public string Descricao { get; set; }  
 
             [Required(ErrorMessage = "O campo é obrigatório!")]

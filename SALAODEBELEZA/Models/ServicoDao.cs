@@ -3,11 +3,11 @@ using SALAODEBELEZA.DataBase;
 
 namespace SALAODEBELEZA.Models
 {
-    public class ServicoDao
+    public class ServicoDAO
     {
         private static ConnectionMysql conn;
 
-        public ServicoDao()
+        public ServicoDAO()
         {
             conn = new ConnectionMysql();
         }
@@ -62,7 +62,7 @@ namespace SALAODEBELEZA.Models
                         NomeServico = reader.GetString("nome_serv"),
                         Descricao = reader.GetString("descricao_serv"),
                         Valor = reader.GetDouble("valor_serv"),
-                        DuracaoAtendimento = reader.GetString("duracao_serv"),
+                        DuracaoAtendimento = reader.GetDateTime("duracao_serv"),
                         Comissao = reader.GetDouble("comissao_serv"),
                         IdCateFk = reader.GetInt32("id_cate_fk"),
                     });
@@ -103,7 +103,7 @@ namespace SALAODEBELEZA.Models
                             NomeServico = reader.GetString("nome_serv"),
                             Descricao = reader.GetString("descricao_serv"),
                             Valor = reader.GetDouble("valor_serv"),
-                            DuracaoAtendimento = reader.GetString("duracao_serv"),
+                            DuracaoAtendimento = reader.GetDateTime("duracao_serv"),
                             Comissao = reader.GetDouble("comissao_serv"),
                             IdCateFk = reader.GetInt32("id_cate_fk"),
                         };

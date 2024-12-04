@@ -9,45 +9,41 @@ namespace SALAODEBELEZA.Models
 {
     public class EnderecoDAO
     {
-        private static ConnectionMysql _conn;
+        private static ConnectionMysql conn;
 
         public EnderecoDAO()
         {
-            _conn = new ConnectionMysql();
+            conn = new ConnectionMysql();
         }
 
-        public int Insert(Endereco item)
+        public int Insert(Endereco endereco)
         {
             try
             {
-                var query = _conn.Query();
-                query.CommandText = "INSERT INTO tarefas (rua_end, bairro_end, numero_end, cidade_end, estado_end, pais_end, cep_end " +
-                    "VALUES (@rua, @bairro, @numero, @cidade, @estado, @pais, @cep)";
+                var query = conn.Query();
+                query.CommandText = "INSERT INTO endereco (rua_end, bairro_end, numero_end, cidade_end, estado_end, pais_end, cep_end) " +
+                                    "VALUES (@rua, @bairro, @numero, @cidade, @estado, @pais, @cep)";
 
-                query.Parameters.AddWithValue("@rua", item.Rua);
-                query.Parameters.AddWithValue("@bairro", item.Bairro);
-                query.Parameters.AddWithValue("@numero", item.Numero);
-                query.Parameters.AddWithValue("@cidade", item.Cidade);
-                query.Parameters.AddWithValue("@estado", item.Estado);
-                query.Parameters.AddWithValue("@pais", item.Pais);
-                query.Parameters.AddWithValue("@cep", item.CEP);
+                query.Parameters.AddWithValue("@rua", endereco.Rua);
+                query.Parameters.AddWithValue("@bairro", endereco.Bairro);
+                query.Parameters.AddWithValue("@numero", endereco.Numero);
+                query.Parameters.AddWithValue("@cidade", endereco.Cidade);
+                query.Parameters.AddWithValue("@estado", endereco.Estado);
+                query.Parameters.AddWithValue("@pais", endereco.Pais);
+                query.Parameters.AddWithValue("@cep", endereco.CEP);
 
-                var result = query.ExecuteNonQuery();
-
-                if (result == 0)
-                {
-                    throw new Exception("O registro não foi inserido. Verifique e tente novamente");
-                }
+                query.ExecuteNonQuery();
 
                 return (int)query.LastInsertedId;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Erro ao inserir: " + ex.Message);
                 throw;
             }
             finally
             {
-                _conn.Close();
+                conn.Close();
             }
         }
 
@@ -57,7 +53,7 @@ namespace SALAODEBELEZA.Models
             {
                 List<Endereco> list = new List<Endereco>();
 
-                var query = _conn.Query();
+                var query = conn.Query();
                 query.CommandText = "SELECT * FROM endereco";
 
                 MySqlDataReader reader = query.ExecuteReader();
@@ -68,38 +64,37 @@ namespace SALAODEBELEZA.Models
                     {
                         Id = reader.GetInt32("id_end"),
                         Rua = reader.GetString("rua_end"),
-                        Bairro = reader.GetString(" bairro_end"),
+                        Bairro = reader.GetString("bairro_end"),
                         Numero = reader.GetString("numero_end"),
                         Cidade = reader.GetString("cidade_end"),
                         Estado = reader.GetString("estado_end"),
                         Pais = reader.GetString("pais_end"),
-                        CEP = reader.GetString("cep_end"),
-
+                        CEP = reader.GetString("cep_end")
                     });
                 }
 
                 return list;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Erro ao listar: " + ex.Message);
                 throw;
             }
             finally
             {
-                _conn.Close();
+                conn.Close();
             }
         }
 
-        public Endereco? GetById(int id)
+        public Endereco GetById(int id)
         {
             try
             {
-                Endereco _endereco = new Endereco();
+                Endereco endereco = new Endereco();
 
-                var query = _conn.Query();
-                query.CommandText = "SELECT * FROM endereco WHERE id_end = @_id";
-
-                query.Parameters.AddWithValue("@_id", id);
+                var query = conn.Query();
+                query.CommandText = "SELECT * FROM endereco WHERE id_end = @id";
+                query.Parameters.AddWithValue("@id", id);
 
                 MySqlDataReader reader = query.ExecuteReader();
 
@@ -110,57 +105,60 @@ namespace SALAODEBELEZA.Models
 
                 while (reader.Read())
                 {
-                    _endereco.Id = reader.GetInt32("id_end");
-                    _endereco.Rua = reader.GetString("rua_end");
-                    _endereco.Bairro = reader.GetString(" bairro_end");
-                    _endereco.Numero = reader.GetString("numero_end");
-                    _endereco.Cidade = reader.GetString("cidade_end");
-                    _endereco.Estado = reader.GetString("estado_end");
-                    _endereco.Pais = reader.GetString("pais_end");
-                    _endereco.CEP = reader.GetString("cep_end");
+                    endereco.Id = reader.GetInt32("id_end");
+                    endereco.Rua = reader.GetString("rua_end");
+                    endereco.Bairro = reader.GetString("bairro_end");
+                    endereco.Numero = reader.GetString("numero_end");
+                    endereco.Cidade = reader.GetString("cidade_end");
+                    endereco.Estado = reader.GetString("estado_end");
+                    endereco.Pais = reader.GetString("pais_end");
+                    endereco.CEP = reader.GetString("cep_end");
                 }
 
-                return _endereco;
+                return endereco;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Erro ao buscar por ID: " + ex.Message);
                 throw;
             }
             finally
             {
-                _conn.Close();
+                conn.Close();
             }
         }
 
-        public void Update(Endereco item)
+        public void Update(Endereco endereco)
         {
             try
             {
-                var query = _conn.Query();
-                query.CommandText = "UPDATE endereco SET rua_end = @_rua, bairro_end = @_bairro, numero_end = @_numero, cidade_end = @_cidade, estado_end = @_estado, pais_end = @_pais, cep_end = @_cep";
+                var query = conn.Query();
+                query.CommandText = "UPDATE endereco SET rua_end = @rua, bairro_end = @bairro, numero_end = @numero, cidade_end = @cidade, estado_end = @estado, pais_end = @pais, cep_end = @cep WHERE id_end = @id";
 
-                query.Parameters.AddWithValue("@_rua", item.Rua);
-                query.Parameters.AddWithValue("@_bairro", item.Bairro);
-                query.Parameters.AddWithValue("@_numero", item.Numero);
-                query.Parameters.AddWithValue("@_cidade", item.Cidade);
-                query.Parameters.AddWithValue("@_estado", item.Estado);
-                query.Parameters.AddWithValue("@_pais", item.Pais);
-                query.Parameters.AddWithValue("@_cep", item.CEP);
+                query.Parameters.AddWithValue("@rua", endereco.Rua);
+                query.Parameters.AddWithValue("@bairro", endereco.Bairro);
+                query.Parameters.AddWithValue("@numero", endereco.Numero);
+                query.Parameters.AddWithValue("@cidade", endereco.Cidade);
+                query.Parameters.AddWithValue("@estado", endereco.Estado);
+                query.Parameters.AddWithValue("@pais", endereco.Pais);
+                query.Parameters.AddWithValue("@cep", endereco.CEP);
+                query.Parameters.AddWithValue("@id", endereco.Id);
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
                 {
-                    throw new Exception("O registro não foi atualizado. Verifique e tente novamente");
+                    throw new Exception("O registro não foi atualizado. Verifique e tente novamente.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Erro ao atualizar: " + ex.Message);
                 throw;
             }
             finally
             {
-                _conn.Close();
+                conn.Close();
             }
         }
 
@@ -168,28 +166,27 @@ namespace SALAODEBELEZA.Models
         {
             try
             {
-                var query = _conn.Query();
-                query.CommandText = "DELETE FROM endereco WHERE id_end = @_id";
-
-                query.Parameters.AddWithValue("@_id", id);
+                var query = conn.Query();
+                query.CommandText = "DELETE FROM endereco WHERE id_end = @id";
+                query.Parameters.AddWithValue("@id", id);
 
                 var result = query.ExecuteNonQuery();
 
                 if (result == 0)
                 {
-                    throw new Exception("O registro não foi excluído. Verifique e tente novamente");
+                    throw new Exception("O registro não foi excluído. Verifique e tente novamente.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Erro ao excluir: " + ex.Message);
                 throw;
             }
             finally
             {
-                _conn.Close();
+                conn.Close();
             }
         }
-
     }
 }
 

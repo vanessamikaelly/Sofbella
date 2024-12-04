@@ -15,8 +15,8 @@ namespace SALAODEBELEZA.Models
         public string Sexo { get; set; }
         public string Observacoes { get; set; }
         public string Expediente { get; set; }
-        public string Possui_Agenda { get; set; }
-        public string Ativo { get; set; }
+        public bool Possui_Agenda { get; set; }
+        public bool Ativo { get; set; }
         public int IdCateFk { get; set; }
         public int IdLogFk { get; set; }
         public int IdPerfFk { get; set; }

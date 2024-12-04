@@ -15,6 +15,8 @@ VALUES (
     'Administrador', 'Agenda Completa', 'Comissões de 5% sobre vendas', 'Controle de fluxo de caixa'
 );
 
+select * from perfil;
+
 create table login (
     id_log int primary key auto_increment,
     email_log varchar(100) not null,
@@ -24,6 +26,9 @@ INSERT INTO login (email_log, senha_log)
 VALUES
     ('usuario@exemplo.com', 'senha123'),
     ('admin@exemplo.com', 'admin123');
+    
+    select * from login;
+
 
 create table endereco (
     id_end int primary key auto_increment,
@@ -33,8 +38,11 @@ create table endereco (
     cidade_end varchar(45),
     estado_end varchar(45),
     pais_end varchar(45),
-    cep_end varchar(45)
+    cep_end varchar(8)
 );
+
+    select * from endereco;
+
 
 create table fornecedor (
     id_forn int primary key auto_increment,
@@ -46,6 +54,9 @@ create table fornecedor (
     id_end_fk int,
     foreign key (id_end_fk) references endereco(id_end)
 );
+
+    select * from fornecedor;
+
 
 create table cliente (
     id_cli int primary key auto_increment,
@@ -59,6 +70,9 @@ create table cliente (
     foreign key (id_end_fk) references endereco(id_end)
 );
 
+    select * from cliente;
+
+
 create table caixa (
     id_caix int primary key auto_increment,
     usuario_caix varchar(100),
@@ -69,12 +83,16 @@ create table caixa (
     saldo_final_caix float
 );
 
+    select * from caixa;
+
 create table categoria (
     id_cate int primary key auto_increment,
     nome_cate varchar(100),
     tipo_cate varchar(45),
     descricao_cate varchar(45)
 );
+
+    select * from categoria;
 
 create table produto (
     id_prod int primary key auto_increment,
@@ -88,18 +106,24 @@ create table produto (
     id_cate_fk int,
     foreign key (id_cate_fk) references categoria(id_cate)
 );
+
+    select * from produto;
+
 create table estoque (
     id_est int primary key auto_increment,
     nomeprod_est varchar(100) not null,
-   estoque_atual_est float,
-   entrada_est float,
+    estoque_atual_est float,
+    entrada_est float,
     preco_compra_est float,
     preco_venda_est float,
     id_forn_fk int,
     id_prod_fk int,
-	foreign key (id_forn_fk) references fornecedor(id_forn),
-    foreign key (id_prod_fk) references produto(id_prod)
+	foreign key (id_forn_fk) references fornecedor (id_forn),
+    foreign key (id_prod_fk) references produto (id_prod)
 );
+
+    select * from estoque;
+
 
 create table baixa_uso_interno (
 	id_baixa int primary key auto_increment,
@@ -110,6 +134,8 @@ create table baixa_uso_interno (
     id_est_fk int,
     foreign key (id_est_fk) references estoque (id_est)
     );
+    
+    select * from baixa_uso_interno;
 
 create table pacote (
     id_pac int primary key auto_increment,
@@ -118,6 +144,8 @@ create table pacote (
     validade_pacote_pac date,
     itens_pacote_pac varchar(300)
 );
+
+    select * from pacote;
 
 create table profissional (
     id_pro int primary key auto_increment,
@@ -140,6 +168,8 @@ create table profissional (
     foreign key (id_end_fk) references endereco(id_end)
 );
 
+    select * from profissional;
+
 create table servico (
     id_serv int primary key auto_increment,
     nome_serv varchar(200),
@@ -151,6 +181,8 @@ create table servico (
     foreign key (id_cate_fk) references categoria(id_cate)
 );
 
+    select * from servico;
+
 create table orcamento (
     id_orca int primary key auto_increment,
     descricao_orca varchar(300),
@@ -161,6 +193,7 @@ create table orcamento (
     foreign key (id_serv_fk) references servico(id_serv)
 );
 
+    select * from orcamento;
 
 create table servico_pacote (
 	id_serv_pac int primary key auto_increment,
@@ -183,6 +216,8 @@ create table expediente (
     foreign key (id_pro_fk) references profissional(id_pro)
 );
 
+    select * from expediente;
+
 create table bloqueio (
     id_blo int primary key auto_increment,
     profissional_blo int,
@@ -193,6 +228,8 @@ create table bloqueio (
     motivo_bloqueio_blo varchar(100),
    dia_inteiro_blo bool
 );
+
+    select * from bloqueio;
 
 create table bloqueio_profissional (
 	id_blo_pro int primary key auto_increment,
@@ -226,6 +263,8 @@ create table agenda (
     foreign key (id_cli_fk) references cliente(id_cli)
 );
 
+    select * from agenda;
+
 create table agenda_servico (
 	id_agend_serv int primary key auto_increment,
 	id_agend_fk int,
@@ -235,7 +274,7 @@ create table agenda_servico (
 );
 
 create table pagamento (
-    id_pag int primary key,
+    id_pag int primary key auto_increment,
     data_pag date,
     valor_pag float,
     desconto_pag float,
@@ -249,6 +288,8 @@ create table pagamento (
     foreign key (id_orca_fk) references orcamento(id_orca),
     foreign key (id_cli_fk) references cliente(id_cli)
 );
+
+    select * from pagamento;
 
 create table anamnese_corporal (
     id_anamcorp int primary key auto_increment,
@@ -282,6 +323,8 @@ create table anamnese_facial (
     medicacao_anamfac varchar(45)
 );
 
+select * from anamnese_facial;
+
 create table Cliente_Anamnesefacial (
 	id_cli_anamfac int primary key auto_increment,
 	id_cli_fk int,
@@ -305,6 +348,8 @@ create table anamnese_capilar (
     atendentes_alergicos_anamcap varchar(45)
 );
 
+select * from anamnese_capilar;
+
 create table Cliente_Anamnesecapilar(
 	id_cli_anamcap int primary key auto_increment,
 	id_cli_fk int,
@@ -326,7 +371,9 @@ create table anamnese_manicure_pedicure (
     micose_anamncure bool,
     coresmalte_anamncure varchar(45)
 );
+
 select * from anamnese_manicure_pedicure;
+
 create table Cliente_Anamnesemanicurepedicure (
 	id_cli_anamncure int primary key auto_increment,
 	id_cli_fk int,

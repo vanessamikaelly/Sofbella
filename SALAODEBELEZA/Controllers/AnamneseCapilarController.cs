@@ -5,91 +5,123 @@ using SALAODEBELEZA.Models;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("anamneseCapilar")]
     [ApiController]
     public class AnamneseCapilarController : ControllerBase
     {
-        public static List<AnamneseCapilar> listaAnamnese = new List<AnamneseCapilar>();
-        public AnamneseCapilarController()
-        {
-
-        }
-
         [HttpGet]
-        public ActionResult GetAnamnseCapilar()
+        public IActionResult Get()
         {
-            return Ok(listaAnamnese);
+            List<AnamneseCapilar> listaAnamnesesCapilares = new AnamneseCapilarDAO().List();
 
+            return Ok(listaAnamnesesCapilares);
         }
 
-        [HttpGet("Buscar/id")]
-
-        public IActionResult GetById(int id)
-        {
-            var anamnese = listaAnamnese.Where(item => item.Id == id).FirstOrDefault();
-
-            return Ok(anamnese);
-        }
-
-        [HttpPut("Atualizar/id")]
-        public IActionResult Put(int id, [FromBody] AnamneseCapilarDTO item)
-        {
-            var anamnese = listaAnamnese.Where(item => item.Id == id).FirstOrDefault();
-
-            if (anamnese == null)
-            {
-                return NotFound();
-            }
-
-            anamnese.TipoCabelo = item.TipoCabelo;
-            anamnese.Caracteristica = item.Caracteristica;
-            anamnese.Comprimento = item.Comprimento;
-            anamnese.Pigmentacao = item.Pigmentacao;
-            anamnese.Elasticidade = item.Elasticidade;
-            anamnese.Espessura = item.Espessura;
-            anamnese.Volume = item.Volume;
-            anamnese.Observacoes = item.Observacoes;
-            anamnese.Resistencia = item.Resistencia;
-            anamnese.Condicao = item.Condicao;
-            anamnese.AntecedentesAlerg = item.AntecedentesAlerg;
-
-            return Ok(listaAnamnese);
-        }
-
-        [HttpPost("Cadastrar/id")]
+        [HttpPost]
         public IActionResult Post([FromBody] AnamneseCapilarDTO item)
         {
-            var anamnese = new AnamneseCapilar();
-            anamnese.Id = listaAnamnese.Count + 1;
-            anamnese.TipoCabelo = item.TipoCabelo;
-            anamnese.Caracteristica = item.Caracteristica;
-            anamnese.Comprimento = item.Comprimento;
-            anamnese.Pigmentacao = item.Pigmentacao;
-            anamnese.Elasticidade = item.Elasticidade;
-            anamnese.Espessura = item.Espessura;
-            anamnese.Volume = item.Volume;
-            anamnese.Observacoes = item.Observacoes;
-            anamnese.Resistencia = item.Resistencia;
-            anamnese.Condicao = item.Condicao;
-            anamnese.AntecedentesAlerg = item.AntecedentesAlerg;
-
-            return Ok("Categoria cadastrada com sucesso:" + item);
-        }
-
-        [HttpDelete("Excluir/id")]
-
-        public IActionResult Delete(int id)
-        {
-            var anamnese = listaAnamnese.Where(item => item.Id == id).FirstOrDefault();
-
-            if (anamnese == null)
+            var anamneseCapilar = new AnamneseCapilar
             {
-                return NotFound();
+                TipoCabelo = item.TipoCabelo,
+                Caracteristica = item.Caracteristica,
+                Comprimento = item.Comprimento,
+                Pigmentacao = item.Pigmentacao,
+                Elasticidade = item.Elasticidade,
+                Espessura = item.Espessura,
+                Volume = item.Volume,
+                Condicao = item.Condicao,
+                Observacoes = item.Observacoes,
+                AntecedentesAlerg = item.AntecedentesAlerg,
+                Resistencia = item.Resistencia
+            };
+
+            try
+            {
+                var dao = new AnamneseCapilarDAO();
+                anamneseCapilar.Id = dao.Insert(anamneseCapilar);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            listaAnamnese.Remove(anamnese);
+            return Created("", anamneseCapilar);
+        }
 
-            return Ok(anamnese);
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var anamneseCapilar = new AnamneseCapilarDAO().GetById(id);
+
+                if (anamneseCapilar == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(anamneseCapilar);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] AnamneseCapilarDTO item)
+        {
+            try
+            {
+                var anamneseCapilar = new AnamneseCapilarDAO().GetById(id);
+
+                if (anamneseCapilar == null)
+                {
+                    return NotFound();
+                }
+
+                anamneseCapilar.TipoCabelo = item.TipoCabelo;
+                anamneseCapilar.Caracteristica = item.Caracteristica;
+                anamneseCapilar.Comprimento = item.Comprimento;
+                anamneseCapilar.Pigmentacao = item.Pigmentacao;
+                anamneseCapilar.Elasticidade = item.Elasticidade;
+                anamneseCapilar.Espessura = item.Espessura;
+                anamneseCapilar.Volume = item.Volume;
+                anamneseCapilar.Condicao = item.Condicao;
+                anamneseCapilar.Observacoes = item.Observacoes;
+                anamneseCapilar.AntecedentesAlerg = item.AntecedentesAlerg;
+                anamneseCapilar.Resistencia = item.Resistencia;
+
+                new AnamneseCapilarDAO().Update(anamneseCapilar);
+
+                return Ok(anamneseCapilar);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var anamneseCapilar = new AnamneseCapilarDAO().GetById(id);
+
+                if (anamneseCapilar == null)
+                {
+                    return NotFound();
+                }
+
+                new AnamneseCapilarDAO().Delete(anamneseCapilar.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }

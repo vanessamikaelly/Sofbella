@@ -13,13 +13,40 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var listaEnderecos = new EnderecoDAO().List();
+                List<Endereco> listaEnderecos = new EnderecoDAO().List();
                 return Ok(listaEnderecos);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreu um erro ao processar a solicitação.");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] EnderecoDTO item)
+        {
+            var endereco = new Endereco
+            {
+                Rua = item.Rua,
+                Bairro = item.Bairro,
+                Numero = item.Numero,
+                Cidade = item.Cidade,
+                Estado = item.Estado,
+                Pais = item.Pais,
+                CEP = item.CEP
+            };
+
+            try
+            {
+                var dao = new EnderecoDAO();
+                endereco.Id = dao.Insert(endereco);
             }
             catch (Exception ex)
             {
-                return Problem("Erro ao listar os endereços: " + ex.Message);
+                return BadRequest(ex.Message);
             }
+
+            return Created("", endereco);
         }
 
         [HttpGet("{id}")]
@@ -30,73 +57,45 @@ namespace SALAODEBELEZA.Controllers
                 var endereco = new EnderecoDAO().GetById(id);
 
                 if (endereco == null)
-                    return NotFound("Endereço não encontrado.");
+                {
+                    return NotFound();
+                }
 
                 return Ok(endereco);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Problem("Erro ao buscar o endereço: " + ex.Message);
-            }
-        }
-
-        [HttpPost]
-        public IActionResult Post([FromBody] EnderecoDTO dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            try
-            {
-                var endereco = new Endereco
-                {
-                    Rua = dto.Rua,
-                    Bairro = dto.Bairro,
-                    Numero = dto.Numero,
-                    Cidade = dto.Cidade,
-                    Estado = dto.Estado,
-                    Pais = dto.Pais,
-                    CEP = dto.CEP
-                };
-
-                endereco.Id = new EnderecoDAO().Insert(endereco);
-
-                return Created("", endereco);
-            }
-            catch (Exception ex)
-            {
-                return Problem("Erro ao criar o endereço: " + ex.Message);
+                return Problem("Ocorreu um erro ao processar a solicitação.");
             }
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] EnderecoDTO dto)
+        public IActionResult Put(int id, [FromBody] EnderecoDTO item)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             try
             {
-                var enderecoExistente = new EnderecoDAO().GetById(id);
+                var endereco = new EnderecoDAO().GetById(id);
 
-                if (enderecoExistente == null)
-                    return NotFound("Endereço não encontrado.");
+                if (endereco == null)
+                {
+                    return NotFound();
+                }
 
-                enderecoExistente.Rua = dto.Rua;
-                enderecoExistente.Bairro = dto.Bairro;
-                enderecoExistente.Numero = dto.Numero;
-                enderecoExistente.Cidade = dto.Cidade;
-                enderecoExistente.Estado = dto.Estado;
-                enderecoExistente.Pais = dto.Pais;
-                enderecoExistente.CEP = dto.CEP;
+                endereco.Rua = item.Rua;
+                endereco.Bairro = item.Bairro;
+                endereco.Numero = item.Numero;
+                endereco.Cidade = item.Cidade;
+                endereco.Estado = item.Estado;
+                endereco.Pais = item.Pais;
+                endereco.CEP = item.CEP;
 
-                new EnderecoDAO().Update(enderecoExistente);
+                new EnderecoDAO().Update(endereco);
 
-                return Ok(enderecoExistente);
+                return Ok(endereco);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return Problem("Erro ao atualizar o endereço: " + ex.Message);
+                return Problem(e.Message);
             }
         }
 
@@ -105,18 +104,20 @@ namespace SALAODEBELEZA.Controllers
         {
             try
             {
-                var enderecoExistente = new EnderecoDAO().GetById(id);
+                var endereco = new EnderecoDAO().GetById(id);
 
-                if (enderecoExistente == null)
-                    return NotFound("Endereço não encontrado.");
+                if (endereco == null)
+                {
+                    return NotFound();
+                }
 
-                new EnderecoDAO().Delete(id);
+                new EnderecoDAO().Delete(endereco.Id);
 
-                return Ok("Endereço excluído com sucesso.");
+                return Ok();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Problem("Erro ao excluir o endereço: " + ex.Message);
+                return Problem("Ocorreu um erro ao processar a solicitação.");
             }
         }
     }

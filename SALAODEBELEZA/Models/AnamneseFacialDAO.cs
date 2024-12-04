@@ -160,7 +160,7 @@ namespace SALAODEBELEZA.Models
                 query.CommandText = "DELETE FROM anamnese_facial WHERE id_anamfac = @Id";
                 query.Parameters.AddWithValue("@Id", id);
 
-                query.ExecuteNonQuery();
+                query.ExecuteNonQuery(); 
             }
             catch (Exception ex)
             {

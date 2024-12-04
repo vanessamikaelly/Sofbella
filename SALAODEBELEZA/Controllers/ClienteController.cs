@@ -53,13 +53,14 @@ namespace SALAODEBELEZA.Controllers
                     return NotFound();
                 }
 
-                cliente.Endereco = item.Endereco;
                 cliente.DataNascimento = item.DataNascimento;
                 cliente.CPFCli = item.CPFCli;
                 cliente.EmailCli = item.EmailCli;
                 cliente.NomeCli = item.NomeCli;
                 cliente.SexoCli = item.SexoCli;
                 cliente.TelefoneCli = item.TelefoneCli;
+                cliente.IdEndFk = item.IdEndFk;
+
 
                 new ClienteDAO().Update(cliente);
 
@@ -76,13 +77,13 @@ namespace SALAODEBELEZA.Controllers
         public IActionResult Post([FromBody] ClienteDTO item)
         {
             var cliente = new Cliente();
-            cliente.Endereco = item.Endereco;
             cliente.DataNascimento = item.DataNascimento;
             cliente.CPFCli = item.CPFCli;
             cliente.EmailCli = item.EmailCli;
             cliente.NomeCli = item.NomeCli;
             cliente.SexoCli = item.SexoCli;
             cliente.TelefoneCli = item.TelefoneCli;
+            cliente.IdEndFk = item.IdEndFk;
 
             try 
             { 

@@ -13,7 +13,7 @@ namespace SALAODEBELEZA.DTOS
         public double Valor { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string DuracaoAtendimento { get; set; }
+        public DateTime DuracaoAtendimento { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
         public double Comissao { get; set; }

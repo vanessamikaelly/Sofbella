@@ -5,77 +5,112 @@ using SALAODEBELEZA.DTOS;
 
 namespace SALAODEBELEZA.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("servico")]
     [ApiController]
     public class ServicoController : ControllerBase
     {
-        public static List<Servico> listaservico = new List<Servico>();
-        public ServicoController()
-        {
-
-        }
-
         [HttpGet]
-        public ActionResult GetServico()
+        public IActionResult Get()
         {
-            return Ok(listaservico);
-
+            List<Servico> listaServicos = new ServicoDAO().List();
+            return Ok(listaServicos);
         }
 
-        [HttpGet("Buscar/id")]
-
-        public IActionResult GetById(int id)
-        {
-            var servico = listaservico.Where(item => item.Id == id).FirstOrDefault();
-
-            return Ok(servico);
-        }
-
-        [HttpPut("Atuaizar/id")]
-        public IActionResult Put(int id, [FromBody] ServicoDTO item)
-        {
-            var servico = listaservico.Where(item => item.Id == id).FirstOrDefault();
-
-            if (servico == null)
-            {
-                return NotFound();
-            }
-
-            servico.NomeServico = item.NomeServico;
-            servico.Descricao = item.Descricao;
-            servico.PrecoUnitario = item.PrecoUnitario;
-            servico.DuracaoAtendimento = item.DuracaoAtendimento;
-            servico.Comissao = item.Comissao;
-            return Ok(listaservico);
-        }
-
-        [HttpPost("Cadastrar/id")]
+        [HttpPost]
         public IActionResult Post([FromBody] ServicoDTO item)
         {
-            var servico = new Servico();
-            servico.Id = listaservico.Count + 1;
-            servico.NomeServico = item.NomeServico;
-            servico.Descricao = item.Descricao;
-            servico.PrecoUnitario = item.PrecoUnitario;
-            servico.DuracaoAtendimento = item.DuracaoAtendimento;
-            servico.Comissao = item.Comissao;
-            return Ok("Categoria cadastrada com sucesso:" + item);
-        }
-
-        [HttpDelete("Excluir/id")]
-
-        public IActionResult Delete(int id)
-        {
-            var servico = listaservico.Where(item => item.Id == id).FirstOrDefault();
-
-            if (servico == null)
+            var servico = new Servico
             {
-                return NotFound();
+                NomeServico = item.NomeServico,
+                Descricao = item.Descricao,
+                Valor = item.Valor,
+                DuracaoAtendimento = item.DuracaoAtendimento,
+                Comissao = item.Comissao,
+                IdCateFk = item.IdCateFk
+            };
+
+            try
+            {
+                var dao = new ServicoDAO();
+                servico.Id = dao.Insert(servico);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            listaservico.Remove(servico);
+            return Created("", servico);
+        }
 
-            return Ok(servico);
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                var servico = new ServicoDAO().GetById(id);
+
+                if (servico == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(servico);
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] ServicoDTO item)
+        {
+            try
+            {
+                var servico = new ServicoDAO().GetById(id);
+
+                if (servico == null)
+                {
+                    return NotFound();
+                }
+
+                servico.NomeServico = item.NomeServico;
+                servico.Descricao = item.Descricao;
+                servico.Valor = item.Valor;
+                servico.DuracaoAtendimento = item.DuracaoAtendimento;
+                servico.Comissao = item.Comissao;
+                servico.IdCateFk = item.IdCateFk;
+
+                new ServicoDAO().Update(servico);
+
+                return Ok(servico);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var servico = new ServicoDAO().GetById(id);
+
+                if (servico == null)
+                {
+                    return NotFound();
+                }
+
+                new ServicoDAO().Delete(servico.Id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return Problem("Ocorreram erros ao processar a solicitação");
+            }
         }
     }
 }

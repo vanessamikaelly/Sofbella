@@ -29,10 +29,10 @@ namespace SALAODEBELEZA.DTOS
         public string Expediente { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string Possui_Agenda { get; set; }
+        public bool Possui_Agenda { get; set; }
 
         [Required(ErrorMessage = "O campo é obrigatório!")]
-        public string Ativo { get; set; }
+        public bool Ativo { get; set; }
 
         [Required]
         public int IdCateFk { get; set; }

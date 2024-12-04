@@ -63,9 +63,9 @@ namespace SOFBELLASALAOOO.Models
                         Id = reader.GetInt32("id_blo"),
                         Profissional = reader.GetInt32("profissional_blo"),
                         DataInicio = reader.GetDateTime("data_inicio_blo"),
-                        HoraInicio = reader.GetString("hora_inicio_blo"),
+                        HoraInicio = reader.GetDateTime("hora_inicio_blo"),
                         DataFinal = reader.GetDateTime("data_fim_blo"),
-                        HoraFinal = reader.GetString("hora_fim_blo"),
+                        HoraFinal = reader.GetDateTime("hora_fim_blo"),
                         Motivo = reader.GetString("motivo_bloqueio_blo"),
                         DiaInteiro = reader.GetBoolean("dia_inteiro_blo")
                     });
@@ -106,9 +106,9 @@ namespace SOFBELLASALAOOO.Models
                     bloqueio.Id = reader.GetInt32("id_blo");
                     bloqueio.Profissional = reader.GetInt32("profissional_blo");
                     bloqueio.DataInicio = reader.GetDateTime("data_inicio_blo");
-                    bloqueio.HoraInicio = reader.GetString("hora_inicio_blo");
+                    bloqueio.HoraInicio = reader.GetDateTime("hora_inicio_blo");
                     bloqueio.DataFinal = reader.GetDateTime("data_fim_blo");
-                    bloqueio.HoraFinal = reader.GetString("hora_fim_blo");
+                    bloqueio.HoraFinal = reader.GetDateTime("hora_fim_blo");
                     bloqueio.Motivo = reader.GetString("motivo_bloqueio_blo");
                     bloqueio.DiaInteiro = reader.GetBoolean("dia_inteiro_blo");
                 }
