@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿DAO
+
+using MySql.Data.MySqlClient;
 using SALAODEBELEZA.DataBase;
 
 namespace SALAODEBELEZA.Models
