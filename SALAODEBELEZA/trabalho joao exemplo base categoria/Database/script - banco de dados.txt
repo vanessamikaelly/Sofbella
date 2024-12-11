@@ -1,0 +1,28 @@
+CREATE DATABASE agenda_db;
+USE agenda_db;
+
+CREATE TABLE tarefas (
+  id_tar int(11) NOT NULL AUTO_INCREMENT,
+  descricao_tar text NOT NULL,
+  data_tar datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  feito_tar tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (id_tar)
+);
+
+CREATE TABLE categorias (
+  id_cat int(11) NOT NULL AUTO_INCREMENT,
+  nome_cat text NOT NULL,
+  PRIMARY KEY (id_cat)
+);
+
+
+INSERT INTO tarefas (descricao_tar) VALUES ("Estudo de API - PART 1"), ("Estudo de API - PART 2"), ("Estudo de API - PART 3");
+UPDATE tarefas SET feito_tar = TRUE WHERE id_tar = 1;
+SELECT * FROM agenda_db.tarefas;
+
+UPDATE agenda_db.tarefas SET feito_tar = NULL WHERE (id_tar = '6');
+
+ALTER TABLE tarefas 
+	ADD COLUMN id_cat_fk INT NULL,
+    ADD CONSTRAINT categoria_id_cat_fk
+		FOREIGN KEY (id_cat_fk) REFERENCES categorias(id_cat);
