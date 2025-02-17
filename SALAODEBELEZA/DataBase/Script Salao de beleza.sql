@@ -266,6 +266,18 @@ create table pacote (
 );
 
     select * from pacote;
+    
+INSERT INTO pacote (nome_pacote_pac, valor_pacote_pac, validade_pacote_pac, itens_pacote_pac) 
+VALUES 
+('Pacote Básico', 99.90, '2025-12-31', 'Item A, Item B, Item C');
+
+INSERT INTO pacote (nome_pacote_pac, valor_pacote_pac, validade_pacote_pac, itens_pacote_pac) 
+VALUES 
+('Pacote Intermediário', 199.90, '2026-06-30', 'Item D, Item E, Item F, Item G');
+
+INSERT INTO pacote (nome_pacote_pac, valor_pacote_pac, validade_pacote_pac, itens_pacote_pac) 
+VALUES 
+('Pacote Premium', 299.90, '2026-12-31', 'Item H, Item I, Item J, Item K, Item L');
 
 create table profissional (
     id_pro int primary key auto_increment,
@@ -289,6 +301,18 @@ create table profissional (
 );
 
     select * from profissional;
+    
+    INSERT INTO profissional (nome_pro, celular_pro, email_pro, cpf_pro, sexo_pro, observacoes_pro, expediente_pro, possui_agenda_pro, ativo_pro, id_cate_fk, id_log_fk, id_perf_fk, id_end_fk) 
+VALUES 
+('Carlos Silva', '11987654321', 'carlos.silva@email.com', '123.456.789-00', 'Masculino', 'Especialista em fisioterapia', 'Seg-Sex: 08h - 18h', TRUE, TRUE, 1, 1, 2, 3);
+
+INSERT INTO profissional (nome_pro, celular_pro, email_pro, cpf_pro, sexo_pro, observacoes_pro, expediente_pro, possui_agenda_pro, ativo_pro, id_cate_fk, id_log_fk, id_perf_fk, id_end_fk) 
+VALUES 
+('Mariana Souza', '21987654321', 'mariana.souza@email.com', '987.654.321-00', 'Feminino', 'Psicóloga clínica', 'Seg-Sáb: 09h - 20h', TRUE, TRUE, 2, 2, 3, 4);
+
+INSERT INTO profissional (nome_pro, celular_pro, email_pro, cpf_pro, sexo_pro, observacoes_pro, expediente_pro, possui_agenda_pro, ativo_pro, id_cate_fk, id_log_fk, id_perf_fk, id_end_fk) 
+VALUES 
+('João Mendes', '31987654321', 'joao.mendes@email.com', '456.789.123-00', 'Masculino', 'Personal Trainer', 'Seg-Dom: 06h - 22h', TRUE, TRUE, 3, 3, 1, 5);
 
 create table servico (
     id_serv int primary key auto_increment,
@@ -302,6 +326,18 @@ create table servico (
 );
 
     select * from servico;
+    
+    INSERT INTO servico (nome_serv, descricao_serv, valor_serv, duracao_serv, comissao_serv, id_cate_fk) 
+VALUES 
+('Consulta Psicológica', 'Atendimento psicológico individual', 150.00, '01:00:00', 20.00, 2);
+
+INSERT INTO servico (nome_serv, descricao_serv, valor_serv, duracao_serv, comissao_serv, id_cate_fk) 
+VALUES 
+('Treinamento Personalizado', 'Sessão de treino com acompanhamento de personal trainer', 100.00, '01:30:00', 15.00, 3);
+
+INSERT INTO servico (nome_serv, descricao_serv, valor_serv, duracao_serv, comissao_serv, id_cate_fk) 
+VALUES 
+('Sessão de Fisioterapia', 'Reabilitação física com fisioterapeuta especializado', 120.00, '00:45:00', 18.00, 1);
 
 create table orcamento (
     id_orca int primary key auto_increment,
@@ -314,6 +350,18 @@ create table orcamento (
 );
 
     select * from orcamento;
+    
+INSERT INTO orcamento (descricao_orca, data_orca, forma_pagamento_orca, valor_orca, id_serv_fk) 
+VALUES 
+('Orçamento para consulta psicológica inicial', '2025-03-10', 'Cartão de Crédito', 150.00, 1);
+
+INSERT INTO orcamento (descricao_orca, data_orca, forma_pagamento_orca, valor_orca, id_serv_fk) 
+VALUES 
+('Orçamento para pacote de treinamento mensal', '2025-03-15', 'Pix', 400.00, 2);
+
+INSERT INTO orcamento (descricao_orca, data_orca, forma_pagamento_orca, valor_orca, id_serv_fk) 
+VALUES 
+('Orçamento para 5 sessões de fisioterapia', '2025-03-20', 'Dinheiro', 600.00, 3);
 
 create table servico_pacote (
 	id_serv_pac int primary key auto_increment,
@@ -322,6 +370,18 @@ create table servico_pacote (
 	foreign key (id_serv_fk) references servico(id_serv),
     foreign key (id_pac_fk) references pacote(id_pac)
 );
+
+INSERT INTO servico_pacote (id_serv_fk, id_pac_fk) 
+VALUES 
+(1, 1);
+
+INSERT INTO servico_pacote (id_serv_fk, id_pac_fk) 
+VALUES 
+(2, 2);
+
+INSERT INTO servico_pacote (id_serv_fk, id_pac_fk) 
+VALUES 
+(3, 3);
 
 create table expediente (
     id_exp int primary key auto_increment,
@@ -337,6 +397,18 @@ create table expediente (
 );
 
     select * from expediente;
+    
+INSERT INTO expediente (nome_exp, dia_semana, hora_entrada_exp, hora_saida_exp, almoco_inicio_exp, almoco_fim_exp, intervalo_almoco_exp, id_pro_fk) 
+VALUES 
+('Expediente Psicóloga', 'Segunda-feira', '08:00:00', '18:00:00', '12:00:00', '13:00:00', TRUE, 1);
+
+INSERT INTO expediente (nome_exp, dia_semana, hora_entrada_exp, hora_saida_exp, almoco_inicio_exp, almoco_fim_exp, intervalo_almoco_exp, id_pro_fk) 
+VALUES 
+('Expediente Personal Trainer', 'Terça-feira', '06:30:00', '20:00:00', '12:30:00', '13:30:00', TRUE, 2);
+
+INSERT INTO expediente (nome_exp, dia_semana, hora_entrada_exp, hora_saida_exp, almoco_inicio_exp, almoco_fim_exp, intervalo_almoco_exp, id_pro_fk) 
+VALUES 
+('Expediente Fisioterapeuta', 'Quarta-feira', '07:00:00', '19:00:00', '12:00:00', '13:00:00', TRUE, 3);
 
 create table bloqueio (
     id_blo int primary key auto_increment,
@@ -350,6 +422,18 @@ create table bloqueio (
 );
 
     select * from bloqueio;
+    
+INSERT INTO bloqueio (profissional_blo, data_inicio_blo, data_fim_blo, hora_inicio_blo, hora_fim_blo, motivo_bloqueio_blo, dia_inteiro_blo) 
+VALUES 
+(1, '2025-04-10', '2025-04-10', '08:00:00', '12:00:00', 'Consulta médica', FALSE);
+
+INSERT INTO bloqueio (profissional_blo, data_inicio_blo, data_fim_blo, hora_inicio_blo, hora_fim_blo, motivo_bloqueio_blo, dia_inteiro_blo) 
+VALUES 
+(2, '2025-05-15', '2025-05-15', '14:00:00', '18:00:00', 'Compromisso pessoal', FALSE);
+
+INSERT INTO bloqueio (profissional_blo, data_inicio_blo, data_fim_blo, hora_inicio_blo, hora_fim_blo, motivo_bloqueio_blo, dia_inteiro_blo) 
+VALUES 
+(3, '2025-06-01', '2025-06-01', NULL, NULL, 'Feriado', TRUE);
 
 create table bloqueio_profissional (
 	id_blo_pro int primary key auto_increment,
@@ -359,6 +443,18 @@ create table bloqueio_profissional (
     foreign key (id_pro_fk) references profissional(id_pro)
 );
 
+INSERT INTO bloqueio_profissional (id_blo_fk, id_pro_fk) 
+VALUES 
+(1, 1);
+
+INSERT INTO bloqueio_profissional (id_blo_fk, id_pro_fk) 
+VALUES 
+(2, 2);
+
+INSERT INTO bloqueio_profissional (id_blo_fk, id_pro_fk) 
+VALUES 
+(3, 3);
+
 create table profissional_categoria (
 	id_pro_cate int primary key auto_increment,
 	id_pro_fk int,
@@ -366,6 +462,18 @@ create table profissional_categoria (
     foreign key (id_pro_fk) references profissional(id_pro),
     foreign key (id_cate_fk) references categoria(id_cate)
 );
+
+INSERT INTO profissional_categoria (id_pro_fk, id_cate_fk) 
+VALUES 
+(1, 1);
+
+INSERT INTO profissional_categoria (id_pro_fk, id_cate_fk) 
+VALUES 
+(2, 2);
+
+INSERT INTO profissional_categoria (id_pro_fk, id_cate_fk) 
+VALUES 
+(3, 3);
 
 create table agenda (
     id_agend int primary key auto_increment,
@@ -384,6 +492,18 @@ create table agenda (
 );
 
     select * from agenda;
+    
+INSERT INTO agenda (data_agend, telefone_agend, nome_cliente_agend, observacoes_agend, responsavel_agend, hora_agend, tempo_atendimento_agend, servico_agend, id_pro_fk, id_cli_fk) 
+VALUES 
+('2025-03-10', '11987654321', 'Carlos Silva', 'Cliente novo, primeira consulta', 'Mariana Souza', '08:00:00', '01:00:00', 'Consulta psicológica', 1, 1);
+
+INSERT INTO agenda (data_agend, telefone_agend, nome_cliente_agend, observacoes_agend, responsavel_agend, hora_agend, tempo_atendimento_agend, servico_agend, id_pro_fk, id_cli_fk) 
+VALUES 
+('2025-03-15', '21987654321', 'Ana Costa', 'Sessão de acompanhamento', 'João Mendes', '09:30:00', '01:30:00', 'Treinamento personalizado', 2, 2);
+
+INSERT INTO agenda (data_agend, telefone_agend, nome_cliente_agend, observacoes_agend, responsavel_agend, hora_agend, tempo_atendimento_agend, servico_agend, id_pro_fk, id_cli_fk) 
+VALUES 
+('2025-03-20', '31987654321', 'Lucas Oliveira', 'Reabilitação física pós-cirurgia', 'Carlos Silva', '14:00:00', '00:45:00', 'Sessão de fisioterapia', 3, 3);
 
 create table agenda_servico (
 	id_agend_serv int primary key auto_increment,
