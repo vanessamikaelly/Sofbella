@@ -513,6 +513,11 @@ create table agenda_servico (
     foreign key (id_serv_fk) references servico(id_serv)
 );
 
+INSERT INTO agenda_servico (id_agend_fk, id_serv_fk) VALUES (1, 3);
+INSERT INTO agenda_servico (id_agend_fk, id_serv_fk) VALUES (2, 5);
+INSERT INTO agenda_servico (id_agend_fk, id_serv_fk) VALUES (3, 2);
+
+
 create table pagamento (
     id_pag int primary key auto_increment,
     data_pag date,
@@ -531,6 +536,16 @@ create table pagamento (
 
     select * from pagamento;
 
+    INSERT INTO pagamento (data_pag, valor_pag, desconto_pag, forma_pagamento_pag, id_caix_fk, id_serv_fk, id_orca_fk, id_cli_fk) 
+VALUES ('2025-02-15', 150.00, 10.00, 'Cartão de Crédito', 1, 2, 1, 3);
+
+INSERT INTO pagamento (data_pag, valor_pag, desconto_pag, forma_pagamento_pag, id_caix_fk, id_serv_fk, id_orca_fk, id_cli_fk) 
+VALUES ('2025-02-16', 200.00, 15.00, 'Pix', 2, 4, 2, 1);
+
+INSERT INTO pagamento (data_pag, valor_pag, desconto_pag, forma_pagamento_pag, id_caix_fk, id_serv_fk, id_orca_fk, id_cli_fk) 
+VALUES ('2025-02-17', 180.00, 5.00, 'Dinheiro', 3, 1, 3, 2);
+
+
 create table anamnese_corporal (
     id_anamcorp int primary key auto_increment,
     depilacao_anamcorp bool,
@@ -546,6 +561,15 @@ create table anamnese_corporal (
 );
 select * from anamnese_corporal;
 
+INSERT INTO anamnese_corporal (depilacao_anamcorp, alergia_anamcorp, tipo_alergia_anamcorp, problema_pele_anamcorp, tratamento_dermatologico_anamcorp, gestante_anamcorp, tipo_pele_anamcorp, vasos_varicosos_anamcorp, metodos_utilizados_anamcorp, areas_anamcorp) 
+VALUES (TRUE, FALSE, '', TRUE, FALSE, FALSE, 'Oleosa', TRUE, 'Cera Quente', 'Pernas, Axilas');
+
+INSERT INTO anamnese_corporal (depilacao_anamcorp, alergia_anamcorp, tipo_alergia_anamcorp, problema_pele_anamcorp, tratamento_dermatologico_anamcorp, gestante_anamcorp, tipo_pele_anamcorp, vasos_varicosos_anamcorp, metodos_utilizados_anamcorp, areas_anamcorp) 
+VALUES (FALSE, TRUE, 'Níquel', FALSE, TRUE, FALSE, 'Mista', FALSE, 'Lâmina', 'Rosto, Braços');
+
+INSERT INTO anamnese_corporal (depilacao_anamcorp, alergia_anamcorp, tipo_alergia_anamcorp, problema_pele_anamcorp, tratamento_dermatologico_anamcorp, gestante_anamcorp, tipo_pele_anamcorp, vasos_varicosos_anamcorp, metodos_utilizados_anamcorp, areas_anamcorp) 
+VALUES (TRUE, TRUE, 'Pólen', TRUE, TRUE, TRUE, 'Seca', TRUE, 'Laser', 'Pernas, Virilha');
+
 create table Cliente_Anamnesecorporal (
 	id_cli_anamcorp int primary key auto_increment,
 	id_cli_fk int,
@@ -553,6 +577,10 @@ create table Cliente_Anamnesecorporal (
     foreign key (id_cli_fk) references cliente(id_cli),
     foreign key (id_anamcorp_fk) references anamnese_corporal(id_anamcorp)
 );
+
+INSERT INTO Cliente_Anamnesecorporal (id_cli_fk, id_anamcorp_fk) VALUES (1, 2);
+INSERT INTO Cliente_Anamnesecorporal (id_cli_fk, id_anamcorp_fk) VALUES (2, 3);
+INSERT INTO Cliente_Anamnesecorporal (id_cli_fk, id_anamcorp_fk) VALUES (3, 1);
 
 create table anamnese_facial (
     id_anamfac int primary key auto_increment,
@@ -565,6 +593,16 @@ create table anamnese_facial (
 
 select * from anamnese_facial;
 
+INSERT INTO anamnese_facial (gestante_anamfac, quedadecabelo_anamfac, alergia_anamfac, tipo_pele_anamfac, medicacao_anamfac) 
+VALUES (FALSE, TRUE, TRUE, 'Mista', 'Antialérgico');
+
+INSERT INTO anamnese_facial (gestante_anamfac, quedadecabelo_anamfac, alergia_anamfac, tipo_pele_anamfac, medicacao_anamfac) 
+VALUES (FALSE, FALSE, FALSE, 'Oleosa', 'Nenhuma');
+
+INSERT INTO anamnese_facial (gestante_anamfac, quedadecabelo_anamfac, alergia_anamfac, tipo_pele_anamfac, medicacao_anamfac) 
+VALUES (TRUE, TRUE, TRUE, 'Seca', 'Vitamina D');
+
+
 create table Cliente_Anamnesefacial (
 	id_cli_anamfac int primary key auto_increment,
 	id_cli_fk int,
@@ -572,6 +610,10 @@ create table Cliente_Anamnesefacial (
     foreign key (id_cli_fk) references cliente(id_cli),
     foreign key (id_anamfac_fk) references anamnese_facial(id_anamfac)
 );
+
+INSERT INTO Cliente_Anamnesefacial (id_cli_fk, id_anamfac_fk) VALUES (1, 3);
+INSERT INTO Cliente_Anamnesefacial (id_cli_fk, id_anamfac_fk) VALUES (2, 1);
+INSERT INTO Cliente_Anamnesefacial (id_cli_fk, id_anamfac_fk) VALUES (3, 2);
 
 create table anamnese_capilar (
     id_anamcap int primary key auto_increment,
@@ -590,6 +632,18 @@ create table anamnese_capilar (
 
 select * from anamnese_capilar;
 
+
+INSERT INTO anamnese_capilar (tipo_cabelo_anamcap, caracteristica_anamcap, comprimento_anamcap, pigmentacao_anamcap, elasticidade_anamcap, expessura_anamcap, volume_anamcap, resistencia_anamcap, condicao_anamcap, observacoes_anamcap, atendentes_alergicos_anamcap) 
+VALUES ('Liso', 'Brilhante', 'Médio', 'Natural', 'Alta', 'Fina', 'Médio', 'Boa resistência', 'Saudável', 'Nenhuma observação', 'Nenhum');
+
+INSERT INTO anamnese_capilar (tipo_cabelo_anamcap, caracteristica_anamcap, comprimento_anamcap, pigmentacao_anamcap, elasticidade_anamcap, expessura_anamcap, volume_anamcap, resistencia_anamcap, condicao_anamcap, observacoes_anamcap, atendentes_alergicos_anamcap) 
+VALUES ('Cacheado', 'Seco', 'Longo', 'Tingido', 'Média', 'Grossa', 'Alto', 'Média resistência', 'Quebradiço', 'Pontas duplas visíveis', 'Nenhum');
+
+INSERT INTO anamnese_capilar (tipo_cabelo_anamcap, caracteristica_anamcap, comprimento_anamcap, pigmentacao_anamcap, elasticidade_anamcap, expessura_anamcap, volume_anamcap, resistencia_anamcap, condicao_anamcap, observacoes_anamcap, atendentes_alergicos_anamcap) 
+VALUES ('Ondulado', 'Oleoso', 'Curto', 'Natural', 'Baixa', 'Média', 'Baixo', 'Baixa resistência', 'Oleoso', 'Caspa leve', 'Alergia a tintura');
+
+
+
 create table Cliente_Anamnesecapilar(
 	id_cli_anamcap int primary key auto_increment,
 	id_cli_fk int,
@@ -597,6 +651,13 @@ create table Cliente_Anamnesecapilar(
     foreign key (id_cli_fk) references cliente(id_cli),
     foreign key (id_anamcap_fk) references anamnese_capilar(id_anamcap)
 );
+
+INSERT INTO Cliente_Anamnesecapilar (id_cli_fk, id_anamcap_fk) VALUES (1, 2);
+INSERT INTO Cliente_Anamnesecapilar (id_cli_fk, id_anamcap_fk) VALUES (2, 3);
+INSERT INTO Cliente_Anamnesecapilar (id_cli_fk, id_anamcap_fk) VALUES (3, 1);
+
+
+
 
 create table anamnese_manicure_pedicure (
     id_anamncure int primary key auto_increment,
@@ -614,6 +675,18 @@ create table anamnese_manicure_pedicure (
 
 select * from anamnese_manicure_pedicure;
 
+
+INSERT INTO anamnese_manicure_pedicure (frequencia_anamncure, retiracuticula_anamncure, roeunhas_anamncure, alergia_anamncure, tipoalergia_anamncure, formato_unha_anamncure, tonalidade_anamncure, unhaencravada_anamncure, micose_anamncure, coresmalte_anamncure) 
+VALUES ('Semanal', TRUE, FALSE, TRUE, 'Formol', 'Quadrado', TRUE, FALSE, FALSE, 'Vermelho');
+
+INSERT INTO anamnese_manicure_pedicure (frequencia_anamncure, retiracuticula_anamncure, roeunhas_anamncure, alergia_anamncure, tipoalergia_anamncure, formato_unha_anamncure, tonalidade_anamncure, unhaencravada_anamncure, micose_anamncure, coresmalte_anamncure) 
+VALUES ('Quinzenal', FALSE, TRUE, FALSE, '', 'Redondo', FALSE, TRUE, FALSE, 'Nude');
+
+INSERT INTO anamnese_manicure_pedicure (frequencia_anamncure, retiracuticula_anamncure, roeunhas_anamncure, alergia_anamncure, tipoalergia_anamncure, formato_unha_anamncure, tonalidade_anamncure, unhaencravada_anamncure, micose_anamncure, coresmalte_anamncure) 
+VALUES ('Mensal', TRUE, FALSE, TRUE, 'Acrilato', 'Oval', TRUE, FALSE, TRUE, 'Francesinha');
+
+
+
 create table Cliente_Anamnesemanicurepedicure (
 	id_cli_anamncure int primary key auto_increment,
 	id_cli_fk int,
@@ -621,4 +694,8 @@ create table Cliente_Anamnesemanicurepedicure (
     foreign key (id_cli_fk) references cliente(id_cli),
     foreign key (id_anamncure_fk) references anamnese_manicure_pedicure(id_anamncure)
 );
+
+INSERT INTO Cliente_Anamnesemanicurepedicure (id_cli_fk, id_anamncure_fk) VALUES (1, 3);
+INSERT INTO Cliente_Anamnesemanicurepedicure (id_cli_fk, id_anamncure_fk) VALUES (2, 1);
+INSERT INTO Cliente_Anamnesemanicurepedicure (id_cli_fk, id_anamncure_fk) VALUES (3, 2);
 
