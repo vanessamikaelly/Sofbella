@@ -15,6 +15,20 @@ VALUES (
     'Administrador', 'Agenda Completa', 'Comissões de 5% sobre vendas', 'Controle de fluxo de caixa'
 );
 
+INSERT INTO perfil (tipo_perf, agenda_perf, comissoes_perf, financeiro_perf) 
+VALUES 
+('Administrador', 'Reuniões mensais', 'Comissões de vendas, bônus de performance', 'Controle de fluxo de caixa, planejamento financeiro');
+
+INSERT INTO perfil (tipo_perf, agenda_perf, comissoes_perf, financeiro_perf) 
+VALUES 
+('Gerente', 'Reuniões semanais', 'Comissões de projetos concluídos', 'Análise de custos, orçamento de equipe');
+
+INSERT INTO perfil (tipo_perf, agenda_perf, comissoes_perf, financeiro_perf) 
+VALUES 
+('Vendedor', 'Visitas diárias a clientes', 'Comissões sobre vendas realizadas', 'Controle de metas de vendas, relatórios de desempenho');
+
+
+
 select * from perfil;
 
 create table login (
@@ -26,6 +40,18 @@ INSERT INTO login (email_log, senha_log)
 VALUES
     ('usuario@exemplo.com', 'senha123'),
     ('admin@exemplo.com', 'admin123');
+
+    INSERT INTO login (email_log, senha_log) 
+VALUES 
+('jose.silva@email.com', 'senha123');
+
+INSERT INTO login (email_log, senha_log) 
+VALUES 
+('ana.martins@email.com', 'segura456');
+
+INSERT INTO login (email_log, senha_log) 
+VALUES 
+('pedro.santos@email.com', 'pedro789');
     
     select * from login;
 
@@ -41,6 +67,18 @@ create table endereco (
     cep_end varchar(8)
 );
 
+INSERT INTO endereco (rua_end, bairro_end, numero_end, cidade_end, estado_end, pais_end, cep_end) 
+VALUES 
+('Rua das Flores', 'Centro', '123', 'São Paulo', 'SP', 'Brasil', '01000000');
+
+INSERT INTO endereco (rua_end, bairro_end, numero_end, cidade_end, estado_end, pais_end, cep_end) 
+VALUES 
+('Avenida Paulista', 'Bela Vista', '456', 'São Paulo', 'SP', 'Brasil', '01310000');
+
+INSERT INTO endereco (rua_end, bairro_end, numero_end, cidade_end, estado_end, pais_end, cep_end) 
+VALUES 
+('Rua João Pessoa', 'Vila Progredior', '789', 'Campinas', 'SP', 'Brasil', '13010000');
+
     select * from endereco;
 
 
@@ -54,6 +92,17 @@ create table fornecedor (
     id_end_fk int,
     foreign key (id_end_fk) references endereco(id_end)
 );
+INSERT INTO fornecedor (nome_forn, razao_social_forn, cnpj_forn, tel_forn, site_forn, id_end_fk) 
+VALUES 
+('Fornecedor A', 'Razão Social A', '12.345.678/0001-90', '(11) 1234-5678', 'www.fornecedora.com.br', 1);
+
+INSERT INTO fornecedor (nome_forn, razao_social_forn, cnpj_forn, tel_forn, site_forn, id_end_fk) 
+VALUES 
+('Fornecedor B', 'Razão Social B', '98.765.432/0001-01', '(21) 9876-5432', 'www.fornecedorb.com.br', 2);
+
+INSERT INTO fornecedor (nome_forn, razao_social_forn, cnpj_forn, tel_forn, site_forn, id_end_fk) 
+VALUES 
+('Fornecedor C', 'Razão Social C', '12.345.678/0001-11', '(31) 1122-3344', 'www.fornecedorC.com.br', 3);
 
     select * from fornecedor;
 
@@ -69,6 +118,17 @@ create table cliente (
     id_end_fk int,
     foreign key (id_end_fk) references endereco(id_end)
 );
+INSERT INTO cliente (nome_cli, email_cli, tel_cli, cpf_cli, sexo_cli, data_nasc_cli, id_end_fk) 
+VALUES 
+('João Silva', 'joao.silva@email.com', '(11) 99876-5432', '123.456.789-00', 'Masculino', '1985-03-15', 1);
+
+INSERT INTO cliente (nome_cli, email_cli, tel_cli, cpf_cli, sexo_cli, data_nasc_cli, id_end_fk) 
+VALUES 
+('Maria Oliveira', 'maria.oliveira@email.com', '(21) 98765-4321', '987.654.321-00', 'Feminino', '1990-07-20', 2);
+
+INSERT INTO cliente (nome_cli, email_cli, tel_cli, cpf_cli, sexo_cli, data_nasc_cli, id_end_fk) 
+VALUES 
+('Carlos Santos', 'carlos.santos@email.com', '(31) 91234-5678', '123.789.456-00', 'Masculino', '1988-11-05', 3);
 
     select * from cliente;
 
@@ -83,6 +143,18 @@ create table caixa (
     saldo_final_caix float
 );
 
+INSERT INTO caixa (usuario_caix, data_inicio_caix, valor_inicial_caix, entrada_caix, saida_caix, saldo_final_caix) 
+VALUES 
+('João Silva', '2025-02-01', 1000.00, 500.00, 300.00, 1200.00);
+
+INSERT INTO caixa (usuario_caix, data_inicio_caix, valor_inicial_caix, entrada_caix, saida_caix, saldo_final_caix) 
+VALUES 
+('Maria Oliveira', '2025-02-01', 1500.00, 800.00, 200.00, 2100.00);
+
+INSERT INTO caixa (usuario_caix, data_inicio_caix, valor_inicial_caix, entrada_caix, saida_caix, saldo_final_caix) 
+VALUES 
+('Carlos Santos', '2025-02-01', 500.00, 300.00, 100.00, 700.00);
+
     select * from caixa;
 
 create table categoria (
@@ -91,6 +163,18 @@ create table categoria (
     tipo_cate varchar(45),
     descricao_cate varchar(45)
 );
+
+INSERT INTO categoria (nome_cate, tipo_cate, descricao_cate) 
+VALUES 
+('Eletrônicos', 'Produtos', 'Produtos relacionados a eletrônicos');
+
+INSERT INTO categoria (nome_cate, tipo_cate, descricao_cate) 
+VALUES 
+('Roupas', 'Vestuário', 'Vestuário feminino');
+
+INSERT INTO categoria (nome_cate, tipo_cate, descricao_cate) 
+VALUES 
+('Alimentos', 'Comércio', 'Produtos alimentícios, incluindo');
 
     select * from categoria;
 
@@ -107,6 +191,18 @@ create table produto (
     foreign key (id_cate_fk) references categoria(id_cate)
 );
 
+INSERT INTO produto (nome_prod, descricao_prod, codigo_barras_prod, categoria_prod, valor_prod, valor_custo_prod, comissao_prod, id_cate_fk) 
+VALUES 
+('Smartphone XYZ', 'Celular de última geração', '1234567890123', 'Eletrônicos', 1500.00, '1000.00', 100.00, 1);
+
+INSERT INTO produto (nome_prod, descricao_prod, codigo_barras_prod, categoria_prod, valor_prod, valor_custo_prod, comissao_prod, id_cate_fk) 
+VALUES 
+('Camiseta Polo', 'Camiseta masculina de algodão', '9876543210987', 'Roupas', 80.00, '50.00', 5.00, 2);
+
+INSERT INTO produto (nome_prod, descricao_prod, codigo_barras_prod, categoria_prod, valor_prod, valor_custo_prod, comissao_prod, id_cate_fk) 
+VALUES 
+('Arroz Integral', 'Arroz integral de 5kg', '1234987654321', 'Alimentos', 20.00, '12.00', 2.00, 3);
+
     select * from produto;
 
 create table estoque (
@@ -122,6 +218,18 @@ create table estoque (
     foreign key (id_prod_fk) references produto (id_prod)
 );
 
+INSERT INTO estoque (nomeprod_est, estoque_atual_est, entrada_est, preco_compra_est, preco_venda_est, id_forn_fk, id_prod_fk) 
+VALUES 
+('Smartphone XYZ', 100, 50, 1000.00, 1500.00, 1, 1);
+
+INSERT INTO estoque (nomeprod_est, estoque_atual_est, entrada_est, preco_compra_est, preco_venda_est, id_forn_fk, id_prod_fk) 
+VALUES 
+('Camiseta Polo', 200, 100, 50.00, 80.00, 2, 2);
+
+INSERT INTO estoque (nomeprod_est, estoque_atual_est, entrada_est, preco_compra_est, preco_venda_est, id_forn_fk, id_prod_fk) 
+VALUES 
+('Arroz Integral', 500, 200, 12.00, 20.00, 3, 3);
+
     select * from estoque;
 
 
@@ -134,6 +242,18 @@ create table baixa_uso_interno (
     id_est_fk int,
     foreign key (id_est_fk) references estoque (id_est)
     );
+
+     INSERT INTO baixa_uso_interno (nome_baixa, estoqueatual_baixa, baixarestoque_baixa, descricao_baixa, id_est_fk) 
+VALUES 
+('Uso Interno Smartphone XYZ', 100, 10, 'Baixa para uso interno no escritório', 1);
+
+INSERT INTO baixa_uso_interno (nome_baixa, estoqueatual_baixa, baixarestoque_baixa, descricao_baixa, id_est_fk) 
+VALUES 
+('Uso Interno Camiseta Polo', 200, 15, 'Baixa para uniformes dos funcionários', 2);
+
+INSERT INTO baixa_uso_interno (nome_baixa, estoqueatual_baixa, baixarestoque_baixa, descricao_baixa, id_est_fk) 
+VALUES 
+('Uso Interno Arroz Integral', 500, 30, 'Baixa para refeitório interno', 3);
     
     select * from baixa_uso_interno;
 
